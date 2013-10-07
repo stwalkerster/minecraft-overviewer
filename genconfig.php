@@ -71,7 +71,7 @@ if( $data['end'] ) {
 renders["<?php echo $name; ?>-end-north"] = {
     "world": "<?php echo $data['title']; ?>",
     "title": "The End",
-    "rendermode": smooth_lighting,
+    "rendermode": normal,
     "dimension": "end",
 }
 <?php
