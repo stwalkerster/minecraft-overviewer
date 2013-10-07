@@ -25,6 +25,12 @@ $worlds = array(
 		'nether' => true,
 		'end' => false,
 	),
+	"mc1" => array(
+		'path' => "mc1-world/",
+		'title' => "MC 1",
+		'nether' => true,
+		'end' => true,
+	),
 );
 
 foreach( $worlds as $name => $data ) 
