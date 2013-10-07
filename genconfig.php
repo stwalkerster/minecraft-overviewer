@@ -1,10 +1,31 @@
 <?php
 
-$worlds = array();
-$worlds["cowgate"] = array( 'path' => "worlds/minecraft/cowgate/cowgate/", 'title' => "Underbelly Cowgate", 'nether' => true, 'end' => false );
-$worlds["creative"] = array( 'path' => "worlds/minecraft/creative/world/", 'title' => "Creative", 'nether' => false, 'end' => false );
-$worlds["ohai"] = array( 'path' => "worlds/minecraft/ohai/world/", 'title' => "Ohai!", 'nether' => true, 'end' => true );
-$worlds["mc1.5"] = array( 'path' => "worlds/minecraft/mc1.5/world/", 'title' => "MC 1.5", 'nether' => true, 'end' => true );
+$worlds = array(
+	"cowgate" => array(
+		'path' => "worlds/minecraft/cowgate/cowgate/",
+		'title' => "Underbelly Cowgate",
+		'nether' => true,
+		'end' => false,
+	),
+	"creative" => array(
+		'path' => "worlds/minecraft/creative/world/",
+		'title' => "Creative",
+		'nether' => false,
+		'end' => false,
+	),
+	"ohai" => array(
+		'path' => "worlds/minecraft/ohai/world/",
+		'title' => "Ohai!",
+		'nether' => false,
+		'end' => false,
+	),
+	"mc1.5" => array(
+		'path' => "worlds/minecraft/mc1.5/world/",
+		'title' => "MC 1.5",
+		'nether' => true,
+		'end' => true,
+	),
+);
 
 foreach( $worlds as $name => $data ) 
 {
