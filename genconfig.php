@@ -66,9 +66,18 @@ $directions = array(
 		"code" => "upper-left",
 		"title" => "North",
 	),
-//	"south" => "lower-right",
-//	"east" => "upper-right",
-//	"west" => "lower-left",
+	"south" => array(
+		"code" => "lower-right",
+		"title" => "South",
+	),
+	"east" => array(
+		"code" => "upper-right",
+		"title" => "East",
+	),
+	"west" => array(
+		"code" => "lower-left",
+		"title" => "West",
+	),
 );
 
 // END OF CONFIGURATION
