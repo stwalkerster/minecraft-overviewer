@@ -1,0 +1,27 @@
+worlds["Underbelly Cowgate"] = "/home/stwalkerster/public_html/minecraft/worlds/minecraft/cowgate/cowgate/"
+worlds["Creative"] = "/home/stwalkerster/public_html/minecraft/worlds/minecraft/creative/world/"
+worlds["Ohai!"] = "/home/stwalkerster/public_html/minecraft/worlds/minecraft/ohai/world/"
+worlds["MC 1.5"] = "/home/stwalkerster/public_html/minecraft/worlds/minecraft/mc1.5/world/"
+
+renders["normalrender"] = {
+    "world": "Underbelly Cowgate",
+    "title": "Normal Render",
+    "rendermode": smooth_lighting,
+    "dimension": "overworld",
+}
+
+renders["night"] = {
+    "world": "Underbelly Cowgate",
+    "title": "Nighttime",
+    "rendermode": smooth_night,
+    "dimension": "overworld",
+}
+
+renders["nether"] = {
+    "world": "Underbelly Cowgate",
+    "title": "Nether",
+    "rendermode": nether_smooth_lighting,
+    "dimension": "nether",
+}
+
+outputdir = "/home/stwalkerster/public_html/minecraft/maps/"
