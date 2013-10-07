@@ -23,7 +23,7 @@ $worlds = array(
 		'path' => "worlds/minecraft/mc1.5/world/",
 		'title' => "MC 1.5",
 		'nether' => true,
-		'end' => true,
+		'end' => false,
 	),
 );
 
