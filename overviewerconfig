@@ -1,7 +1,7 @@
-worlds["Underbelly Cowgate"] = "/home/stwalkerster/public_html/minecraft/worlds/minecraft/cowgate/cowgate/"
-worlds["Creative"] = "/home/stwalkerster/public_html/minecraft/worlds/minecraft/creative/world/"
-worlds["Ohai!"] = "/home/stwalkerster/public_html/minecraft/worlds/minecraft/ohai/world/"
-worlds["MC 1.5"] = "/home/stwalkerster/public_html/minecraft/worlds/minecraft/mc1.5/world/"
+worlds["Underbelly Cowgate"] = "worlds/minecraft/cowgate/cowgate/"
+worlds["Creative"] = "worlds/minecraft/creative/world/"
+worlds["Ohai!"] = "worlds/minecraft/ohai/world/"
+worlds["MC 1.5"] = "worlds/minecraft/mc1.5/world/"
 
 renders["normalrender"] = {
     "world": "Underbelly Cowgate",
@@ -24,4 +24,4 @@ renders["nether"] = {
     "dimension": "nether",
 }
 
-outputdir = "/home/stwalkerster/public_html/minecraft/maps/"
+outputdir = "maps"
