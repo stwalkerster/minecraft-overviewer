@@ -36,28 +36,28 @@ $worlds = array(
 		'nether' => true,
 		'end' => true,
 	),
-	
-	"beta1.8" => array(
-		'path' => "beta1.8/world/",
-		'title' => "Beta 1.8",
-		'overworld' => true,
-		'nether' => true,
-		'end' => false,
-	),
-	"freebuild" => array(
-		'path' => "freebuild/world3/",
-		'title' => "Freebuild",
-		'overworld' => true,
-		'nether' => true,
-		'end' => false,
-	),
-	"survival" => array(
-		'path' => "survival/world/",
-		'title' => "Survival",
-		'overworld' => true,
-		'nether' => true,
-		'end' => false,
-	),
+# MCRegion, needs upgrading.	
+#	"beta1.8" => array(
+#		'path' => "beta1.8/world/",
+#		'title' => "Beta 1.8",
+#		'overworld' => true,
+#		'nether' => true,
+#		'end' => false,
+#	),
+#	"freebuild" => array(
+#		'path' => "freebuild/world3/",
+#		'title' => "Freebuild",
+#		'overworld' => true,
+#		'nether' => true,
+#		'end' => false,
+#	),
+#	"survival" => array(
+#		'path' => "survival/world/",
+#		'title' => "Survival",
+#		'overworld' => true,
+#		'nether' => true,
+#		'end' => false,
+#	),
 );
 
 $renders = array(
