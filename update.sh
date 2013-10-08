@@ -8,6 +8,8 @@ wget -N https://s3-eu-west-1.amazonaws.com/minecraft-worlds/smp/backups.tar
 
 tar -xf 2012-05-02T000009Z.tar.bz2
 tar -xf backups.tar
+tar -xf backups/1.8pre-final.tar.bz2
+tar -xf backups/freebuild-final.tar.bz2
 
 rsync -avz -e "ssh -i /var/lib/jenkins/.ssh/minecraft.metapod.id_rsa" --exclude lost+found --exclude '*.tar.bz' minecraft@metapod.lon.stwalkerster.net:/mnt/minecraft/ $WORKSPACE/worlds
 
