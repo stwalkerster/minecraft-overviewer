@@ -36,6 +36,28 @@ $worlds = array(
 		'nether' => true,
 		'end' => true,
 	),
+	
+	"beta1.8" => array(
+		'path' => "beta1.8/world/",
+		'title' => "Beta 1.8",
+		'overworld' => true,
+		'nether' => true,
+		'end' => false,
+	),
+	"freebuild" => array(
+		'path' => "freebuild/world3/",
+		'title' => "Freebuild",
+		'overworld' => true,
+		'nether' => true,
+		'end' => false,
+	),
+	"survival" => array(
+		'path' => "survival/world/",
+		'title' => "Survival",
+		'overworld' => true,
+		'nether' => true,
+		'end' => false,
+	),
 );
 
 $renders = array(
@@ -66,9 +88,18 @@ $directions = array(
 		"code" => "upper-left",
 		"title" => "North",
 	),
-//	"south" => "lower-right",
-//	"east" => "upper-right",
-//	"west" => "lower-left",
+	"south" => array(
+		"code" => "lower-right",
+		"title" => "South",
+	),
+	"east" => array(
+		"code" => "upper-right",
+		"title" => "East",
+	),
+	"west" => array(
+		"code" => "lower-left",
+		"title" => "West",
+	),
 );
 
 // END OF CONFIGURATION
