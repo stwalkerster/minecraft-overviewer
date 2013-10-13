@@ -11,6 +11,7 @@ $worlds = array(
 );
 
 $renders = array(
+	// DAY is required!
 	"day" => array(
 		'title' => 'Day',
 		'rendermode' => 'smooth_lighting',
@@ -19,6 +20,7 @@ $renders = array(
 );
 
 $directions = array(
+	// NORTH is required!
 	"north" => array(
 		"code" => "upper-left",
 		"title" => "North",
@@ -65,7 +67,7 @@ foreach( $worlds as $worldname => $world )
 	echo "\t" . '"world": "' . $world['title'] . '",' . "\r\n";
 	echo "\t" . '"title": "Biomes",' . "\r\n";
 	echo "\t" . '"rendermode": [ClearBase(), BiomeOverlay()],' . "\r\n";
-	echo "\t" . '"overlay": [\'day\'],' . "\r\n";
+	echo "\t" . '"overlay": [\'' . $worldname . '-overworld-day-north\'],' . "\r\n";
 	echo "}\r\n\r\n";
 }
 
