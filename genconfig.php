@@ -146,6 +146,20 @@ foreach( $worlds as $worldname => $world )
 	echo "\t" . '"rendermode": [ClearBase(), BiomeOverlay()],' . "\r\n";
 	echo "\t" . '"overlay": [\'' . $worldname . '-overworld-day-north\'],' . "\r\n";
 	echo "}\r\n\r\n";
+		
+	echo 'renders["' . $worldname . '-spawn"] = {' . "\r\n";
+	echo "\t" . '"world": "' . $world['title'] . '",' . "\r\n";
+	echo "\t" . '"title": "Monster Spawn",' . "\r\n";
+	echo "\t" . '"rendermode": [ClearBase(), SpawnOverlay()],' . "\r\n";
+	echo "\t" . '"overlay": [\'' . $worldname . '-overworld-day-north\'],' . "\r\n";
+	echo "}\r\n\r\n";
+		
+	echo 'renders["' . $worldname . '-slime"] = {' . "\r\n";
+	echo "\t" . '"world": "' . $world['title'] . '",' . "\r\n";
+	echo "\t" . '"title": "Slime Spawn",' . "\r\n";
+	echo "\t" . '"rendermode": [ClearBase(), SlimeOverlay()],' . "\r\n";
+	echo "\t" . '"overlay": [\'' . $worldname . '-overworld-day-north\'],' . "\r\n";
+	echo "}\r\n\r\n";
 }
 
 
