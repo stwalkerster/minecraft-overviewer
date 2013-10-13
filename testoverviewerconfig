@@ -3,7 +3,7 @@ def townFilter(poi):
         return poi['name']
 
 def witchFilter(poi):
-    if poi['id'] == 'Witch Hut':
+    if poi['id'] == 'Witch':
         return poi['name']
 
 def horseFilter(poi):
