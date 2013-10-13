@@ -51,22 +51,29 @@ renders["cowgate-overworld-day-north"] = {
 			'z':1092,
 			'name':'Witch Hut'
 		},
-		{	'id':'Horse?',
-			'x':300,
-			'y':64,
-			'z':250,
-			'name':'Horse'
-		},
-		{	'id':'Horse?',
-			'x':285,
-			'y':64,
-			'z':185,
-			'name':'Horse'
-		}
+	#	{	'id':'Horse?',
+	#		'x':300,
+	#		'y':64,
+	#		'z':250,
+	#		'name':'Horse'
+	#	},
+	#	{	'id':'Horse?',
+	#		'x':285,
+	#		'y':64,
+	#		'z':185,
+	#		'name':'Horse'
+	#	}
+	#	{	'id':'Horse?',
+	#		'x':821,
+	#		'y':64,
+	#		'z':-604,
+	#		'name':'Horse'
+	#	}
 	],
 	'markers': [
 					dict(name="Towns", filterFunction=townFilter, icon="../marker_town.png"),
-					dict(name="Witch Huts", filterFunction=witchFilter), #, icon="../marker_witch.png")
+					dict(name="Witch Huts", filterFunction=witchFilter), icon="../marker_witch.png")
 					dict(name="Horses", filterFunction=horseFilter), #, icon="../marker_witch.png")
+					dict(name="Temples", filterFunction=horseFilter), icon="../marker_temple.png")
 				],
 }
