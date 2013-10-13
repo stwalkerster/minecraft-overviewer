@@ -14,17 +14,23 @@ renders["cowgate-overworld-day-north"] = {
 	"northdirection": "upper-left",
 	"manualpois": [
 		{	'id': 'Town',
-			'x':100,
-			'y':80,
-			'z':100,
-			'name': 'Foo'
+			'x':163,
+			'y':64,
+			'z':304,
+			'name': 'Main Town'
 		},
 		{	'id':'Town',
-			'x':-300,
+			'x':715,
 			'y':85,
-			'z':-234,
-			'name':'Bar'
+			'z':585,
+			'name':'Desert Town 1'
+		},
+		{	'id':'Town',
+			'x':-136,
+			'y':85,
+			'z':-194,
+			'name':'Desert Town 2'
 		}
 	],
-	'markers': [dict(name="Towns", filterFunction=townFilter)],
+	'markers': [dict(name="Towns", filterFunction=townFilter, icon="marker_town.png")],
 }
