@@ -8,56 +8,6 @@ $worlds = array(
 		'nether' => true,
 		'end' => false,
 	),
-	"creative" => array(
-		'path' => "worlds/minecraft/creative/world/",
-		'title' => "Creative",
-		'overworld' => true,
-		'nether' => false,
-		'end' => false,
-	),
-	"ohai" => array(
-		'path' => "worlds/minecraft/ohai/world/",
-		'title' => "Ohai!",
-		'overworld' => true,
-		'nether' => false,
-		'end' => false,
-	),
-	"mc1.5" => array(
-		'path' => "worlds/minecraft/mc1.5/world/",
-		'title' => "MC 1.5",
-		'overworld' => true,
-		'nether' => true,
-		'end' => false,
-	),
-	"mc1" => array(
-		'path' => "mc1-world/",
-		'title' => "MC 1",
-		'overworld' => true,
-		'nether' => true,
-		'end' => true,
-	),
-# MCRegion, needs upgrading.	
-#	"beta1.8" => array(
-#		'path' => "beta1.8/world/",
-#		'title' => "Beta 1.8",
-#		'overworld' => true,
-#		'nether' => true,
-#		'end' => false,
-#	),
-#	"freebuild" => array(
-#		'path' => "freebuild/world3/",
-#		'title' => "Freebuild",
-#		'overworld' => true,
-#		'nether' => true,
-#		'end' => false,
-#	),
-#	"survival" => array(
-#		'path' => "survival/world/",
-#		'title' => "Survival",
-#		'overworld' => true,
-#		'nether' => true,
-#		'end' => false,
-#	),
 );
 
 $renders = array(
@@ -66,39 +16,12 @@ $renders = array(
 		'rendermode' => 'smooth_lighting',
 		'dimension' => 'overworld',
 	),
-	"night" => array(
-		'title' => 'Night',
-		'rendermode' => 'smooth_night',
-		'dimension' => 'overworld',
-	),
-	"nether" => array(
-		'title' => 'Nether',
-		'rendermode' => 'nether_smooth_lighting',
-		'dimension' => 'nether',
-	),
-	"end" => array(
-		'title' => 'The End',
-		'rendermode' => 'smooth_lighting',
-		'dimension' => 'end',
-	),
 );
 
 $directions = array(
 	"north" => array(
 		"code" => "upper-left",
 		"title" => "North",
-	),
-	"south" => array(
-		"code" => "lower-right",
-		"title" => "South",
-	),
-	"east" => array(
-		"code" => "upper-right",
-		"title" => "East",
-	),
-	"west" => array(
-		"code" => "lower-left",
-		"title" => "West",
 	),
 );
 
