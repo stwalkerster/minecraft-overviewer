@@ -6,6 +6,6 @@
 
 php genconfig.php > overviewerconfig
 
-overviewer.py --config=overviewerconfig --genpoi
+overviewer.py --config=testoverviewerconfig --genpoi
 
 #overviewer.py --config=overviewerconfig
