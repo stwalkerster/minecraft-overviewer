@@ -32,5 +32,5 @@ renders["cowgate-overworld-day-north"] = {
 			'name':'Desert Town 2'
 		}
 	],
-	'markers': [dict(name="Towns", filterFunction=townFilter, icon="marker_town.png")],
+	'markers': [dict(name="Towns", filterFunction=townFilter, icon="../marker_town.png")],
 }
