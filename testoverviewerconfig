@@ -72,8 +72,8 @@ renders["cowgate-overworld-day-north"] = {
 	],
 	'markers': [
 					dict(name="Towns", filterFunction=townFilter, icon="../marker_town.png"),
-					dict(name="Witch Huts", filterFunction=witchFilter), icon="../marker_witch.png")
-					dict(name="Horses", filterFunction=horseFilter), #, icon="../marker_witch.png")
-					dict(name="Temples", filterFunction=horseFilter), icon="../marker_temple.png")
+					dict(name="Witch Huts", filterFunction=witchFilter, icon="../marker_witch.png"),
+					dict(name="Horses", filterFunction=horseFilter), #, icon="../marker_witch.png"),
+					dict(name="Temples", filterFunction=horseFilter, icon="../marker_temple.png"),
 				],
 }
