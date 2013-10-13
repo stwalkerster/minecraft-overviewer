@@ -8,4 +8,4 @@
 
 overviewer.py --config=testoverviewerconfig --genpoi
 
-#overviewer.py --config=overviewerconfig
+overviewer.py --config=testoverviewerconfig
