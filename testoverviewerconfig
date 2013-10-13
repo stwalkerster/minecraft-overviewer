@@ -1,3 +1,7 @@
+def townFilter(poi):
+    if poi['id'] == 'Town':
+        return poi['name']
+
 outputdir = "maps"
 
 worlds["Underbelly Cowgate"] = "worlds/minecraft/cowgate/cowgate/"
@@ -8,4 +12,19 @@ renders["cowgate-overworld-day-north"] = {
 	"rendermode": "smooth_lighting",
 	"dimension": "overworld",
 	"northdirection": "upper-left",
+	"manualpois": [
+		{	'id': 'Town',
+			'x':100,
+			'y':80,
+			'z':100,
+			'name': 'Foo'
+		},
+		{	'id':'Town',
+			'x':-300,
+			'y':85,
+			'z':-234,
+			'name':'Bar'
+		}
+	],
+	'markers': [dict(name="Towns", filterFunction=townFilter)],
 }
