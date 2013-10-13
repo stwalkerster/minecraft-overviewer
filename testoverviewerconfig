@@ -2,6 +2,14 @@ def townFilter(poi):
     if poi['id'] == 'Town':
         return poi['name']
 
+def witchFilter(poi):
+    if poi['id'] == 'Witch Hut':
+        return poi['name']
+
+def horseFilter(poi):
+    if poi['id'] == 'Horses':
+        return poi['name']
+
 outputdir = "maps"
 
 worlds["Underbelly Cowgate"] = "worlds/minecraft/cowgate/cowgate/"
@@ -17,12 +25,12 @@ renders["cowgate-overworld-day-north"] = {
 			'x':163,
 			'y':64,
 			'z':304,
-			'name': 'Main Town'
+			'name': 'Ghost Town'
 		},
 		{	'id':'Town',
-			'x':715,
-			'y':85,
-			'z':585,
+			'x':709,
+			'y':70,
+			'z':597,
 			'name':'Desert Town 1'
 		},
 		{	'id':'Town',
@@ -30,7 +38,35 @@ renders["cowgate-overworld-day-north"] = {
 			'y':85,
 			'z':-194,
 			'name':'Desert Town 2'
+		},
+		{	'id':'Town',
+			'x':815,
+			'y':70,
+			'z':-891,
+			'name':'Plains Town 2'
+		},
+		{	'id':'Witch',
+			'x':115,
+			'y':64,
+			'z':1092,
+			'name':'Witch Hut'
+		},
+		{	'id':'Horse?',
+			'x':300,
+			'y':64,
+			'z':250,
+			'name':'Horse'
+		},
+		{	'id':'Horse?',
+			'x':285,
+			'y':64,
+			'z':185,
+			'name':'Horse'
 		}
 	],
-	'markers': [dict(name="Towns", filterFunction=townFilter, icon="../marker_town.png")],
+	'markers': [
+					dict(name="Towns", filterFunction=townFilter, icon="../marker_town.png"),
+					dict(name="Witch Huts", filterFunction=witchFilter), #, icon="../marker_witch.png")
+					dict(name="Horses", filterFunction=horseFilter), #, icon="../marker_witch.png")
+				],
 }
