@@ -18,6 +18,10 @@ def underbellyFilter(poi):
     if poi['id'] == 'Underbelly':
         return poi['name']
 
+def signFilter(poi):
+    if poi['id'] == 'Sign':
+        return "\n".join([poi['Text1'], poi['Text2'], poi['Text3'], poi['Text4']])
+
 <?php
 
 $worlds = array(
@@ -104,6 +108,11 @@ $worlds = array(
 			array(
 				"name"           => "Underbelly",
 				"filterFunction" => "underbellyFilter",
+				"icon"           => "../marker_ub.png",
+			),
+			array(
+				"name"           => "Sign",
+				"filterFunction" => "signFilter",
 				"icon"           => "../marker_ub.png",
 			),
 		), // markers
