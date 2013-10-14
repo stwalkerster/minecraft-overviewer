@@ -18,9 +18,15 @@ def underbellyFilter(poi):
     if poi['id'] == 'Underbelly':
         return poi['name']
 
-def signFilter(poi):
+def houseSignFilter(poi):
     if poi['id'] == 'Sign':
-        return "\n".join([poi['Text1'], poi['Text2'], poi['Text3'], poi['Text4']])
+        if poi['Text1'] == '[House]':
+            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4']])
+
+def townSignFilter(poi):
+    if poi['id'] == 'Sign':
+        if poi['Text1'] == '[House]':
+            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4']])
 
 <?php
 
@@ -91,7 +97,7 @@ $worlds = array(
 		), // manualpoi
 		"markers" => array(
 			array(
-				"name"           => "Towns",
+				"name"           => "Manual Town",
 				"filterFunction" => "townFilter",
 				"icon"           => "../marker_town.png",
 			),
@@ -111,8 +117,13 @@ $worlds = array(
 				"icon"           => "../marker_ub.png",
 			),
 			array(
-				"name"           => "Sign",
-				"filterFunction" => "signFilter",
+				"name"           => "Houses",
+				"filterFunction" => "houseSignFilter",
+			),
+			array(
+				"name"           => "Towns",
+				"filterFunction" => "townSignFilter",
+				"icon"           => "../marker_town.png",
 			),
 		), // markers
 	), // cowgate
