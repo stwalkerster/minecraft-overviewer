@@ -10,10 +10,6 @@ def horseFilter(poi):
     if poi['id'] == 'Horses':
         return poi['name']
 
-def templeFilter(poi):
-    if poi['id'] == 'Temple':
-        return poi['name']
-
 def underbellyFilter(poi):
     if poi['id'] == 'Sign':
         if poi['Text1'] == '[Underbelly]':
@@ -51,20 +47,6 @@ $worlds = array(
 		'manualpois' => array(
 			array(
 				'id'   => 'Town',
-				'x'    => 163,
-				'y'    => 64,
-				'z'    => 304,
-				'name' => 'Ghost Town'
-			),
-			array(
-				'id'   => 'Town',
-				'x'    => 709,
-				'y'    => 70,
-				'z'    => 597,
-				'name' =>'Desert Town 1'
-			),
-			array(
-				'id'   => 'Town',
 				'x'    => -136,
 				'y'    => 85,
 				'z'    => -194,
@@ -84,20 +66,6 @@ $worlds = array(
 				'z'    => 1092,
 				'name' => 'Witch Hut'
 			),
-			array(
-				'id'   => 'Temple',
-				'x'    => 323,
-				'y'    => 64,
-				'z'    => 865,
-				'name' => 'Desert Temple'
-			),
-			array(
-				'id'   => 'Temple',
-				'x'    => 237,
-				'y'    => 64,
-				'z'    => -209,
-				'name' => 'Jungle Temple'
-			),
 		), // manualpoi
 		"markers" => array(
 			array(
@@ -107,13 +75,8 @@ $worlds = array(
 			),
 			array(
 				"name"           => "Witch Huts",
-				"filterFunction" => "witchFilter",
+				"filterFunction" => "witchHutSignFilter",
 				"icon"           => "../marker_witch.png",
-			),
-			array(
-				"name"           => "Manual Temples",
-				"filterFunction" => "templeFilter",
-				"icon"           => "../marker_temple.png",
 			),
 			array(
 				"name"           => "Temples",
