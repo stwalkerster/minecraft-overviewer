@@ -235,7 +235,7 @@ foreach( $worlds as $worldname => $world )
 				echo "\t" . '"rendermode": "' . $map['rendermode'] . '",' . "\r\n";
 				echo "\t" . '"dimension": "' . $map['dimension'] . '",' . "\r\n";
 				echo "\t" . '"northdirection": "' . $direction['code'] . '",' . "\r\n";
-				if( $map[ 'dimension' ] == "overworld" && is_array( $world[ 'manualpois' ] ) )
+				if( $map[ 'dimension' ] == "overworld" && isset( $world['manualpos' ] ) && is_array( $world[ 'manualpois' ] ) )
 				{
 					echo "\t" . '"manualpois": [' . "\r\n";
 					foreach( $world[ 'manualpois' ] as $poi ) 
@@ -255,7 +255,6 @@ foreach( $worlds as $worldname => $world )
 					}
 					echo "\t],\r\n";
 				}
-				else { echo "################"; print_r($world); }
 				echo "}\r\n\r\n";
 			}
 		}
