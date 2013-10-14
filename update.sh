@@ -8,4 +8,4 @@ php genconfig.php > overviewerconfig
 
 overviewer.py --config=overviewerconfig --genpoi
 
-#overviewer.py --config=overviewerconfig
+overviewer.py --config=overviewerconfig
