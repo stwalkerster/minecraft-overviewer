@@ -91,6 +91,7 @@ $worlds = array(
 			array(
 				"name"           => "Houses",
 				"filterFunction" => "houseSignFilter",
+				"icon"           => "../marker_house.png",
 			),
 			array(
 				"name"           => "Towns",
