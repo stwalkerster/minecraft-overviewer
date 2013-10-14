@@ -113,7 +113,6 @@ $worlds = array(
 			array(
 				"name"           => "Sign",
 				"filterFunction" => "signFilter",
-				"icon"           => "../marker_ub.png",
 			),
 		), // markers
 	), // cowgate
@@ -192,7 +191,12 @@ foreach( $worlds as $worldname => $world )
 					echo "\t'markers' : [\r\n";
 					foreach( $world[ "markers" ] as $marker )
 					{
-						echo "\t\tdict(name=\"" . $marker[ "name" ] . "\", filterFunction=" . $marker[ "filterFunction" ] . ", icon=\"" . $marker[ "icon" ] . "\"),\r\n";
+						echo "\t\tdict(name=\"" . $marker[ "name" ] . "\", filterFunction=" . $marker[ "filterFunction" ];
+						if( isset( $marker[ 'icon' ] ) )
+						{
+							echo ", icon=\"" . $marker[ "icon" ] . "\"";
+						}
+						echo "),\r\n";
 					}
 					echo "\t],\r\n";
 				}
