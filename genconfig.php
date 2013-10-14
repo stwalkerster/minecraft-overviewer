@@ -15,8 +15,19 @@ def templeFilter(poi):
         return poi['name']
 
 def underbellyFilter(poi):
-    if poi['id'] == 'Underbelly':
-        return poi['name']
+    if poi['id'] == 'Sign':
+        if poi['Text1'] == '[Underbelly]':
+            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4']])
+
+def witchHutSignFilter(poi):
+    if poi['id'] == 'Sign':
+        if poi['Text1'] == '[Witch Hut]':
+            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4']])
+
+def templeSignFilter(poi):
+    if poi['id'] == 'Sign':
+        if poi['Text1'] == '[Temple]':
+            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4']])
 
 def houseSignFilter(poi):
     if poi['id'] == 'Sign':
@@ -25,7 +36,7 @@ def houseSignFilter(poi):
 
 def townSignFilter(poi):
     if poi['id'] == 'Sign':
-        if poi['Text1'] == '[House]':
+        if poi['Text1'] == '[Town]':
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4']])
 
 <?php
@@ -74,13 +85,6 @@ $worlds = array(
 				'name' => 'Witch Hut'
 			),
 			array(
-				'id'   => 'Underbelly',
-				'x'    => -38,
-				'y'    => 64,
-				'z'    => 381,
-				'name' => 'Bottom of the Lane'
-			),
-			array(
 				'id'   => 'Temple',
 				'x'    => 323,
 				'y'    => 64,
@@ -107,8 +111,13 @@ $worlds = array(
 				"icon"           => "../marker_witch.png",
 			),
 			array(
-				"name"           => "Temples",
+				"name"           => "Manual Temples",
 				"filterFunction" => "templeFilter",
+				"icon"           => "../marker_temple.png",
+			),
+			array(
+				"name"           => "Temples",
+				"filterFunction" => "templeSignFilter",
 				"icon"           => "../marker_temple.png",
 			),
 			array(
