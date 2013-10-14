@@ -10,13 +10,30 @@ def horseFilter(poi):
     if poi['id'] == 'Horses':
         return poi['name']
 
-def templeFilter(poi):
-    if poi['id'] == 'Temple':
-        return poi['name']
-
 def underbellyFilter(poi):
-    if poi['id'] == 'Underbelly':
-        return poi['name']
+    if poi['id'] == 'Sign':
+        if poi['Text1'] == '[Underbelly]':
+            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4']])
+
+def witchHutSignFilter(poi):
+    if poi['id'] == 'Sign':
+        if poi['Text1'] == '[Witch Hut]':
+            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4']])
+
+def templeSignFilter(poi):
+    if poi['id'] == 'Sign':
+        if poi['Text1'] == '[Temple]':
+            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4']])
+
+def houseSignFilter(poi):
+    if poi['id'] == 'Sign':
+        if poi['Text1'] == '[House]':
+            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4']])
+
+def townSignFilter(poi):
+    if poi['id'] == 'Sign':
+        if poi['Text1'] == '[Town]':
+            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4']])
 
 <?php
 
@@ -28,20 +45,6 @@ $worlds = array(
 		'nether' => true,
 		'end' => false,
 		'manualpois' => array(
-			array(
-				'id'   => 'Town',
-				'x'    => 163,
-				'y'    => 64,
-				'z'    => 304,
-				'name' => 'Ghost Town'
-			),
-			array(
-				'id'   => 'Town',
-				'x'    => 709,
-				'y'    => 70,
-				'z'    => 597,
-				'name' =>'Desert Town 1'
-			),
 			array(
 				'id'   => 'Town',
 				'x'    => -136,
@@ -63,48 +66,36 @@ $worlds = array(
 				'z'    => 1092,
 				'name' => 'Witch Hut'
 			),
-			array(
-				'id'   => 'Underbelly',
-				'x'    => -38,
-				'y'    => 64,
-				'z'    => 381,
-				'name' => 'Bottom of the Lane'
-			),
-			array(
-				'id'   => 'Temple',
-				'x'    => 323,
-				'y'    => 64,
-				'z'    => 865,
-				'name' => 'Desert Temple'
-			),
-			array(
-				'id'   => 'Temple',
-				'x'    => 237,
-				'y'    => 64,
-				'z'    => -209,
-				'name' => 'Jungle Temple'
-			),
 		), // manualpoi
 		"markers" => array(
 			array(
-				"name"           => "Towns",
+				"name"           => "Manual Town",
 				"filterFunction" => "townFilter",
 				"icon"           => "../marker_town.png",
 			),
 			array(
 				"name"           => "Witch Huts",
-				"filterFunction" => "witchFilter",
+				"filterFunction" => "witchHutSignFilter",
 				"icon"           => "../marker_witch.png",
 			),
 			array(
 				"name"           => "Temples",
-				"filterFunction" => "templeFilter",
+				"filterFunction" => "templeSignFilter",
 				"icon"           => "../marker_temple.png",
 			),
 			array(
 				"name"           => "Underbelly",
 				"filterFunction" => "underbellyFilter",
 				"icon"           => "../marker_ub.png",
+			),
+			array(
+				"name"           => "Houses",
+				"filterFunction" => "houseSignFilter",
+			),
+			array(
+				"name"           => "Towns",
+				"filterFunction" => "townSignFilter",
+				"icon"           => "../marker_town.png",
 			),
 		), // markers
 	), // cowgate
@@ -251,7 +242,12 @@ foreach( $worlds as $worldname => $world )
 					echo "\t'markers' : [\r\n";
 					foreach( $world[ "markers" ] as $marker )
 					{
-						echo "\t\tdict(name=\"" . $marker[ "name" ] . "\", filterFunction=" . $marker[ "filterFunction" ] . ", icon=\"" . $marker[ "icon" ] . "\"),\r\n";
+						echo "\t\tdict(name=\"" . $marker[ "name" ] . "\", filterFunction=" . $marker[ "filterFunction" ];
+						if( isset( $marker[ 'icon' ] ) )
+						{
+							echo ", icon=\"" . $marker[ "icon" ] . "\"";
+						}
+						echo "),\r\n";
 					}
 					echo "\t],\r\n";
 				}
