@@ -130,10 +130,10 @@ $directions = array(
 		"code" => "upper-left",
 		"title" => "North",
 	),
-#	"south" => array(
-#		"code" => "lower-right",
-#		"title" => "South",
-#	),
+	"south" => array(
+		"code" => "lower-right",
+		"title" => "South",
+	),
 );
 
 // END OF CONFIGURATION
