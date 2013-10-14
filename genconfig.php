@@ -117,11 +117,11 @@ $renders = array(
 		'rendermode' => 'smooth_lighting',
 		'dimension' => 'overworld',
 	),
-#	"night" => array(
-#		'title' => 'Night',
-#		'rendermode' => 'smooth_night',
-#		'dimension' => 'overworld',
-#	),
+	"night" => array(
+		'title' => 'Night',
+		'rendermode' => 'smooth_night',
+		'dimension' => 'overworld',
+	),
 );
 
 $directions = array(
