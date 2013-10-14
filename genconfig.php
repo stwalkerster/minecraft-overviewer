@@ -1,3 +1,23 @@
+def townFilter(poi):
+    if poi['id'] == 'Town':
+        return poi['name']
+
+def witchFilter(poi):
+    if poi['id'] == 'Witch':
+        return poi['name']
+
+def horseFilter(poi):
+    if poi['id'] == 'Horses':
+        return poi['name']
+
+def templeFilter(poi):
+    if poi['id'] == 'Temple':
+        return poi['name']
+
+def underbellyFilter(poi):
+    if poi['id'] == 'Underbelly':
+        return poi['name']
+
 <?php
 
 $worlds = array(
@@ -7,8 +27,88 @@ $worlds = array(
 		'overworld' => true,
 		'nether' => true,
 		'end' => false,
-	),
-);
+		'manualpois' => array(
+			array(
+				'id'   => 'Town',
+				'x'    => 163,
+				'y'    => 64,
+				'z'    => 304,
+				'name' => 'Ghost Town'
+			),
+			array(
+				'id'   => 'Town',
+				'x'    => 709,
+				'y'    => 70,
+				'z'    => 597,
+				'name' =>'Desert Town 1'
+			),
+			array(
+				'id'   => 'Town',
+				'x'    => -136,
+				'y'    => 85,
+				'z'    => -194,
+				'name' => 'Desert Town 2'
+			),
+			array(
+				'id'   => 'Town',
+				'x'    => 815,
+				'y'    => 70,
+				'z'    => -891,
+				'name' => 'Plains Town 2'
+			),
+			array(
+				'id'   => 'Witch',
+				'x'    => 115,	
+				'y'    => 64,
+				'z'    => 1092,
+				'name' => 'Witch Hut'
+			),
+			array(
+				'id'   => 'Underbelly',
+				'x'    => -38,
+				'y'    => 64,
+				'z'    => 381,
+				'name' => 'Bottom of the Lane'
+			),
+			array(
+				'id'   => 'Temple',
+				'x'    => 323,
+				'y'    => 64,
+				'z'    => 865,
+				'name' => 'Desert Temple'
+			),
+			array(
+				'id'   => 'Temple',
+				'x'    => 237,
+				'y'    => 64,
+				'z'    => -209,
+				'name' => 'Jungle Temple'
+			),
+		), // manualpoi
+		"markers" => array(
+			array(
+				"name"           => "Towns",
+				"filterFunction" => "townFilter",
+				"icon"           => "../marker_town.png",
+			),
+			array(
+				"name"           => "Witch Huts",
+				"filterFunction" => "witchFilter",
+				"icon"           => "../marker_witch.png",
+			),
+			array(
+				"name"           => "Temples",
+				"filterFunction" => "templeFilter",
+				"icon"           => "../marker_temple.png",
+			),
+			array(
+				"name"           => "Underbelly",
+				"filterFunction" => "underbellyFilter",
+				"icon"           => "../marker_ub.png",
+			),
+		), // markers
+	), // cowgate
+); // worlds
 
 $renders = array(
 	// DAY is required!
@@ -58,6 +158,27 @@ foreach( $worlds as $worldname => $world )
 				echo "\t" . '"rendermode": "' . $map['rendermode'] . '",' . "\r\n";
 				echo "\t" . '"dimension": "' . $map['dimension'] . '",' . "\r\n";
 				echo "\t" . '"northdirection": "' . $direction['code'] . '",' . "\r\n";
+				if( $map[ 'dimension' ] == "overworld" && is_array( $world[ 'manualpois' ] ) )
+				{
+					echo "\t" . '"manualpois": [' . "\r\n";
+					foreach( $world[ 'manualpois' ] as $poi ) 
+					{
+						echo "\t\t{\r\n";
+						foreach( $poi as $poikey => $poivalue )
+						{
+							echo "\t\t\t'" . $poikey . "' : '" . $poivalue . "',\r\n";
+						}
+						echo "\t\t},\r\n";
+					}
+					echo "\t" . '],' . "\r\n";
+					echo "\t'markers' : [\r\n";
+					foreach( $world[ "markers" ] as $marker )
+					{
+						echo "\t\tdict(name=\"" . $marker[ "name" ] . "\", filterFunction=" . $marker[ "filterFunction" ] . ", icon=\"" . $marker[ "icon" ] . "\"),\r\n";
+					}
+					echo "\t],\r\n";
+				}
+				else { echo "################"; print_r($world); }
 				echo "}\r\n\r\n";
 			}
 		}
