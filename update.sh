@@ -19,6 +19,6 @@ rsync -avz -e "ssh -i /var/lib/jenkins/.ssh/minecraft.metapod.id_rsa" --exclude 
 
 php genconfig.php > overviewerconfig
 
-overviewer.py --config=overviewerconfig --genpoi
-
 overviewer.py --config=overviewerconfig
+
+overviewer.py --config=overviewerconfig --genpoi
