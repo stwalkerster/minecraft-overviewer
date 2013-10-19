@@ -235,9 +235,9 @@ echo "\r\n";
 // Render Declarations
 foreach( $worlds as $worldname => $world )
 {
-	foreach( $renders as $mapname => $map )
+	foreach( $directions as $directionname => $direction )
 	{
-		foreach( $directions as $directionname => $direction )
+		foreach( $renders as $mapname => $map )
 		{
 			if( $world[ $map[ 'dimension' ] ] )
 			{
@@ -275,31 +275,34 @@ foreach( $worlds as $worldname => $world )
 				echo "}\r\n\r\n";
 			}
 		}
-	}
 	
-	echo 'renders["' . $worldname . '-biome"] = {' . "\r\n";
-	echo "\t" . '"world": "' . $world['title'] . '",' . "\r\n";
-	echo "\t" . '"title": "Biomes",' . "\r\n";
-	echo "\t" . '"rendermode": [ClearBase(), BiomeOverlay()],' . "\r\n";
-	echo "\t" . '"dimension": "overworld",' . "\r\n";
-	echo "\t" . '"overlay": [],' . "\r\n";
-	echo "}\r\n\r\n";
-		
-	echo 'renders["' . $worldname . '-spawn"] = {' . "\r\n";
-	echo "\t" . '"world": "' . $world['title'] . '",' . "\r\n";
-	echo "\t" . '"title": "Monster Spawn",' . "\r\n";
-	echo "\t" . '"rendermode": [ClearBase(), SpawnOverlay()],' . "\r\n";
-	echo "\t" . '"dimension": "overworld",' . "\r\n";
-	echo "\t" . '"overlay": [],' . "\r\n";
-	echo "}\r\n\r\n";
-		
-	echo 'renders["' . $worldname . '-slime"] = {' . "\r\n";
-	echo "\t" . '"world": "' . $world['title'] . '",' . "\r\n";
-	echo "\t" . '"title": "Slime Spawn",' . "\r\n";
-	echo "\t" . '"rendermode": [ClearBase(), SlimeOverlay()],' . "\r\n";
-	echo "\t" . '"dimension": "overworld",' . "\r\n";
-	echo "\t" . '"overlay": [],' . "\r\n";
-	echo "}\r\n\r\n";
+		echo 'renders["' . $worldname . '-' . $directionname . '-biome"] = {' . "\r\n";
+		echo "\t" . '"world": "' . $world['title'] . '",' . "\r\n";
+		echo "\t" . '"title": "Biomes",' . "\r\n";
+		echo "\t" . '"rendermode": [ClearBase(), BiomeOverlay()],' . "\r\n";
+		echo "\t" . '"dimension": "overworld",' . "\r\n";
+		echo "\t" . '"overlay": ["' . $worldname . '-overworld-day-' . $directionname . '"],' . "\r\n";
+		echo "\t" . '"northdirection": "' . $direction['code'] . '",' . "\r\n";
+		echo "}\r\n\r\n";
+			
+		echo 'renders["' . $worldname . '-' . $directionname . '-spawn"] = {' . "\r\n";
+		echo "\t" . '"world": "' . $world['title'] . '",' . "\r\n";
+		echo "\t" . '"title": "Monster Spawn",' . "\r\n";
+		echo "\t" . '"rendermode": [ClearBase(), SpawnOverlay()],' . "\r\n";
+		echo "\t" . '"dimension": "overworld",' . "\r\n";
+		echo "\t" . '"overlay": ["' . $worldname . '-overworld-day-' . $directionname . '"],' . "\r\n";
+		echo "\t" . '"northdirection": "' . $direction['code'] . '",' . "\r\n";
+		echo "}\r\n\r\n";
+			
+		echo 'renders["' . $worldname . '-' . $directionname . '-slime"] = {' . "\r\n";
+		echo "\t" . '"world": "' . $world['title'] . '",' . "\r\n";
+		echo "\t" . '"title": "Slime Spawn",' . "\r\n";
+		echo "\t" . '"rendermode": [ClearBase(), SlimeOverlay()],' . "\r\n";
+		echo "\t" . '"dimension": "overworld",' . "\r\n";
+		echo "\t" . '"overlay": ["' . $worldname . '-overworld-day-' . $directionname . '"],' . "\r\n";
+		echo "\t" . '"northdirection": "' . $direction['code'] . '",' . "\r\n";
+		echo "}\r\n\r\n";
+	}
 }
 
 
