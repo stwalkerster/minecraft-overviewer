@@ -45,6 +45,11 @@ def pointOfInterestSignFilter(poi):
         if poi['Text1'] == '[POI]':
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4']])
 
+outputdir = "maps"
+			
+from observer import JSObserver
+observer = JSObserver(outputdir=outputdir, minrefresh=10)
+
 <?php
 
 $worlds = array(
@@ -217,12 +222,6 @@ $directions = array(
 );
 
 // END OF CONFIGURATION
-
-// Output directory
-
-echo 'outputdir = "maps"' . "\r\n";
-
-echo "\r\n";
 
 // World Declarations
 foreach( $worlds as $name => $data ) 
