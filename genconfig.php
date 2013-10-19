@@ -35,6 +35,11 @@ def townSignFilter(poi):
         if poi['Text1'] == '[Town]':
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4']])
 
+def portalSignFilter(poi):
+    if poi['id'] == 'Sign':
+        if poi['Text1'] == '[Portal]':
+            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4']])
+
 <?php
 
 $worlds = array(
@@ -97,6 +102,11 @@ $worlds = array(
 				"name"           => "Towns",
 				"filterFunction" => "townSignFilter",
 				"icon"           => "../marker_town.png",
+			),
+			array(
+				"name"           => "Portals",
+				"filterFunction" => "portalSignFilter",
+				"icon"           => "../marker_portal.png",
 			),
 		), // markers
 	), // cowgate
