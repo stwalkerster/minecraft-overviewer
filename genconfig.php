@@ -302,6 +302,33 @@ foreach( $worlds as $worldname => $world )
 		echo "\t" . '"overlay": ["' . $worldname . '-overworld-day-' . $directionname . '"],' . "\r\n";
 		echo "\t" . '"northdirection": "' . $direction['code'] . '",' . "\r\n";
 		echo "}\r\n\r\n";
+			
+		echo 'renders["' . $worldname . '-' . $directionname . '-horse"] = {' . "\r\n";
+		echo "\t" . '"world": "' . $world['title'] . '",' . "\r\n";
+		echo "\t" . '"title": "Horse Spawn",' . "\r\n";
+		echo "\t" . '"rendermode": [ClearBase(), BiomeOverlay(biomes=[("Plains", (0, 255, 0))])],' . "\r\n";
+		echo "\t" . '"dimension": "overworld",' . "\r\n";
+		echo "\t" . '"overlay": ["' . $worldname . '-overworld-day-' . $directionname . '"],' . "\r\n";
+		echo "\t" . '"northdirection": "' . $direction['code'] . '",' . "\r\n";
+		echo "}\r\n\r\n";
+			
+		echo 'renders["' . $worldname . '-' . $directionname . '-ocelot"] = {' . "\r\n";
+		echo "\t" . '"world": "' . $world['title'] . '",' . "\r\n";
+		echo "\t" . '"title": "Ocelot Spawn",' . "\r\n";
+		echo "\t" . '"rendermode": [ClearBase(), BiomeOverlay(biomes=[("Jungle", (0, 255, 0))])],' . "\r\n";
+		echo "\t" . '"dimension": "overworld",' . "\r\n";
+		echo "\t" . '"overlay": ["' . $worldname . '-overworld-day-' . $directionname . '"],' . "\r\n";
+		echo "\t" . '"northdirection": "' . $direction['code'] . '",' . "\r\n";
+		echo "}\r\n\r\n";
+			
+		echo 'renders["' . $worldname . '-' . $directionname . '-wolf"] = {' . "\r\n";
+		echo "\t" . '"world": "' . $world['title'] . '",' . "\r\n";
+		echo "\t" . '"title": "Wolf Spawn",' . "\r\n";
+		echo "\t" . '"rendermode": [ClearBase(), BiomeOverlay(biomes=[("Forest", (0, 255, 0)), ("Taiga", (0, 255, 0))])],' . "\r\n";
+		echo "\t" . '"dimension": "overworld",' . "\r\n";
+		echo "\t" . '"overlay": ["' . $worldname . '-overworld-day-' . $directionname . '"],' . "\r\n";
+		echo "\t" . '"northdirection": "' . $direction['code'] . '",' . "\r\n";
+		echo "}\r\n\r\n";
 	}
 }
 
