@@ -40,6 +40,11 @@ def portalSignFilter(poi):
         if poi['Text1'] == '[Portal]':
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4']])
 
+def pointOfInterestSignFilter(poi):
+    if poi['id'] == 'Sign':
+        if poi['Text1'] == '[POI]':
+            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4']])
+
 <?php
 
 $worlds = array(
@@ -107,6 +112,11 @@ $worlds = array(
 				"name"           => "Portals",
 				"filterFunction" => "portalSignFilter",
 				"icon"           => "../marker_portal.png",
+			),
+			array(
+				"name"           => "Points of Interest",
+				"filterFunction" => "pointOfInterestSignFilter",
+				"icon"           => "../treasure-mark.png",
 			),
 		), // markers
 	), // cowgate
