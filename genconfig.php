@@ -153,28 +153,6 @@ $worlds = array(
 		'nether' => true,
 		'end' => true,
 	),
-# MCRegion, needs upgrading.	
-#	"beta1.8" => array(
-#		'path' => "beta1.8/world/",
-#		'title' => "Beta 1.8",
-#		'overworld' => true,
-#		'nether' => true,
-#		'end' => false,
-#	),
-#	"freebuild" => array(
-#		'path' => "freebuild/world3/",
-#		'title' => "Freebuild",
-#		'overworld' => true,
-#		'nether' => true,
-#		'end' => false,
-#	),
-#	"survival" => array(
-#		'path' => "survival/world/",
-#		'title' => "Survival",
-#		'overworld' => true,
-#		'nether' => true,
-#		'end' => false,
-#	),
 ); // worlds
 
 $renders = array(
@@ -191,7 +169,7 @@ $renders = array(
 	),
 	"nether" => array(
 		'title' => 'Nether',
-		'rendermode' => 'nether_smooth_lighting',
+		'rendermode' => 'nether',
 		'dimension' => 'nether',
 	),
 	"end" => array(
