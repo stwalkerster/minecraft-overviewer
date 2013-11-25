@@ -46,6 +46,7 @@ def pointOfInterestSignFilter(poi):
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4']])
 
 outputdir = "maps"
+processes = 2
 			
 from observer import JSObserver
 observer = JSObserver(outputdir=outputdir, minrefresh=10)
