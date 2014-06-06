@@ -57,6 +57,7 @@ $worlds = array(
 	"cowgate" => array(
 		'path' => "worlds/minecraft/cowgate/cowgate/",
 		'title' => "Underbelly Cowgate",
+		'renderchecks' => 0,
 		'overworld' => true,
 		'nether' => true,
 		'end' => false,
@@ -129,6 +130,7 @@ $worlds = array(
 	"creative" => array(
 		'path' => "worlds/minecraft/creative/world/",
 		'title' => "Creative",
+		'renderchecks' => 3,
 		'overworld' => true,
 		'nether' => false,
 		'end' => false,
@@ -136,6 +138,7 @@ $worlds = array(
 	"ohai" => array(
 		'path' => "worlds/minecraft/ohai/world/",
 		'title' => "Ohai!",
+		'renderchecks' => 3,
 		'overworld' => true,
 		'nether' => false,
 		'end' => false,
@@ -143,6 +146,7 @@ $worlds = array(
 	"mc1.5" => array(
 		'path' => "worlds/minecraft/mc1.5/world/",
 		'title' => "MC 1.5",
+		'renderchecks' => 3,
 		'overworld' => true,
 		'nether' => true,
 		'end' => false,
@@ -150,6 +154,7 @@ $worlds = array(
 	"mc1" => array(
 		'path' => "mc1-world/",
 		'title' => "MC 1",
+		'renderchecks' => 3,
 		'overworld' => true,
 		'nether' => true,
 		'end' => true,
@@ -225,6 +230,7 @@ foreach( $worlds as $worldname => $world )
 				echo "\t" . '"rendermode": "' . $map['rendermode'] . '",' . "\r\n";
 				echo "\t" . '"dimension": "' . $map['dimension'] . '",' . "\r\n";
 				echo "\t" . '"northdirection": "' . $direction['code'] . '",' . "\r\n";
+				echo "\t" . '"renderchecks": "' . $world['renderchecks'] . '",' . "\r\n";
 				if( $map[ 'dimension' ] == "overworld" && isset( $world['manualpois' ] ) && is_array( $world[ 'manualpois' ] ) )
 				{
 					echo "\t" . '"manualpois": [' . "\r\n";
@@ -261,6 +267,7 @@ foreach( $worlds as $worldname => $world )
 		echo "\t" . '"dimension": "overworld",' . "\r\n";
 		echo "\t" . '"overlay": ["' . $worldname . '-overworld-day-' . $directionname . '"],' . "\r\n";
 		echo "\t" . '"northdirection": "' . $direction['code'] . '",' . "\r\n";
+		echo "\t" . '"renderchecks": "' . $world['renderchecks'] . '",' . "\r\n";
 		echo "}\r\n\r\n";
 			
 		echo 'renders["' . $worldname . '-' . $directionname . '-spawn"] = {' . "\r\n";
@@ -270,6 +277,7 @@ foreach( $worlds as $worldname => $world )
 		echo "\t" . '"dimension": "overworld",' . "\r\n";
 		echo "\t" . '"overlay": ["' . $worldname . '-overworld-day-' . $directionname . '"],' . "\r\n";
 		echo "\t" . '"northdirection": "' . $direction['code'] . '",' . "\r\n";
+		echo "\t" . '"renderchecks": "' . $world['renderchecks'] . '",' . "\r\n";
 		echo "}\r\n\r\n";
 			
 		echo 'renders["' . $worldname . '-' . $directionname . '-slime"] = {' . "\r\n";
@@ -279,6 +287,7 @@ foreach( $worlds as $worldname => $world )
 		echo "\t" . '"dimension": "overworld",' . "\r\n";
 		echo "\t" . '"overlay": ["' . $worldname . '-overworld-day-' . $directionname . '"],' . "\r\n";
 		echo "\t" . '"northdirection": "' . $direction['code'] . '",' . "\r\n";
+		echo "\t" . '"renderchecks": "' . $world['renderchecks'] . '",' . "\r\n";
 		echo "}\r\n\r\n";
 			
 		echo 'renders["' . $worldname . '-' . $directionname . '-horse"] = {' . "\r\n";
@@ -288,6 +297,7 @@ foreach( $worlds as $worldname => $world )
 		echo "\t" . '"dimension": "overworld",' . "\r\n";
 		echo "\t" . '"overlay": ["' . $worldname . '-overworld-day-' . $directionname . '"],' . "\r\n";
 		echo "\t" . '"northdirection": "' . $direction['code'] . '",' . "\r\n";
+		echo "\t" . '"renderchecks": "' . $world['renderchecks'] . '",' . "\r\n";
 		echo "}\r\n\r\n";
 			
 		echo 'renders["' . $worldname . '-' . $directionname . '-ocelot"] = {' . "\r\n";
@@ -297,6 +307,7 @@ foreach( $worlds as $worldname => $world )
 		echo "\t" . '"dimension": "overworld",' . "\r\n";
 		echo "\t" . '"overlay": ["' . $worldname . '-overworld-day-' . $directionname . '"],' . "\r\n";
 		echo "\t" . '"northdirection": "' . $direction['code'] . '",' . "\r\n";
+		echo "\t" . '"renderchecks": "' . $world['renderchecks'] . '",' . "\r\n";
 		echo "}\r\n\r\n";
 			
 		echo 'renders["' . $worldname . '-' . $directionname . '-wolf"] = {' . "\r\n";
@@ -306,6 +317,7 @@ foreach( $worlds as $worldname => $world )
 		echo "\t" . '"dimension": "overworld",' . "\r\n";
 		echo "\t" . '"overlay": ["' . $worldname . '-overworld-day-' . $directionname . '"],' . "\r\n";
 		echo "\t" . '"northdirection": "' . $direction['code'] . '",' . "\r\n";
+		echo "\t" . '"renderchecks": "' . $world['renderchecks'] . '",' . "\r\n";
 		echo "}\r\n\r\n";
 	}
 }
