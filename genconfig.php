@@ -44,6 +44,16 @@ def pointOfInterestSignFilter(poi):
     if poi['id'] == 'Sign':
         if poi['Text1'] == '[POI]':
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4']])
+            
+def trainSignFilter(poi):
+    if poi['id'] == 'Sign':
+        if poi['Text1'] == '[Station]':
+            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4']])
+            
+def dockSignFilter(poi):
+    if poi['id'] == 'Sign':
+        if poi['Text1'] == '[Dock]':
+            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4']])
 
 outputdir = "maps"
 processes = 2
@@ -117,6 +127,16 @@ $worlds = array(
 				"name"           => "Points of Interest",
 				"filterFunction" => "pointOfInterestSignFilter",
 				"icon"           => "../treasure-mark.png",
+			),
+			array(
+				"name"           => "Minecart Station",
+				"filterFunction" => "trainSignFilter",
+				"icon"           => "../marker-train.png",
+			),
+			array(
+				"name"           => "Dock",
+				"filterFunction" => "dockSignFilter",
+				"icon"           => "../watercraft.png",
 			),
 		), // markers
 	), // cowgate
@@ -208,6 +228,35 @@ foreach( $worlds as $name => $data )
 
 echo "\r\n";
 
+function markerGeneration($world, $dimension)
+{
+    if( $dimension == "overworld" && isset( $world['manualpois' ] ) && is_array( $world[ 'manualpois' ] ) )
+    {
+        echo "\t" . '"manualpois": [' . "\r\n";
+        foreach( $world[ 'manualpois' ] as $poi ) 
+        {
+            echo "\t\t{\r\n";
+            foreach( $poi as $poikey => $poivalue )
+            {
+                echo "\t\t\t'" . $poikey . "' : " . ( is_numeric( $poivalue ) ? $poivalue : "'" . $poivalue . "'" ) . ",\r\n";
+            }
+            echo "\t\t},\r\n";
+        }
+        echo "\t" . '],' . "\r\n";
+        echo "\t'markers' : [\r\n";
+        foreach( $world[ "markers" ] as $marker )
+        {
+            echo "\t\tdict(name=\"" . $marker[ "name" ] . "\", filterFunction=" . $marker[ "filterFunction" ];
+            if( isset( $marker[ 'icon' ] ) )
+            {
+                echo ", icon=\"" . $marker[ "icon" ] . "\"";
+            }
+            echo "),\r\n";
+        }
+        echo "\t],\r\n";
+    }
+}
+
 // Render Declarations
 foreach( $worlds as $worldname => $world )
 {
@@ -224,31 +273,7 @@ foreach( $worlds as $worldname => $world )
 				echo "\t" . '"dimension": "' . $map['dimension'] . '",' . "\r\n";
 				echo "\t" . '"northdirection": "' . $direction['code'] . '",' . "\r\n";
 				echo "\t" . '"renderchecks": "' . $world['renderchecks'] . '",' . "\r\n";
-				if( $map[ 'dimension' ] == "overworld" && isset( $world['manualpois' ] ) && is_array( $world[ 'manualpois' ] ) )
-				{
-					echo "\t" . '"manualpois": [' . "\r\n";
-					foreach( $world[ 'manualpois' ] as $poi ) 
-					{
-						echo "\t\t{\r\n";
-						foreach( $poi as $poikey => $poivalue )
-						{
-							echo "\t\t\t'" . $poikey . "' : " . ( is_numeric( $poivalue ) ? $poivalue : "'" . $poivalue . "'" ) . ",\r\n";
-						}
-						echo "\t\t},\r\n";
-					}
-					echo "\t" . '],' . "\r\n";
-					echo "\t'markers' : [\r\n";
-					foreach( $world[ "markers" ] as $marker )
-					{
-						echo "\t\tdict(name=\"" . $marker[ "name" ] . "\", filterFunction=" . $marker[ "filterFunction" ];
-						if( isset( $marker[ 'icon' ] ) )
-						{
-							echo ", icon=\"" . $marker[ "icon" ] . "\"";
-						}
-						echo "),\r\n";
-					}
-					echo "\t],\r\n";
-				}
+				markerGeneration($world, $map[ 'dimension' ]);
 				echo "}\r\n\r\n";
 			}
 		}
@@ -261,6 +286,7 @@ foreach( $worlds as $worldname => $world )
 		echo "\t" . '"overlay": ["' . $worldname . '-overworld-day-' . $directionname . '"],' . "\r\n";
 		echo "\t" . '"northdirection": "' . $direction['code'] . '",' . "\r\n";
 		echo "\t" . '"renderchecks": "' . $world['renderchecks'] . '",' . "\r\n";
+        markerGeneration($world, "overworld");
 		echo "}\r\n\r\n";
 			
 		echo 'renders["' . $worldname . '-' . $directionname . '-spawn"] = {' . "\r\n";
@@ -271,6 +297,7 @@ foreach( $worlds as $worldname => $world )
 		echo "\t" . '"overlay": ["' . $worldname . '-overworld-day-' . $directionname . '"],' . "\r\n";
 		echo "\t" . '"northdirection": "' . $direction['code'] . '",' . "\r\n";
 		echo "\t" . '"renderchecks": "' . $world['renderchecks'] . '",' . "\r\n";
+        markerGeneration($world, "overworld");
 		echo "}\r\n\r\n";
 			
 		echo 'renders["' . $worldname . '-' . $directionname . '-slime"] = {' . "\r\n";
@@ -281,6 +308,7 @@ foreach( $worlds as $worldname => $world )
 		echo "\t" . '"overlay": ["' . $worldname . '-overworld-day-' . $directionname . '"],' . "\r\n";
 		echo "\t" . '"northdirection": "' . $direction['code'] . '",' . "\r\n";
 		echo "\t" . '"renderchecks": "' . $world['renderchecks'] . '",' . "\r\n";
+        markerGeneration($world, "overworld");
 		echo "}\r\n\r\n";
 			
 		echo 'renders["' . $worldname . '-' . $directionname . '-horse"] = {' . "\r\n";
@@ -291,6 +319,7 @@ foreach( $worlds as $worldname => $world )
 		echo "\t" . '"overlay": ["' . $worldname . '-overworld-day-' . $directionname . '"],' . "\r\n";
 		echo "\t" . '"northdirection": "' . $direction['code'] . '",' . "\r\n";
 		echo "\t" . '"renderchecks": "' . $world['renderchecks'] . '",' . "\r\n";
+        markerGeneration($world, "overworld");
 		echo "}\r\n\r\n";
 			
 		echo 'renders["' . $worldname . '-' . $directionname . '-ocelot"] = {' . "\r\n";
@@ -301,6 +330,7 @@ foreach( $worlds as $worldname => $world )
 		echo "\t" . '"overlay": ["' . $worldname . '-overworld-day-' . $directionname . '"],' . "\r\n";
 		echo "\t" . '"northdirection": "' . $direction['code'] . '",' . "\r\n";
 		echo "\t" . '"renderchecks": "' . $world['renderchecks'] . '",' . "\r\n";
+        markerGeneration($world, "overworld");
 		echo "}\r\n\r\n";
 			
 		echo 'renders["' . $worldname . '-' . $directionname . '-wolf"] = {' . "\r\n";
@@ -311,6 +341,7 @@ foreach( $worlds as $worldname => $world )
 		echo "\t" . '"overlay": ["' . $worldname . '-overworld-day-' . $directionname . '"],' . "\r\n";
 		echo "\t" . '"northdirection": "' . $direction['code'] . '",' . "\r\n";
 		echo "\t" . '"renderchecks": "' . $world['renderchecks'] . '",' . "\r\n";
+        markerGeneration($world, "overworld");
 		echo "}\r\n\r\n";
 	}
 }
