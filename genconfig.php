@@ -76,13 +76,6 @@ $worlds = array(
 				'z'    => -891,
 				'name' => 'Plains Town 2'
 			),
-			array(
-				'id'   => 'Witch',
-				'x'    => 115,	
-				'y'    => 64,
-				'z'    => 1092,
-				'name' => 'Witch Hut'
-			),
 		), // manualpoi
 		"markers" => array(
 			array(
