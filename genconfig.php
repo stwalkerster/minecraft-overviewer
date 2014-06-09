@@ -72,27 +72,20 @@ $worlds = array(
 		'nether' => true,
 		'end' => false,
 		'manualpois' => array(
-			array(
-				'id'   => 'Town',
-				'x'    => -136,
-				'y'    => 85,
-				'z'    => -194,
-				'name' => 'Desert Town 2'
-			),
-			array(
+			/*array(
 				'id'   => 'Town',
 				'x'    => 815,
 				'y'    => 70,
 				'z'    => -891,
 				'name' => 'Plains Town 2'
-			),
+			),*/
 		), // manualpoi
 		"markers" => array(
-			array(
+			/*array(
 				"name"           => "Manual Town",
 				"filterFunction" => "townFilter",
 				"icon"           => "../marker_town.png",
-			),
+			),*/
 			array(
 				"name"           => "Witch Huts",
 				"filterFunction" => "witchHutSignFilter",
