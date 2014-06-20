@@ -54,6 +54,11 @@ def dockSignFilter(poi):
     if poi['id'] == 'Sign':
         if poi['Text1'] == '[Dock]':
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4']])
+			
+def canalSignFilter(poi):
+    if poi['id'] == 'Sign':
+        if poi['Text1'] == '[Canal]':
+            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4']])
 
 outputdir = "maps"
 processes = 2
@@ -129,7 +134,12 @@ $worlds = array(
 			array(
 				"name"           => "Dock",
 				"filterFunction" => "dockSignFilter",
-				"icon"           => "../watercraft.png",
+				"icon"           => "../harbor.png",
+			),
+			array(
+				"name"           => "Canal",
+				"filterFunction" => "canalSignFilter",
+				"icon"           => "../taxiboat.png",
 			),
 		), // markers
 	), // cowgate
