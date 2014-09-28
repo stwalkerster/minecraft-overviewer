@@ -1,5 +1,7 @@
 #!/bin/bash -ex
 
+mkdir -p maps
+
 #Initiating new render job
 ssh jenkins@metapod.lon.stwalkerster.net 'echo '"'"'tellraw @a {"text":"[Jenkins: Initiating new render job]","color":"gray","italic":true}'"'"' > /mnt/minecraft/minecraft-cowgate.fifo'
 
