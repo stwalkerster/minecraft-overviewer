@@ -177,6 +177,17 @@ $worlds = array(
 	),
 ); // worlds
 
+if(getenv('forcerender') == 'true')
+{
+	foreach($worlds as $key => $world)
+	{
+		if($world['rendermode'] != 3)
+		{
+			$world['rendermode'] = 2;
+		}
+	}
+}
+
 $renders = array(
 	// DAY is required!
 	"day" => array(
