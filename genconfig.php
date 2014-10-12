@@ -17,48 +17,53 @@ def underbellyFilter(poi):
 
 def witchHutSignFilter(poi):
     if poi['id'] == 'Sign':
-        if poi['Text1'] == '[Witch Hut]':
+        if "Witch Hut" in poi['Text1']
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4']])
 
 def templeSignFilter(poi):
     if poi['id'] == 'Sign':
-        if poi['Text1'] == '[Temple]' or poi['Text1'] == 'Temple':
+        if "Temple" in poi['Text1']
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4']])
 
 def houseSignFilter(poi):
     if poi['id'] == 'Sign':
-    	print('Found sign: ' + poi['Text1'])
-        if poi['Text1'] == '[House]' or poi['Text1'] == 'House':
+        if "House" in poi['Text1']
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4']])
 
 def townSignFilter(poi):
     if poi['id'] == 'Sign':
-        if poi['Text1'] == '[Town]' or poi['Text1'] == 'Town':
+        if "Town" in poi['Text1']
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4']])
 
 def portalSignFilter(poi):
     if poi['id'] == 'Sign':
-        if poi['Text1'] == '[Portal]' or poi['Text1'] == 'Portal':
+        if "Portal" in poi['Text1']
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4']])
 
 def pointOfInterestSignFilter(poi):
     if poi['id'] == 'Sign':
-        if poi['Text1'] == '[POI]' or poi['Text1'] == 'POI':
+        if "POI" in poi['Text1']
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4']])
             
 def trainSignFilter(poi):
     if poi['id'] == 'Sign':
-        if poi['Text1'] == '[Station]' or poi['Text1'] == 'Station':
+        if "Station" in poi['Text1']
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4']])
             
 def dockSignFilter(poi):
     if poi['id'] == 'Sign':
-        if poi['Text1'] == '[Dock]' or poi['Text1'] == 'Dock':
+        if "Dock" in poi['Text1']
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4']])
 			
 def canalSignFilter(poi):
     if poi['id'] == 'Sign':
-        if poi['Text1'] == '[Canal]' or poi['Text1'] == 'Canal':
+        if "Canal" in poi['Text1']
+            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4']])
+
+			
+def netherFastTransportSignFilter(poi):
+    if poi['id'] == 'Sign':
+        if "NFT" in poi['Text1']
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4']])
 
 outputdir = "maps"
@@ -141,6 +146,11 @@ $worlds = array(
 				"name"           => "Canal",
 				"filterFunction" => "canalSignFilter",
 				"icon"           => "../taxiboat.png",
+			),
+			array(
+				"name"           => "Nether Fast Transport",
+				"filterFunction" => "netherFastTransportSignFilter",
+				"icon"           => "../underground.png",
 			),
 		), // markers
 	), // cowgate
