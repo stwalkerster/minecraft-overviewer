@@ -27,6 +27,7 @@ def templeSignFilter(poi):
 
 def houseSignFilter(poi):
     if poi['id'] == 'Sign':
+    	console.log('Found sign: ' . poi['Text1'])
         if poi['Text1'] == '[House]' or poi['Text1'] == 'House':
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4']])
 
