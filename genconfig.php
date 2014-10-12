@@ -22,42 +22,42 @@ def witchHutSignFilter(poi):
 
 def templeSignFilter(poi):
     if poi['id'] == 'Sign':
-        if poi['Text1'] == '[Temple]':
+        if poi['Text1'] == '[Temple]' or poi['Text1'] == 'Temple':
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4']])
 
 def houseSignFilter(poi):
     if poi['id'] == 'Sign':
-        if poi['Text1'] == '[House]':
+        if poi['Text1'] == '[House]' or poi['Text1'] == 'House':
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4']])
 
 def townSignFilter(poi):
     if poi['id'] == 'Sign':
-        if poi['Text1'] == '[Town]':
+        if poi['Text1'] == '[Town]' or poi['Text1'] == 'Town':
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4']])
 
 def portalSignFilter(poi):
     if poi['id'] == 'Sign':
-        if poi['Text1'] == '[Portal]':
+        if poi['Text1'] == '[Portal]' or poi['Text1'] == 'Portal':
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4']])
 
 def pointOfInterestSignFilter(poi):
     if poi['id'] == 'Sign':
-        if poi['Text1'] == '[POI]':
+        if poi['Text1'] == '[POI]' or poi['Text1'] == 'POI':
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4']])
             
 def trainSignFilter(poi):
     if poi['id'] == 'Sign':
-        if poi['Text1'] == '[Station]':
+        if poi['Text1'] == '[Station]' or poi['Text1'] == 'Station':
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4']])
             
 def dockSignFilter(poi):
     if poi['id'] == 'Sign':
-        if poi['Text1'] == '[Dock]':
+        if poi['Text1'] == '[Dock]' or poi['Text1'] == 'Dock':
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4']])
 			
 def canalSignFilter(poi):
     if poi['id'] == 'Sign':
-        if poi['Text1'] == '[Canal]':
+        if poi['Text1'] == '[Canal]' or poi['Text1'] == 'Canal':
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4']])
 
 outputdir = "maps"
