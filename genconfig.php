@@ -17,53 +17,53 @@ def underbellyFilter(poi):
 
 def witchHutSignFilter(poi):
     if poi['id'] == 'Sign':
-        if "Witch Hut" in poi['Text1']
+        if "Witch Hut" in poi['Text1']:
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4']])
 
 def templeSignFilter(poi):
     if poi['id'] == 'Sign':
-        if "Temple" in poi['Text1']
+        if "Temple" in poi['Text1']:
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4']])
 
 def houseSignFilter(poi):
     if poi['id'] == 'Sign':
-        if "House" in poi['Text1']
+        if "House" in poi['Text1']:
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4']])
 
 def townSignFilter(poi):
     if poi['id'] == 'Sign':
-        if "Town" in poi['Text1']
+        if "Town" in poi['Text1']:
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4']])
 
 def portalSignFilter(poi):
     if poi['id'] == 'Sign':
-        if "Portal" in poi['Text1']
+        if "Portal" in poi['Text1']:
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4']])
 
 def pointOfInterestSignFilter(poi):
     if poi['id'] == 'Sign':
-        if "POI" in poi['Text1']
+        if "POI" in poi['Text1']:
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4']])
             
 def trainSignFilter(poi):
     if poi['id'] == 'Sign':
-        if "Station" in poi['Text1']
+        if "Station" in poi['Text1']:
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4']])
             
 def dockSignFilter(poi):
     if poi['id'] == 'Sign':
-        if "Dock" in poi['Text1']
+        if "Dock" in poi['Text1']:
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4']])
 			
 def canalSignFilter(poi):
     if poi['id'] == 'Sign':
-        if "Canal" in poi['Text1']
+        if "Canal" in poi['Text1']:
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4']])
 
 			
 def netherFastTransportSignFilter(poi):
     if poi['id'] == 'Sign':
-        if "NFT" in poi['Text1']
+        if "NFT" in poi['Text1']:
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4']])
 
 outputdir = "maps"
