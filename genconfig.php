@@ -18,7 +18,7 @@ def underbellyFilter(poi):
 def witchHutSignFilter(poi):
     if poi['id'] == 'Sign':
         if "Witch Hut" in poi['Text1']
-            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4']])
+            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "".join([poi['x'], poi['y'], poi['z']],",")])
 
 def templeSignFilter(poi):
     if poi['id'] == 'Sign':
