@@ -29,7 +29,7 @@ ssh jenkins@metapod.lon.stwalkerster.net 'echo '"'"'save-on'"'"' > /mnt/minecraf
 
 php genconfig.php > overviewerconfig
 
-overviewer.py --config=overviewerconfig --genpoi
+overviewer.py --config=overviewerconfig --genpoi -v
 
 # Render complete. + URL
 ssh jenkins@metapod.lon.stwalkerster.net 'echo '"'"'tellraw @a {"text":"[Jenkins: POI update complete. ]","color":"gray","italic":true}'"'"' > /mnt/minecraft/minecraft-cowgate.fifo'
