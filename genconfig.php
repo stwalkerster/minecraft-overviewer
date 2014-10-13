@@ -116,26 +116,31 @@ $worlds = array(
 				"name"           => "Houses",
 				"filterFunction" => "houseSignFilter",
 				"icon"           => "../marker_house.png",
+                "checked"        => "true",
 			),
 			array(
 				"name"           => "Towns",
 				"filterFunction" => "townSignFilter",
 				"icon"           => "../marker_town.png",
+                "checked"        => "true",
 			),
 			array(
 				"name"           => "Portals",
 				"filterFunction" => "portalSignFilter",
 				"icon"           => "../marker_portal.png",
+                "checked"        => "true",
 			),
 			array(
 				"name"           => "Points of Interest",
 				"filterFunction" => "pointOfInterestSignFilter",
 				"icon"           => "../treasure-mark.png",
+                "checked"        => "true",
 			),
 			array(
 				"name"           => "Minecart Station",
 				"filterFunction" => "trainSignFilter",
 				"icon"           => "../marker-train.png",
+                "checked"        => "true",
 			),
 			array(
 				"name"           => "Dock",
@@ -146,11 +151,13 @@ $worlds = array(
 				"name"           => "Canal",
 				"filterFunction" => "canalSignFilter",
 				"icon"           => "../taxiboat.png",
+                "checked"        => "true",
 			),
 			array(
 				"name"           => "Nether Fast Transport",
 				"filterFunction" => "netherFastTransportSignFilter",
 				"icon"           => "../underground.png",
+                "checked"        => "true",
 			),
 		), // markers
 	), // cowgate
@@ -276,6 +283,10 @@ function markerGeneration($world, $dimension)
             if( isset( $marker[ 'icon' ] ) )
             {
                 echo ", icon=\"" . $marker[ "icon" ] . "\"";
+            }
+            if( isset( $marker[ 'checked' ] ) )
+            {
+                echo ", checked=\"" . $marker[ "checked" ] . "\"";
             }
             echo "),\r\n";
         }
