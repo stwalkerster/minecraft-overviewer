@@ -75,6 +75,87 @@ observer = JSObserver(outputdir=outputdir, minrefresh=10)
 <?php
 
 $worlds = array(
+    "crew" => array(
+		'path' => "worlds/minecraft/crew/world/",
+		'title' => "HW Events Crew",
+		'renderchecks' => 0,
+		'overworld' => true,
+		'nether' => false,
+		'end' => false,
+		'manualpois' => array(
+			/*array(
+				'id'   => 'Town',
+				'x'    => 815,
+				'y'    => 70,
+				'z'    => -891,
+				'name' => 'Plains Town 2'
+			),*/
+		), // manualpoi
+		"markers" => array(
+			/*array(
+				"name"           => "Manual Town",
+				"filterFunction" => "townFilter",
+				"icon"           => "../marker_town.png",
+			),*/
+			array(
+				"name"           => "Witch Huts",
+				"filterFunction" => "witchHutSignFilter",
+				"icon"           => "../marker_witch.png",
+			),
+			array(
+				"name"           => "Temples",
+				"filterFunction" => "templeSignFilter",
+				"icon"           => "../marker_temple.png",
+			),
+			array(
+				"name"           => "Houses",
+				"filterFunction" => "houseSignFilter",
+				"icon"           => "../marker_house.png",
+                "checked"        => "true",
+			),
+			array(
+				"name"           => "Towns",
+				"filterFunction" => "townSignFilter",
+				"icon"           => "../marker_town.png",
+                "checked"        => "true",
+			),
+			array(
+				"name"           => "Portals",
+				"filterFunction" => "portalSignFilter",
+				"icon"           => "../marker_portal.png",
+                "checked"        => "true",
+			),
+			array(
+				"name"           => "Points of Interest",
+				"filterFunction" => "pointOfInterestSignFilter",
+				"icon"           => "../treasure-mark.png",
+                "checked"        => "true",
+			),/*
+			array(
+				"name"           => "Minecart Station",
+				"filterFunction" => "trainSignFilter",
+				"icon"           => "../marker-train.png",
+                "checked"        => "true",
+			),
+			array(
+				"name"           => "Dock",
+				"filterFunction" => "dockSignFilter",
+				"icon"           => "../harbor.png",
+			),
+			array(
+				"name"           => "Canal",
+				"filterFunction" => "canalSignFilter",
+				"icon"           => "../taxiboat.png",
+                "checked"        => "true",
+			),
+			array(
+				"name"           => "Nether Fast Transport",
+				"filterFunction" => "netherFastTransportSignFilter",
+				"icon"           => "../underground.png",
+                "checked"        => "true",
+			),*/
+		), // markers
+	), // crew
 	"cowgate" => array(
 		'path' => "worlds/minecraft/cowgate/cowgate/",
 		'title' => "Underbelly Cowgate",
@@ -92,11 +173,6 @@ $worlds = array(
 			),*/
 		), // manualpoi
 		"markers" => array(
-			/*array(
-				"name"           => "Manual Town",
-				"filterFunction" => "townFilter",
-				"icon"           => "../marker_town.png",
-			),*/
 			array(
 				"name"           => "Witch Huts",
 				"filterFunction" => "witchHutSignFilter",
