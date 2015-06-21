@@ -80,7 +80,7 @@ $worlds = array(
 		'title' => "HW Events Crew",
 		'renderchecks' => 0,
 		'overworld' => true,
-		'nether' => false,
+		'nether' => true,
 		'end' => false,
 		'manualpois' => array(
 			/*array(
@@ -237,7 +237,7 @@ $worlds = array(
 			),
 		), // markers
 	), // cowgate
-/*	"creative" => array(
+	"creative" => array(
 		'path' => "worlds/minecraft/creative/world/",
 		'title' => "Creative",
 		'renderchecks' => 3,
@@ -269,7 +269,6 @@ $worlds = array(
 		'nether' => true,
 		'end' => true,
 	),
-	*/
 ); // worlds
 
 if(getenv('forcerender') == 'true')
