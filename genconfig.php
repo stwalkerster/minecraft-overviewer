@@ -153,12 +153,14 @@ $worlds = array(
 			array(
 				"name"           => "Witch Huts",
 				"filterFunction" => "witchHutSignFilter",
+                "checked"        => "true",
 				"icon"           => "../marker_witch.png",
 			),
 			array(
 				"name"           => "Temples",
 				"filterFunction" => "templeSignFilter",
 				"icon"           => "../marker_temple.png",
+                "checked"        => "true",
 			),
 			array(
 				"name"           => "Underbelly",
@@ -199,6 +201,7 @@ $worlds = array(
 				"name"           => "Dock",
 				"filterFunction" => "dockSignFilter",
 				"icon"           => "../harbor.png",
+                "checked"        => "true",
 			),
 			array(
 				"name"           => "Canal",
