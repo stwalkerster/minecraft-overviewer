@@ -13,7 +13,7 @@ def horseFilter(poi):
 def underbellyFilter(poi):
     if poi['id'] == 'Sign':
         if "Underbelly" in poi['Text1']:
-            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], str(poi['x']), str(poi['y']), str(poi['z'])])
+            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join(str(poi['x']), str(poi['y']), str(poi['z'])) + ")"])
 
 def witchHutSignFilter(poi):
     if poi['id'] == 'Sign':
