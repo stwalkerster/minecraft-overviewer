@@ -67,6 +67,7 @@ def netherFastTransportSignFilter(poi):
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], str(poi['x']), str(poi['y']), str(poi['z'])])
 
 outputdir = "maps"
+customwebassets = "assets"
 processes = 2
 			
 from observer import JSObserver
