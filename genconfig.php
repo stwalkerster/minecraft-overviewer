@@ -1,3 +1,10 @@
+def pointOfInterestFactory(poi):
+    return "\n".join([
+        poi['Text2'], 
+        poi['Text3'], 
+        poi['Text4'], 
+        "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
+
 def townFilter(poi):
     if poi['id'] == 'Town':
         return poi['name']
@@ -13,58 +20,57 @@ def horseFilter(poi):
 def underbellyFilter(poi):
     if poi['id'] == 'Sign':
         if "Underbelly" in poi['Text1']:
-            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
+            return pointOfInterestFactory(poi)
 
 def witchHutSignFilter(poi):
     if poi['id'] == 'Sign':
         if "Witch Hut" in poi['Text1']:
-            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
+            return pointOfInterestFactory(poi)
 
 def templeSignFilter(poi):
     if poi['id'] == 'Sign':
         if "Temple" in poi['Text1']:
-            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
+            return pointOfInterestFactory(poi)
 
 def houseSignFilter(poi):
     if poi['id'] == 'Sign':
         if "House" in poi['Text1']:
-            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
+            return pointOfInterestFactory(poi)
 
 def townSignFilter(poi):
     if poi['id'] == 'Sign':
         if "Town" in poi['Text1']:
-            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
+            return pointOfInterestFactory(poi)
 
 def portalSignFilter(poi):
     if poi['id'] == 'Sign':
         if "Portal" in poi['Text1']:
-            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
+            return pointOfInterestFactory(poi)
 
 def pointOfInterestSignFilter(poi):
     if poi['id'] == 'Sign':
         if "POI" in poi['Text1']:
-            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
+            return pointOfInterestFactory(poi)
             
 def trainSignFilter(poi):
     if poi['id'] == 'Sign':
         if "Station" in poi['Text1']:
-            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
+            return pointOfInterestFactory(poi)
             
 def dockSignFilter(poi):
     if poi['id'] == 'Sign':
         if "Dock" in poi['Text1']:
-            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
+            return pointOfInterestFactory(poi)
 			
 def canalSignFilter(poi):
     if poi['id'] == 'Sign':
         if "Canal" in poi['Text1']:
-            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
+            return pointOfInterestFactory(poi)
 
-			
 def netherFastTransportSignFilter(poi):
     if poi['id'] == 'Sign':
         if "NFT" in poi['Text1']:
-            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
+            return pointOfInterestFactory(poi)
 
 outputdir = "maps"
 customwebassets = "assets"
@@ -131,30 +137,7 @@ $worlds = array(
 				"filterFunction" => "pointOfInterestSignFilter",
 				"icon"           => "../treasure-mark.png",
                 "checked"        => "true",
-			),/*
-			array(
-				"name"           => "Minecart Station",
-				"filterFunction" => "trainSignFilter",
-				"icon"           => "../marker-train.png",
-                "checked"        => "true",
 			),
-			array(
-				"name"           => "Dock",
-				"filterFunction" => "dockSignFilter",
-				"icon"           => "../harbor.png",
-			),
-			array(
-				"name"           => "Canal",
-				"filterFunction" => "canalSignFilter",
-				"icon"           => "../taxiboat.png",
-                "checked"        => "true",
-			),
-			array(
-				"name"           => "Nether Fast Transport",
-				"filterFunction" => "netherFastTransportSignFilter",
-				"icon"           => "../underground.png",
-                "checked"        => "true",
-			),*/
 		), // markers
 	), // crew
 	"cowgate" => array(
@@ -230,13 +213,27 @@ $worlds = array(
 				"icon"           => "../taxiboat.png",
                 "checked"        => "true",
 			),
+        ), // markers
+		"netherMarkers" => array(
 			array(
 				"name"           => "Nether Fast Transport",
 				"filterFunction" => "netherFastTransportSignFilter",
 				"icon"           => "../underground.png",
                 "checked"        => "true",
 			),
-		), // markers
+			array(
+				"name"           => "Points of Interest",
+				"filterFunction" => "pointOfInterestSignFilter",
+				"icon"           => "../treasure-mark.png",
+                "checked"        => "true",
+			),
+			array(
+				"name"           => "Houses",
+				"filterFunction" => "houseSignFilter",
+				"icon"           => "../marker_house.png",
+                "checked"        => "true",
+			),
+		), // netherMarkers
 	), // cowgate
 	"creative" => array(
 		'path' => "worlds/minecraft/creative/world/",
@@ -354,6 +351,25 @@ function markerGeneration($world, $dimension)
         echo "\t" . '],' . "\r\n";
         echo "\t'markers' : [\r\n";
         foreach( $world[ "markers" ] as $marker )
+        {
+            echo "\t\tdict(name=\"" . $marker[ "name" ] . "\", filterFunction=" . $marker[ "filterFunction" ];
+            if( isset( $marker[ 'icon' ] ) )
+            {
+                echo ", icon=\"" . $marker[ "icon" ] . "\"";
+            }
+            if( isset( $marker[ 'checked' ] ) )
+            {
+                echo ", checked=\"" . $marker[ "checked" ] . "\"";
+            }
+            echo "),\r\n";
+        }
+        echo "\t],\r\n";
+    }
+    
+    if( $dimension == "nether" && isset( $world['netherMarkers' ] ) && is_array( $world[ 'netherMarkers' ] ) )
+    {
+        echo "\t'markers' : [\r\n";
+        foreach( $world[ "netherMarkers" ] as $marker )
         {
             echo "\t\tdict(name=\"" . $marker[ "name" ] . "\", filterFunction=" . $marker[ "filterFunction" ];
             if( isset( $marker[ 'icon' ] ) )
