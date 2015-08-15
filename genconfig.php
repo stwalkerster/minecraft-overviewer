@@ -17,7 +17,7 @@ def underbellyFilter(poi):
             
 def spawnerFilter(poi):
     if poi['id'] == 'Sign':
-        if "Spawner" in poi['Text1']:
+        if "Spawner" == poi['Text1']:
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
 
 def witchHutSignFilter(poi):
