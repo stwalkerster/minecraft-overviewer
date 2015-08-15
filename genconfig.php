@@ -14,6 +14,11 @@ def underbellyFilter(poi):
     if poi['id'] == 'Sign':
         if "Underbelly" in poi['Text1']:
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
+            
+def spawnerFilter(poi):
+    if poi['id'] == 'Sign':
+        if "Spawner" in poi['Text1']:
+            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
 
 def witchHutSignFilter(poi):
     if poi['id'] == 'Sign':
@@ -131,6 +136,12 @@ $worlds = array(
 				"icon"           => "../treasure-mark.png",
                 "checked"        => "true",
 			),
+			array(
+				"name"           => "Spawners",
+				"filterFunction" => "spawnerFilter",
+				"icon"           => "../zombie-outbreak1.png",
+                "checked"        => "false",
+			),
 		), // markers
 	), // crew
 	"cowgate" => array(
@@ -209,6 +220,12 @@ $worlds = array(
 				"icon"           => "../taxiboat.png",
                 "checked"        => "true",
 			),
+			array(
+				"name"           => "Spawners",
+				"filterFunction" => "spawnerFilter",
+				"icon"           => "../zombie-outbreak1.png",
+                "checked"        => "false",
+			),
         ), // markers
 		"netherMarkers" => array(
 			array(
@@ -228,6 +245,12 @@ $worlds = array(
 				"filterFunction" => "houseSignFilter",
 				"icon"           => "../marker_house.png",
                 "checked"        => "true",
+			),
+			array(
+				"name"           => "Spawners",
+				"filterFunction" => "spawnerFilter",
+				"icon"           => "../zombie-outbreak1.png",
+                "checked"        => "false",
 			),
 		), // netherMarkers
 	), // cowgate
