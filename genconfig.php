@@ -80,7 +80,58 @@ observer = JSObserver(outputdir=outputdir, minrefresh=10)
 <?php
 
 $worlds = array(
-    "crew" => array(
+	"combatupdate" => array(
+		'path' => "worlds/minecraft/combatupdate/world/",
+		'title' => "Combat Update",
+		'renderchecks' => 0,
+		'overworld' => true,
+		'nether' => false,
+		'end' => false,
+		'manualpois' => array(),
+		"markers" => array(
+			array(
+				"name"           => "Witch Huts",
+				"filterFunction" => "witchHutSignFilter",
+				"icon"           => "../marker_witch.png",
+			),
+			array(
+				"name"           => "Temples",
+				"filterFunction" => "templeSignFilter",
+				"icon"           => "../marker_temple.png",
+			),
+			array(
+				"name"           => "Houses",
+				"filterFunction" => "houseSignFilter",
+				"icon"           => "../marker_house.png",
+				"checked"        => "true",
+			),
+			array(
+				"name"           => "Towns",
+				"filterFunction" => "townSignFilter",
+				"icon"           => "../marker_town.png",
+				"checked"        => "true",
+			),
+			array(
+				"name"           => "Portals",
+				"filterFunction" => "portalSignFilter",
+				"icon"           => "../marker_portal.png",
+				"checked"        => "true",
+			),
+			array(
+				"name"           => "Points of Interest",
+				"filterFunction" => "pointOfInterestSignFilter",
+				"icon"           => "../treasure-mark.png",
+				"checked"        => "true",
+			),
+			array(
+				"name"           => "Spawners",
+				"filterFunction" => "spawnerFilter",
+				"icon"           => "../zombie-outbreak1.png",
+				"checked"        => "false",
+			),
+		), // markers
+	), // combatupdate
+	"crew" => array(
 		'path' => "worlds/minecraft/crew/world/",
 		'title' => "HW Events Crew",
 		'renderchecks' => 0,
