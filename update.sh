@@ -5,18 +5,22 @@ mkdir -p maps
 #Initiating new render job
 ssh jenkins@metapod.lon.stwalkerster.net 'echo '"'"'tellraw @a {"text":"[Jenkins: Initiating new render job]","color":"gray","italic":true}'"'"' > /mnt/minecraft/minecraft-cowgate.fifo'
 ssh jenkins@metapod.lon.stwalkerster.net 'echo '"'"'tellraw @a {"text":"[Jenkins: Initiating new render job]","color":"gray","italic":true}'"'"' > /mnt/minecraft/minecraft-crew.fifo'
+ssh jenkins@metapod.lon.stwalkerster.net 'echo '"'"'tellraw @a {"text":"[Jenkins: Initiating new render job]","color":"gray","italic":true}'"'"' > /mnt/minecraft/minecraft-combatupdate.fifo'
 
 # /save-off
 ssh jenkins@metapod.lon.stwalkerster.net 'echo '"'"'save-off'"'"' > /mnt/minecraft/minecraft-cowgate.fifo'
 ssh jenkins@metapod.lon.stwalkerster.net 'echo '"'"'save-off'"'"' > /mnt/minecraft/minecraft-crew.fifo'
+ssh jenkins@metapod.lon.stwalkerster.net 'echo '"'"'save-off'"'"' > /mnt/minecraft/minecraft-combatupdate.fifo'
 
 # Waiting for save to complete.
 ssh jenkins@metapod.lon.stwalkerster.net 'echo '"'"'tellraw @a {"text":"[Jenkins: Waiting for save to complete.]","color":"gray","italic":true}'"'"' > /mnt/minecraft/minecraft-cowgate.fifo'
 ssh jenkins@metapod.lon.stwalkerster.net 'echo '"'"'tellraw @a {"text":"[Jenkins: Waiting for save to complete.]","color":"gray","italic":true}'"'"' > /mnt/minecraft/minecraft-crew.fifo'
+ssh jenkins@metapod.lon.stwalkerster.net 'echo '"'"'tellraw @a {"text":"[Jenkins: Waiting for save to complete.]","color":"gray","italic":true}'"'"' > /mnt/minecraft/minecraft-combatupdate.fifo'
 
 # /save-all
 ssh jenkins@metapod.lon.stwalkerster.net 'echo '"'"'save-all'"'"' > /mnt/minecraft/minecraft-cowgate.fifo'
 ssh jenkins@metapod.lon.stwalkerster.net 'echo '"'"'save-all'"'"' > /mnt/minecraft/minecraft-crew.fifo'
+ssh jenkins@metapod.lon.stwalkerster.net 'echo '"'"'save-all'"'"' > /mnt/minecraft/minecraft-combatupdate.fifo'
 
 
 
@@ -38,16 +42,19 @@ tar -xf backups/survival-final.tar.bz2 -C survival/
 # Transferring world to render server.
 ssh jenkins@metapod.lon.stwalkerster.net 'echo '"'"'tellraw @a {"text":"[Jenkins: Transferring world to render server.]","color":"gray","italic":true}'"'"' > /mnt/minecraft/minecraft-cowgate.fifo'
 ssh jenkins@metapod.lon.stwalkerster.net 'echo '"'"'tellraw @a {"text":"[Jenkins: Transferring world to render server.]","color":"gray","italic":true}'"'"' > /mnt/minecraft/minecraft-crew.fifo'
+ssh jenkins@metapod.lon.stwalkerster.net 'echo '"'"'tellraw @a {"text":"[Jenkins: Transferring world to render server.]","color":"gray","italic":true}'"'"' > /mnt/minecraft/minecraft-combatupdate.fifo'
 
 rsync -avz -e "ssh -i /var/lib/jenkins/.ssh/minecraft.metapod.id_rsa" --exclude lost+found --exclude '*.tar.bz' minecraft@metapod.lon.stwalkerster.net:/mnt/minecraft/ $WORKSPACE/worlds
 
 # Transfer complete. Initiating render.
 ssh jenkins@metapod.lon.stwalkerster.net 'echo '"'"'tellraw @a {"text":"[Jenkins: Transfer complete. Initiating render.]","color":"gray","italic":true}'"'"' > /mnt/minecraft/minecraft-cowgate.fifo'
 ssh jenkins@metapod.lon.stwalkerster.net 'echo '"'"'tellraw @a {"text":"[Jenkins: Transfer complete. Initiating render.]","color":"gray","italic":true}'"'"' > /mnt/minecraft/minecraft-crew.fifo'
+ssh jenkins@metapod.lon.stwalkerster.net 'echo '"'"'tellraw @a {"text":"[Jenkins: Transfer complete. Initiating render.]","color":"gray","italic":true}'"'"' > /mnt/minecraft/minecraft-combatupdate.fifo'
 
 # /save-on
 ssh jenkins@metapod.lon.stwalkerster.net 'echo '"'"'save-on'"'"' > /mnt/minecraft/minecraft-cowgate.fifo'
 ssh jenkins@metapod.lon.stwalkerster.net 'echo '"'"'save-on'"'"' > /mnt/minecraft/minecraft-crew.fifo'
+ssh jenkins@metapod.lon.stwalkerster.net 'echo '"'"'save-on'"'"' > /mnt/minecraft/minecraft-combatupdate.fifo'
 
 php genconfig.php > overviewerconfig
 
@@ -61,3 +68,6 @@ ssh jenkins@metapod.lon.stwalkerster.net 'echo '"'"'tellraw @a {"text":"        
 
 ssh jenkins@metapod.lon.stwalkerster.net 'echo '"'"'tellraw @a {"text":"[Jenkins: Render complete. ]","color":"gray","italic":true}'"'"' > /mnt/minecraft/minecraft-crew.fifo'
 ssh jenkins@metapod.lon.stwalkerster.net 'echo '"'"'tellraw @a {"text":"          http://crew.mc.stwalkerster.co.uk/","italic":false,"color":"yellow","clickEvent":{"action":"open_url","value":"http://crew.mc.stwalkerster.co.uk/"}}'"'"' > /mnt/minecraft/minecraft-crew.fifo'
+
+ssh jenkins@metapod.lon.stwalkerster.net 'echo '"'"'tellraw @a {"text":"[Jenkins: Render complete. ]","color":"gray","italic":true}'"'"' > /mnt/minecraft/minecraft-combatupdate.fifo'
+ssh jenkins@metapod.lon.stwalkerster.net 'echo '"'"'tellraw @a {"text":"          http://cowgate.mc.stwalkerster.co.uk/","italic":false,"color":"yellow","clickEvent":{"action":"open_url","value":"http://cowgate.mc.stwalkerster.co.uk/"}}'"'"' > /mnt/minecraft/minecraft-combatupdate.fifo'
