@@ -70,6 +70,11 @@ def netherFastTransportSignFilter(poi):
         if "NFT" in poi['Text1']:
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
 
+def mineSignFilter(poi):
+    if poi['id'] == 'Sign':
+        if "Mine" in poi['Text1']:
+            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
+
 outputdir = "maps"
 customwebassets = "assets"
 processes = 2
@@ -129,6 +134,12 @@ $worlds = array(
 				"icon"           => "../zombie-outbreak1.png",
 				"checked"        => "false",
 			),
+			array(
+				"name"           => "Mines",
+				"filterFunction" => "mineSignFilter",
+				"icon"           => "../mine.png",
+				"checked"        => "true",
+			),
 		), // markers
 	), // combatupdate
 	"crew" => array(
@@ -167,31 +178,37 @@ $worlds = array(
 				"name"           => "Houses",
 				"filterFunction" => "houseSignFilter",
 				"icon"           => "../marker_house.png",
-                "checked"        => "true",
+				"checked"        => "true",
 			),
 			array(
 				"name"           => "Towns",
 				"filterFunction" => "townSignFilter",
 				"icon"           => "../marker_town.png",
-                "checked"        => "true",
+				"checked"        => "true",
 			),
 			array(
 				"name"           => "Portals",
 				"filterFunction" => "portalSignFilter",
 				"icon"           => "../marker_portal.png",
-                "checked"        => "true",
+				"checked"        => "true",
 			),
 			array(
 				"name"           => "Points of Interest",
 				"filterFunction" => "pointOfInterestSignFilter",
 				"icon"           => "../treasure-mark.png",
-                "checked"        => "true",
+				"checked"        => "true",
 			),
 			array(
 				"name"           => "Spawners",
 				"filterFunction" => "spawnerFilter",
 				"icon"           => "../zombie-outbreak1.png",
-                "checked"        => "false",
+				"checked"        => "false",
+			),
+			array(
+				"name"           => "Mines",
+				"filterFunction" => "mineSignFilter",
+				"icon"           => "../mine.png",
+				"checked"        => "true",
 			),
 		), // markers
 	), // crew
@@ -215,14 +232,14 @@ $worlds = array(
 			array(
 				"name"           => "Witch Huts",
 				"filterFunction" => "witchHutSignFilter",
-                "checked"        => "true",
+				"checked"        => "true",
 				"icon"           => "../marker_witch.png",
 			),
 			array(
 				"name"           => "Temples",
 				"filterFunction" => "templeSignFilter",
 				"icon"           => "../marker_temple.png",
-                "checked"        => "true",
+				"checked"        => "true",
 			),
 			array(
 				"name"           => "Underbelly",
@@ -233,49 +250,55 @@ $worlds = array(
 				"name"           => "Houses",
 				"filterFunction" => "houseSignFilter",
 				"icon"           => "../marker_house.png",
-                "checked"        => "true",
+				"checked"        => "true",
 			),
 			array(
 				"name"           => "Towns",
 				"filterFunction" => "townSignFilter",
 				"icon"           => "../marker_town.png",
-                "checked"        => "true",
+				"checked"        => "true",
 			),
 			array(
 				"name"           => "Portals",
 				"filterFunction" => "portalSignFilter",
 				"icon"           => "../marker_portal.png",
-                "checked"        => "true",
+				"checked"        => "true",
 			),
 			array(
 				"name"           => "Points of Interest",
 				"filterFunction" => "pointOfInterestSignFilter",
 				"icon"           => "../treasure-mark.png",
-                "checked"        => "true",
+				"checked"        => "true",
 			),
 			array(
 				"name"           => "Minecart Station",
 				"filterFunction" => "trainSignFilter",
 				"icon"           => "../marker-train.png",
-                "checked"        => "true",
+				"checked"        => "true",
 			),
 			array(
 				"name"           => "Dock",
 				"filterFunction" => "dockSignFilter",
 				"icon"           => "../harbor.png",
-                "checked"        => "true",
+				"checked"        => "true",
 			),
 			array(
 				"name"           => "Canal",
 				"filterFunction" => "canalSignFilter",
 				"icon"           => "../taxiboat.png",
-                "checked"        => "true",
+				"checked"        => "true",
 			),
 			array(
 				"name"           => "Spawners",
 				"filterFunction" => "spawnerFilter",
 				"icon"           => "../zombie-outbreak1.png",
-                "checked"        => "false",
+				"checked"        => "false",
+			),
+			array(
+				"name"           => "Mines",
+				"filterFunction" => "mineSignFilter",
+				"icon"           => "../mine.png",
+				"checked"        => "true",
 			),
         ), // markers
 		"netherMarkers" => array(
@@ -283,25 +306,25 @@ $worlds = array(
 				"name"           => "Nether Fast Transport",
 				"filterFunction" => "netherFastTransportSignFilter",
 				"icon"           => "../underground.png",
-                "checked"        => "true",
+				"checked"        => "true",
 			),
 			array(
 				"name"           => "Points of Interest",
 				"filterFunction" => "pointOfInterestSignFilter",
 				"icon"           => "../treasure-mark.png",
-                "checked"        => "true",
+				"checked"        => "true",
 			),
 			array(
 				"name"           => "Houses",
 				"filterFunction" => "houseSignFilter",
 				"icon"           => "../marker_house.png",
-                "checked"        => "true",
+				"checked"        => "true",
 			),
 			array(
 				"name"           => "Spawners",
 				"filterFunction" => "spawnerFilter",
 				"icon"           => "../zombie-outbreak1.png",
-                "checked"        => "false",
+				"checked"        => "false",
 			),
 		), // netherMarkers
 	), // cowgate
