@@ -112,7 +112,7 @@ $worlds = array(
 			array(
 				"name"           => "Temples",
 				"filterFunction" => "templeSignFilter",
-				"icon"           => "../marker_temple.png",
+				"icon"           => "../temple-2.png",
 			),
 			array(
 				"name"           => "Houses",
@@ -194,7 +194,7 @@ $worlds = array(
 			array(
 				"name"           => "Temples",
 				"filterFunction" => "templeSignFilter",
-				"icon"           => "../marker_temple.png",
+				"icon"           => "../temple-2.png",
 			),
 			array(
 				"name"           => "Houses",
@@ -272,7 +272,7 @@ $worlds = array(
 			array(
 				"name"           => "Temples",
 				"filterFunction" => "templeSignFilter",
-				"icon"           => "../marker_temple.png",
+				"icon"           => "../temple-2.png",
 				"checked"        => "true",
 			),
 			array(
