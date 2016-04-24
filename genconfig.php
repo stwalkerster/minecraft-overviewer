@@ -75,6 +75,16 @@ def mineSignFilter(poi):
         if "Mine" in poi['Text1']:
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
 
+def enclosureSignFilter(poi):
+    if poi['id'] == 'Sign':
+        if "Enclosure" in poi['Text1']:
+            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
+
+def fieldSignFilter(poi):
+    if poi['id'] == 'Sign':
+        if "Field" in poi['Text1']:
+            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
+
 outputdir = "maps"
 customwebassets = "assets"
 processes = 2
@@ -138,6 +148,18 @@ $worlds = array(
 				"name"           => "Mines",
 				"filterFunction" => "mineSignFilter",
 				"icon"           => "../mine.png",
+				"checked"        => "true",
+			),
+			array(
+				"name"           => "Farming: Fields",
+				"filterFunction" => "fieldSignFilter",
+				"icon"           => "../field.png",
+				"checked"        => "true",
+			),
+			array(
+				"name"           => "Farming: Enclosures",
+				"filterFunction" => "enclosureSignFilter",
+				"icon"           => "../enclosure.png",
 				"checked"        => "true",
 			),
 		), // markers
@@ -208,6 +230,18 @@ $worlds = array(
 				"name"           => "Mines",
 				"filterFunction" => "mineSignFilter",
 				"icon"           => "../mine.png",
+				"checked"        => "true",
+			),
+			array(
+				"name"           => "Farming: Fields",
+				"filterFunction" => "fieldSignFilter",
+				"icon"           => "../field.png",
+				"checked"        => "true",
+			),
+			array(
+				"name"           => "Farming: Enclosures",
+				"filterFunction" => "enclosureSignFilter",
+				"icon"           => "../enclosure.png",
 				"checked"        => "true",
 			),
 		), // markers
@@ -298,6 +332,18 @@ $worlds = array(
 				"name"           => "Mines",
 				"filterFunction" => "mineSignFilter",
 				"icon"           => "../mine.png",
+				"checked"        => "true",
+			),
+			array(
+				"name"           => "Farming: Fields",
+				"filterFunction" => "fieldSignFilter",
+				"icon"           => "../field.png",
+				"checked"        => "true",
+			),
+			array(
+				"name"           => "Farming: Enclosures",
+				"filterFunction" => "enclosureSignFilter",
+				"icon"           => "../enclosure.png",
 				"checked"        => "true",
 			),
         ), // markers
