@@ -100,7 +100,7 @@ $worlds = array(
 		'title' => "Combat Update",
 		'renderchecks' => 0,
 		'overworld' => true,
-		'nether' => false,
+		'nether' => true,
 		'end' => false,
 		'manualpois' => array(),
 		"markers" => array(
@@ -163,6 +163,32 @@ $worlds = array(
 				"checked"        => "true",
 			),
 		), // markers
+		"netherMarkers" => array(
+			array(
+				"name"           => "Nether Fast Transport",
+				"filterFunction" => "netherFastTransportSignFilter",
+				"icon"           => "../underground.png",
+				"checked"        => "true",
+			),
+			array(
+				"name"           => "Points of Interest",
+				"filterFunction" => "pointOfInterestSignFilter",
+				"icon"           => "../treasure-mark.png",
+				"checked"        => "true",
+			),
+			array(
+				"name"           => "Houses",
+				"filterFunction" => "houseSignFilter",
+				"icon"           => "../marker_house.png",
+				"checked"        => "true",
+			),
+			array(
+				"name"           => "Spawners",
+				"filterFunction" => "spawnerFilter",
+				"icon"           => "../zombie-outbreak1.png",
+				"checked"        => "false",
+			),
+		), // netherMarkers
 	), // combatupdate
 	"crew" => array(
 		'path' => "worlds/minecraft/crew/world/",
