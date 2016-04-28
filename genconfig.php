@@ -85,6 +85,11 @@ def fieldSignFilter(poi):
         if "Field" in poi['Text1']:
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
 
+def fortressSignFilter(poi):
+    if poi['id'] == 'Sign':
+        if "Fortress" in poi['Text1']:
+            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
+
 outputdir = "maps"
 customwebassets = "assets"
 processes = 2
@@ -180,6 +185,18 @@ $worlds = array(
 				"name"           => "Houses",
 				"filterFunction" => "houseSignFilter",
 				"icon"           => "../marker_house.png",
+				"checked"        => "true",
+			),
+			array(
+				"name"           => "Portals",
+				"filterFunction" => "portalSignFilter",
+				"icon"           => "../marker_portal.png",
+				"checked"        => "true",
+			),
+			array(
+				"name"           => "Nether Fortresses",
+				"filterFunction" => "fortressSignFilter",
+				"icon"           => "../castle-2.png",
 				"checked"        => "true",
 			),
 			array(
