@@ -90,6 +90,11 @@ def fortressSignFilter(poi):
         if "Fortress" in poi['Text1']:
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
 
+def hutFilter(poi):
+    if poi['id'] == 'Sign':
+        if "Hut" in poi['Text1']:
+            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
+
 outputdir = "maps"
 customwebassets = "assets"
 processes = 2
@@ -167,6 +172,12 @@ $worlds = array(
 				"icon"           => "../enclosure.png",
 				"checked"        => "true",
 			),
+			array(
+				"name"           => "Huts",
+				"filterFunction" => "hutFilter",
+				"icon"           => "../bunker-2-2.png",
+				"checked"        => "true",
+			),
 		), // markers
 		"netherMarkers" => array(
 			array(
@@ -204,6 +215,12 @@ $worlds = array(
 				"filterFunction" => "spawnerFilter",
 				"icon"           => "../zombie-outbreak1.png",
 				"checked"        => "false",
+			),
+			array(
+				"name"           => "Huts",
+				"filterFunction" => "hutFilter",
+				"icon"           => "../bunker-2-2.png",
+				"checked"        => "true",
 			),
 		), // netherMarkers
 	), // combatupdate
@@ -285,6 +302,12 @@ $worlds = array(
 				"name"           => "Farming: Enclosures",
 				"filterFunction" => "enclosureSignFilter",
 				"icon"           => "../enclosure.png",
+				"checked"        => "true",
+			),
+			array(
+				"name"           => "Huts",
+				"filterFunction" => "hutFilter",
+				"icon"           => "../bunker-2-2.png",
 				"checked"        => "true",
 			),
 		), // markers
@@ -389,6 +412,12 @@ $worlds = array(
 				"icon"           => "../enclosure.png",
 				"checked"        => "true",
 			),
+			array(
+				"name"           => "Huts",
+				"filterFunction" => "hutFilter",
+				"icon"           => "../bunker-2-2.png",
+				"checked"        => "true",
+			),
         ), // markers
 		"netherMarkers" => array(
 			array(
@@ -414,6 +443,12 @@ $worlds = array(
 				"filterFunction" => "spawnerFilter",
 				"icon"           => "../zombie-outbreak1.png",
 				"checked"        => "false",
+			),
+			array(
+				"name"           => "Huts",
+				"filterFunction" => "hutFilter",
+				"icon"           => "../bunker-2-2.png",
+				"checked"        => "true",
 			),
 		), // netherMarkers
 	), // cowgate
