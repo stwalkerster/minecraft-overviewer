@@ -95,6 +95,12 @@ def hutFilter(poi):
         if "Hut" in poi['Text1']:
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
 
+def iglooFilter(poi):
+    if poi['id'] == 'Sign':
+        if "Igloo" in poi['Text1']:
+            return "\n".join([poi['Text1'], "", poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
+
+
 outputdir = "maps"
 customwebassets = "assets"
 processes = 2
@@ -194,6 +200,12 @@ $worlds = array(
 				"name"           => "Huts",
 				"filterFunction" => "hutFilter",
 				"icon"           => "../bunker-2-2.png",
+				"checked"        => "true",
+			),
+			array(
+				"name"           => "Igloos",
+				"filterFunction" => "iglooFilter",
+				"icon"           => "../bunker.png",
 				"checked"        => "true",
 			),
 		), // markers
