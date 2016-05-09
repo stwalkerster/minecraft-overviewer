@@ -149,6 +149,24 @@ $worlds = array(
 				"checked"        => "true",
 			),
 			array(
+				"name"           => "Minecart Station",
+				"filterFunction" => "trainSignFilter",
+				"icon"           => "../marker-train.png",
+				"checked"        => "true",
+			),
+			array(
+				"name"           => "Dock",
+				"filterFunction" => "dockSignFilter",
+				"icon"           => "../harbor.png",
+				"checked"        => "true",
+			),
+			array(
+				"name"           => "Canal",
+				"filterFunction" => "canalSignFilter",
+				"icon"           => "../taxiboat.png",
+				"checked"        => "true",
+			),
+			array(
 				"name"           => "Spawners",
 				"filterFunction" => "spawnerFilter",
 				"icon"           => "../zombie-outbreak1.png",
