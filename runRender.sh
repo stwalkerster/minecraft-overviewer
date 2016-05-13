@@ -2,6 +2,8 @@
 
 echo "Building world '" $BUILD_WORLD_NAME "' with unix name '" $BUILD_WORLD_UNIX_NAME "'"
 
+mkdir -p maps/$BUILD_WORLD_UNIX_NAME
+
 function serverCommand {
     ssh jenkins@metapod.lon.stwalkerster.net 'echo '"'"$1"'"' > /mnt/minecraft/minecraft-'$BUILD_WORLD_UNIX_NAME'.fifo'
 }
