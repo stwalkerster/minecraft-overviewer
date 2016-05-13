@@ -42,7 +42,7 @@ for directionName, directionCode in d_directions.iteritems():
         'markers': marker_definitions(),
     }
     renders[configWorldUnixName + "-overworld-night-" + directionName] = {
-        "title": "Day - " + directionName,
+        "title": "Night - " + directionName,
         "dimension": "overworld",
         "northdirection": directionCode,
         "renderchecks": "0",
