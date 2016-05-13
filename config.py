@@ -1,9 +1,5 @@
 import os
-import sys
-
 from observer import JSObserver
-
-sys.path.insert(1, os.path.dirname(os.path.realpath(__file__)))
 from common import marker_definitions, nether_marker_definitions, end_marker_definitions
 
 # General config

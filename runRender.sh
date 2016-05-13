@@ -18,10 +18,8 @@ rsync -avz -e "ssh -i /var/lib/jenkins/.ssh/minecraft.metapod.id_rsa" --exclude 
 serverCommand 'tellraw @a {"text":"[Jenkins: Transfer complete. Initiating render.]","color":"gray","italic":true}'
 serverCommand 'save-on'
 
-PYTHONPATH=$PYTHONPATH:`pwd`
-
-overviewer.py --config=config.py --genpoi
-overviewer.py --config=config.py
+PYTHONPATH=`pwd` overviewer.py --config=config.py --genpoi
+PYTHONPATH=`pwd` overviewer.py --config=config.py
 
 serverCommand 'tellraw @a {"text":"[Jenkins: Render complete. ]","color":"gray","italic":true}'
 serverCommand 'tellraw @a {"text":"          http://'$BUILD_WORLD_UNIX_NAME'.mc.stwalkerster.co.uk/","italic":false,"color":"yellow","clickEvent":{"action":"open_url","value":"http://'$BUILD_WORLD_UNIX_NAME'.mc.stwalkerster.co.uk/"}}'
