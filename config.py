@@ -32,7 +32,7 @@ world = configWorldHumanName
 renders = dict()
 
 
-for directionName, directionCode in d_directions:
+for directionName, directionCode in d_directions.iteritemms():
     renders[configWorldUnixName + "-overworld-day-" + directionName] = {
         "title": "Day - " + directionName,
         "dimension": "overworld",
