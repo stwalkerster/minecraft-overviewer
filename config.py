@@ -10,7 +10,7 @@ d_directions = dict(North="upper-left", South="lower-right", East="upper-right",
 configWorldUnixName = os.environ.get('BUILD_WORLD_UNIX_NAME')
 configWorldHumanName = os.environ.get('BUILD_WORLD_NAME')
 
-configWorldPath = "worlds/" + configWorldUnixName + "/world"
+configWorldPath = "server/world"
 
 configRenderNether = os.path.isdir(configWorldPath + "/DIM-1/region")
 configRenderEnd = os.path.isdir(configWorldPath + "/DIM1/region")

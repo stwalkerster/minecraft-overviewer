@@ -13,9 +13,11 @@ serverCommand 'tellraw @a {"text":"[Jenkins: Waiting for save to complete, then 
 
 sleep 5
 
-rsync -avz -e "ssh -i /var/lib/jenkins/.ssh/minecraft.metapod.id_rsa" --exclude lost+found --exclude '*.tar.bz' minecraft@metapod.lon.stwalkerster.net:/mnt/minecraft/$BUILD_WORLD_UNIX_NAME/ $WORKSPACE/worlds
+rsync -avz -e "ssh -i /var/lib/jenkins/.ssh/minecraft.metapod.id_rsa" --exclude lost+found --exclude '*.tar.bz' minecraft@metapod.lon.stwalkerster.net:/mnt/minecraft/$BUILD_WORLD_UNIX_NAME/ $WORKSPACE/server
 
 serverCommand 'save-on'
+
+PYTHONPATH=$PYTHONPATH:`pwd`
 
 overviewer.py --config=config.py --genpoi
 
