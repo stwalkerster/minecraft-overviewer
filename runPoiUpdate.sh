@@ -1,4 +1,4 @@
-#!/usr/bin/env bash -ex
+#!/bin/bash -ex
 
 echo "Building world '" $BUILD_WORLD_NAME "' with unix name '" $BUILD_WORLD_UNIX_NAME "'"
 
