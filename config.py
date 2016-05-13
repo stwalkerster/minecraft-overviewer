@@ -1,6 +1,10 @@
 import os
-from common import marker_definitions, nether_marker_definitions, end_marker_definitions
+import sys
+
 from observer import JSObserver
+
+sys.path.insert(1, os.path.dirname(os.path.realpath(__file__)))
+from common import marker_definitions, nether_marker_definitions, end_marker_definitions
 
 # General config
 end_smooth_lighting = [Base(), EdgeLines(), SmoothLighting(strength=0.5)]
