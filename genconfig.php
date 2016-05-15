@@ -100,6 +100,9 @@ def iglooFilter(poi):
         if "Igloo" in poi['Text1']:
             return "\n".join([poi['Text1'], "", poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
 
+def playerIcons(poi):
+    if poi['id'] == 'Player':
+        return "Last known location for %s" % poi['EntityId']
 
 outputdir = "maps"
 customwebassets = "assets"
@@ -206,6 +209,12 @@ $worlds = array(
 				"name"           => "Igloos",
 				"filterFunction" => "iglooFilter",
 				"icon"           => "../icons/bunker.png",
+				"checked"        => "true",
+			),
+			array(
+				"name"           => "Players",
+				"filterFunction" => "playerFilter",
+				"icon"           => "../icons/male-2.png",
 				"checked"        => "true",
 			),
 		), // markers
