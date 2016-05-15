@@ -102,6 +102,7 @@ def iglooFilter(poi):
 
 def playerFilter(poi):
     if poi['id'] == 'Player':
+        poi['icon'] = "http://cravatar.eu/helmavatar/%s" % poi['EntityId']
         return "Last known location for %s" % poi['EntityId']
 
 outputdir = "maps"
@@ -214,7 +215,6 @@ $worlds = array(
 			array(
 				"name"           => "Players",
 				"filterFunction" => "playerFilter",
-				"icon"           => "../icons/male-2.png",
 				"checked"        => "true",
 			),
 		), // markers
@@ -352,7 +352,6 @@ $worlds = array(
 			array(
 				"name"           => "Players",
 				"filterFunction" => "playerFilter",
-				"icon"           => "../icons/male-2.png",
 				"checked"        => "true",
 			),
 		), // markers
@@ -466,7 +465,6 @@ $worlds = array(
 			array(
 				"name"           => "Players",
 				"filterFunction" => "playerFilter",
-				"icon"           => "../icons/male-2.png",
 				"checked"        => "true",
 			),
         ), // markers
@@ -514,7 +512,6 @@ $worlds = array(
 			array(
 				"name"           => "Players",
 				"filterFunction" => "playerFilter",
-				"icon"           => "../icons/male-2.png",
 				"checked"        => "true",
 			),
 		),
@@ -530,7 +527,6 @@ $worlds = array(
 			array(
 				"name"           => "Players",
 				"filterFunction" => "playerFilter",
-				"icon"           => "../icons/male-2.png",
 				"checked"        => "true",
 			),
 		),
@@ -546,7 +542,6 @@ $worlds = array(
 			array(
 				"name"           => "Players",
 				"filterFunction" => "playerFilter",
-				"icon"           => "../icons/male-2.png",
 				"checked"        => "true",
 			),
 		),
@@ -562,7 +557,6 @@ $worlds = array(
 			array(
 				"name"           => "Players",
 				"filterFunction" => "playerFilter",
-				"icon"           => "../icons/male-2.png",
 				"checked"        => "true",
 			),
 		),
