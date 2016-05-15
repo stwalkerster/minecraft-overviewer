@@ -349,6 +349,12 @@ $worlds = array(
 				"icon"           => "../icons/bunker-2-2.png",
 				"checked"        => "true",
 			),
+			array(
+				"name"           => "Players",
+				"filterFunction" => "playerFilter",
+				"icon"           => "../icons/male-2.png",
+				"checked"        => "true",
+			),
 		), // markers
 	), // crew
 	"cowgate" => array(
@@ -457,6 +463,12 @@ $worlds = array(
 				"icon"           => "../icons/bunker-2-2.png",
 				"checked"        => "true",
 			),
+			array(
+				"name"           => "Players",
+				"filterFunction" => "playerFilter",
+				"icon"           => "../icons/male-2.png",
+				"checked"        => "true",
+			),
         ), // markers
 		"netherMarkers" => array(
 			array(
@@ -498,6 +510,14 @@ $worlds = array(
 		'overworld' => true,
 		'nether' => false,
 		'end' => false,
+		'markers' => array(
+			array(
+				"name"           => "Players",
+				"filterFunction" => "playerFilter",
+				"icon"           => "../icons/male-2.png",
+				"checked"        => "true",
+			),
+		),
 	),
 	"ohai" => array(
 		'path' => "worlds/ohai/world/",
@@ -506,6 +526,14 @@ $worlds = array(
 		'overworld' => true,
 		'nether' => false,
 		'end' => false,
+		'markers' => array(
+			array(
+				"name"           => "Players",
+				"filterFunction" => "playerFilter",
+				"icon"           => "../icons/male-2.png",
+				"checked"        => "true",
+			),
+		),
 	),
 	"mc1.5" => array(
 		'path' => "worlds/mc1.5/world/",
@@ -514,6 +542,14 @@ $worlds = array(
 		'overworld' => true,
 		'nether' => true,
 		'end' => false,
+		'markers' => array(
+			array(
+				"name"           => "Players",
+				"filterFunction" => "playerFilter",
+				"icon"           => "../icons/male-2.png",
+				"checked"        => "true",
+			),
+		),
 	),
 	"mc1" => array(
 		'path' => "mc1-world/",
@@ -522,6 +558,14 @@ $worlds = array(
 		'overworld' => true,
 		'nether' => true,
 		'end' => true,
+		'markers' => array(
+			array(
+				"name"           => "Players",
+				"filterFunction" => "playerFilter",
+				"icon"           => "../icons/male-2.png",
+				"checked"        => "true",
+			),
+		),
 	),
 ); // worlds
 
