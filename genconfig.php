@@ -92,7 +92,7 @@ def fortressSignFilter(poi):
 
 def hutFilter(poi):
     if poi['id'] == 'Sign':
-        if "Hut" in poi['Text1']:
+        if "[Hut]" in poi['Text1']:
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
 
 def iglooFilter(poi):
