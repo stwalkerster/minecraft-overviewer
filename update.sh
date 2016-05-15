@@ -41,13 +41,13 @@ ssh jenkins@metapod.lon.stwalkerster.net 'echo '"'"'tellraw @a {"text":"[Jenkins
 ssh jenkins@metapod.lon.stwalkerster.net 'echo '"'"'tellraw @a {"text":"[Jenkins: Transferring world to render server.]","color":"gray","italic":true}'"'"' > /mnt/minecraft/minecraft-crew.fifo'
 ssh jenkins@metapod.lon.stwalkerster.net 'echo '"'"'tellraw @a {"text":"[Jenkins: Transferring world to render server.]","color":"gray","italic":true}'"'"' > /mnt/minecraft/minecraft-combatupdate.fifo'
 
-rsync -avz -e "ssh -i /var/lib/jenkins/.ssh/minecraft.metapod.id_rsa" --exclude lost+found --exclude '*.tar.bz' minecraft@metapod.lon.stwalkerster.net:/mnt/minecraft/combatupdate/ $WORKSPACE/worlds2/combatupdate
-rsync -avz -e "ssh -i /var/lib/jenkins/.ssh/minecraft.metapod.id_rsa" --exclude lost+found --exclude '*.tar.bz' minecraft@metapod.lon.stwalkerster.net:/mnt/minecraft/crew/ $WORKSPACE/worlds2/crew
-rsync -avz -e "ssh -i /var/lib/jenkins/.ssh/minecraft.metapod.id_rsa" --exclude lost+found --exclude '*.tar.bz' minecraft@metapod.lon.stwalkerster.net:/mnt/minecraft/cowgate/ $WORKSPACE/worlds2/cowgate
-rsync -avz -e "ssh -i /var/lib/jenkins/.ssh/minecraft.metapod.id_rsa" --exclude lost+found --exclude '*.tar.bz' minecraft@metapod.lon.stwalkerster.net:/mnt/minecraft/creative/ $WORKSPACE/worlds2/creative
-rsync -avz -e "ssh -i /var/lib/jenkins/.ssh/minecraft.metapod.id_rsa" --exclude lost+found --exclude '*.tar.bz' minecraft@metapod.lon.stwalkerster.net:/mnt/minecraft/mc1.5/ $WORKSPACE/worlds2/mc1.5
-rsync -avz -e "ssh -i /var/lib/jenkins/.ssh/minecraft.metapod.id_rsa" --exclude lost+found --exclude '*.tar.bz' minecraft@metapod.lon.stwalkerster.net:/mnt/minecraft/ohai/ $WORKSPACE/worlds2/ohai
-rsync -avz -e "ssh -i /var/lib/jenkins/.ssh/minecraft.metapod.id_rsa" --exclude lost+found --exclude '*.tar.bz' minecraft@metapod.lon.stwalkerster.net:/mnt/minecraft/os-gb/ $WORKSPACE/worlds2/os-gb
+rsync -avz -e "ssh -i /var/lib/jenkins/.ssh/minecraft.metapod.id_rsa" --exclude lost+found --exclude '*.tar.bz' minecraft@metapod.lon.stwalkerster.net:/mnt/minecraft/combatupdate/ $WORKSPACE/worlds/combatupdate
+rsync -avz -e "ssh -i /var/lib/jenkins/.ssh/minecraft.metapod.id_rsa" --exclude lost+found --exclude '*.tar.bz' minecraft@metapod.lon.stwalkerster.net:/mnt/minecraft/crew/ $WORKSPACE/worlds/crew
+rsync -avz -e "ssh -i /var/lib/jenkins/.ssh/minecraft.metapod.id_rsa" --exclude lost+found --exclude '*.tar.bz' minecraft@metapod.lon.stwalkerster.net:/mnt/minecraft/cowgate/ $WORKSPACE/worlds/cowgate
+rsync -avz -e "ssh -i /var/lib/jenkins/.ssh/minecraft.metapod.id_rsa" --exclude lost+found --exclude '*.tar.bz' minecraft@metapod.lon.stwalkerster.net:/mnt/minecraft/creative/ $WORKSPACE/worlds/creative
+rsync -avz -e "ssh -i /var/lib/jenkins/.ssh/minecraft.metapod.id_rsa" --exclude lost+found --exclude '*.tar.bz' minecraft@metapod.lon.stwalkerster.net:/mnt/minecraft/mc1.5/ $WORKSPACE/worlds/mc1.5
+rsync -avz -e "ssh -i /var/lib/jenkins/.ssh/minecraft.metapod.id_rsa" --exclude lost+found --exclude '*.tar.bz' minecraft@metapod.lon.stwalkerster.net:/mnt/minecraft/ohai/ $WORKSPACE/worlds/ohai
+rsync -avz -e "ssh -i /var/lib/jenkins/.ssh/minecraft.metapod.id_rsa" --exclude lost+found --exclude '*.tar.bz' minecraft@metapod.lon.stwalkerster.net:/mnt/minecraft/os-gb/ $WORKSPACE/worlds/os-gb
 
 # Transfer complete. Initiating render.
 ssh jenkins@metapod.lon.stwalkerster.net 'echo '"'"'tellraw @a {"text":"[Jenkins: Transfer complete. Initiating render.]","color":"gray","italic":true}'"'"' > /mnt/minecraft/minecraft-cowgate.fifo'
