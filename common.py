@@ -16,6 +16,7 @@ def marker_definitions():
         dict(name="Farming: Enclosures", filterFunction=enclosureSignFilter, icon="../enclosure.png", checked="true"),
         dict(name="Huts", filterFunction=hutFilter, icon="../bunker-2-2.png", checked="true"),
         dict(name="Igloos", filterFunction=iglooFilter, icon="../bunker.png", checked="true"),
+        dict(name="Players", filterFunction=playerFilter, checked="true"),
     ]
 
 
@@ -167,3 +168,8 @@ def iglooFilter(poi):
         if "Igloo" in poi['Text1']:
             return "\n".join([poi['Text1'], "", poi['Text2'], poi['Text3'], poi['Text4'],
                               "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
+
+def playerFilter(poi):
+    if poi['id'] == 'Player':
+        poi['icon'] = "http://cravatar.eu/helmavatar/%s" % poi['EntityId']
+        return "Last known location for %s" % poi['EntityId']
