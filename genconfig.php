@@ -100,7 +100,7 @@ def iglooFilter(poi):
         if "Igloo" in poi['Text1']:
             return "\n".join([poi['Text1'], "", poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
 
-def playerIcons(poi):
+def playerFilter(poi):
     if poi['id'] == 'Player':
         return "Last known location for %s" % poi['EntityId']
 
