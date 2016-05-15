@@ -1,3 +1,5 @@
+end_smooth_lighting = [Base(), EdgeLines(), SmoothLighting(strength=0.5)]
+
 def townFilter(poi):
     if poi['id'] == 'Town':
         return poi['name']
@@ -588,12 +590,12 @@ $renders = array(
 	),
 	"nether" => array(
 		'title' => 'Nether',
-		'rendermode' => 'nether',
+		'rendermode' => 'nether_smooth_lighting',
 		'dimension' => 'nether',
 	),
 	"end" => array(
 		'title' => 'The End',
-		'rendermode' => 'smooth_lighting',
+		'rendermode' => 'end_smooth_lighting',
 		'dimension' => 'end',
 	),
 );
