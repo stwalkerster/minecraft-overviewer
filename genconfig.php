@@ -115,7 +115,7 @@ observer = JSObserver(outputdir=outputdir, minrefresh=10)
 
 $worlds = array(
 	"combatupdate" => array(
-		'path' => "worlds/minecraft/combatupdate/world/",
+		'path' => "worlds/combatupdate/world/",
 		'title' => "Combat Update",
 		'renderchecks' => 0,
 		'overworld' => true,
@@ -264,7 +264,7 @@ $worlds = array(
 		), // netherMarkers
 	), // combatupdate
 	"crew" => array(
-		'path' => "worlds/minecraft/crew/world/",
+		'path' => "worlds/crew/world/",
 		'title' => "HW Events Crew",
 		'renderchecks' => 0,
 		'overworld' => true,
@@ -352,7 +352,7 @@ $worlds = array(
 		), // markers
 	), // crew
 	"cowgate" => array(
-		'path' => "worlds/minecraft/cowgate/cowgate/",
+		'path' => "worlds/cowgate/cowgate/",
 		'title' => "Underbelly Cowgate",
 		'renderchecks' => 0,
 		'overworld' => true,
@@ -492,7 +492,7 @@ $worlds = array(
 		), // netherMarkers
 	), // cowgate
 	"creative" => array(
-		'path' => "worlds/minecraft/creative/world/",
+		'path' => "worlds/creative/world/",
 		'title' => "Creative",
 		'renderchecks' => 3,
 		'overworld' => true,
@@ -500,7 +500,7 @@ $worlds = array(
 		'end' => false,
 	),
 	"ohai" => array(
-		'path' => "worlds/minecraft/ohai/world/",
+		'path' => "worlds/ohai/world/",
 		'title' => "Ohai!",
 		'renderchecks' => 3,
 		'overworld' => true,
@@ -508,7 +508,7 @@ $worlds = array(
 		'end' => false,
 	),
 	"mc1.5" => array(
-		'path' => "worlds/minecraft/mc1.5/world/",
+		'path' => "worlds/mc1.5/world/",
 		'title' => "MC 1.5",
 		'renderchecks' => 3,
 		'overworld' => true,
