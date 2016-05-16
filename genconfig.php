@@ -1,5 +1,3 @@
-end_smooth_lighting = [Base(), EdgeLines(), SmoothLighting(strength=0.5)]
-
 def townFilter(poi):
     if poi['id'] == 'Town':
         return poi['name']
@@ -595,7 +593,7 @@ $renders = array(
 	),
 	"end" => array(
 		'title' => 'The End',
-		'rendermode' => 'end_smooth_lighting',
+		'rendermode' => 'normal',
 		'dimension' => 'end',
 	),
 );
