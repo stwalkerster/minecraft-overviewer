@@ -4,12 +4,10 @@ mkdir -p maps
 
 #Initiating new render job
 ssh jenkins@metapod.lon.stwalkerster.net 'echo '"'"'tellraw @a {"text":"[Jenkins: Initiating POI update job]","color":"gray","italic":true}'"'"' > /mnt/minecraft/minecraft-cowgate.fifo'
-ssh jenkins@metapod.lon.stwalkerster.net 'echo '"'"'tellraw @a {"text":"[Jenkins: Initiating POI update job]","color":"gray","italic":true}'"'"' > /mnt/minecraft/minecraft-crew.fifo'
 ssh jenkins@metapod.lon.stwalkerster.net 'echo '"'"'tellraw @a {"text":"[Jenkins: Initiating POI update job]","color":"gray","italic":true}'"'"' > /mnt/minecraft/minecraft-combatupdate.fifo'
 
 # /save-off
 ssh jenkins@metapod.lon.stwalkerster.net 'echo '"'"'save-off'"'"' > /mnt/minecraft/minecraft-cowgate.fifo'
-ssh jenkins@metapod.lon.stwalkerster.net 'echo '"'"'save-off'"'"' > /mnt/minecraft/minecraft-crew.fifo'
 ssh jenkins@metapod.lon.stwalkerster.net 'echo '"'"'save-off'"'"' > /mnt/minecraft/minecraft-combatupdate.fifo'
 
 # Waiting for save to complete.
@@ -17,7 +15,6 @@ ssh jenkins@metapod.lon.stwalkerster.net 'echo '"'"'save-off'"'"' > /mnt/minecra
 
 # /save-all
 ssh jenkins@metapod.lon.stwalkerster.net 'echo '"'"'save-all'"'"' > /mnt/minecraft/minecraft-cowgate.fifo'
-ssh jenkins@metapod.lon.stwalkerster.net 'echo '"'"'save-all'"'"' > /mnt/minecraft/minecraft-crew.fifo'
 ssh jenkins@metapod.lon.stwalkerster.net 'echo '"'"'save-all'"'"' > /mnt/minecraft/minecraft-combatupdate.fifo'
 
 sleep 5
@@ -32,7 +29,6 @@ rsync -avz -e "ssh -i /var/lib/jenkins/.ssh/minecraft.metapod.id_rsa" --exclude 
 
 # /save-on
 ssh jenkins@metapod.lon.stwalkerster.net 'echo '"'"'save-on'"'"' > /mnt/minecraft/minecraft-cowgate.fifo'
-ssh jenkins@metapod.lon.stwalkerster.net 'echo '"'"'save-on'"'"' > /mnt/minecraft/minecraft-crew.fifo'
 ssh jenkins@metapod.lon.stwalkerster.net 'echo '"'"'save-on'"'"' > /mnt/minecraft/minecraft-combatupdate.fifo'
 
 php genconfig.php > overviewerconfig
@@ -41,5 +37,4 @@ overviewer.py  --genpoi --config=overviewerconfig
 
 # Render complete. + URL
 ssh jenkins@metapod.lon.stwalkerster.net 'echo '"'"'tellraw @a {"text":"[Jenkins: POI update complete. ]","color":"gray","italic":true}'"'"' > /mnt/minecraft/minecraft-cowgate.fifo'
-ssh jenkins@metapod.lon.stwalkerster.net 'echo '"'"'tellraw @a {"text":"[Jenkins: POI update complete. ]","color":"gray","italic":true}'"'"' > /mnt/minecraft/minecraft-crew.fifo'
 ssh jenkins@metapod.lon.stwalkerster.net 'echo '"'"'tellraw @a {"text":"[Jenkins: POI update complete. ]","color":"gray","italic":true}'"'"' > /mnt/minecraft/minecraft-combatupdate.fifo'
