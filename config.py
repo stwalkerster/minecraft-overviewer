@@ -29,15 +29,11 @@ worlds[configWorldHumanName] = configWorldPath
 world = configWorldHumanName
 
 
-renders = dict()
-
-
 for directionName, directionCode in d_directions.iteritems():
     renders[configWorldUnixName + "-overworld-day-" + directionName] = {
         "title": "Day - " + directionName,
         "dimension": "overworld",
         "northdirection": directionCode,
-        "renderchecks": "0",
         "rendermode": "smooth_lighting",
         'markers': marker_definitions(),
     }
@@ -45,27 +41,24 @@ for directionName, directionCode in d_directions.iteritems():
         "title": "Night - " + directionName,
         "dimension": "overworld",
         "northdirection": directionCode,
-        "renderchecks": "0",
         "rendermode": "smooth_night",
         'markers': marker_definitions(),
     }
 
     if configRenderNether:
         renders[configWorldUnixName + "-nether-" + directionName] = {
-            "title": "Nether - " + directionName,
+            "title": directionName,
             "dimension": "nether",
             "northdirection": directionCode,
-            "renderchecks": "0",
             "rendermode": "nether_smooth_lighting",
             'markers': nether_marker_definitions(),
         }
 
     if configRenderEnd:
         renders[configWorldUnixName + "-end-" + directionName] = {
-            "title": "The End - " + directionName,
+            "title": directionName,
             "dimension": "end",
             "northdirection": directionCode,
-            "renderchecks": "0",
             "rendermode": "end_smooth_lighting",
             'markers': end_marker_definitions(),
         }
@@ -77,7 +70,6 @@ for directionName, directionCode in d_directions.iteritems():
         "overlay": [configWorldUnixName + "-overworld-day-" + directionName,
                     configWorldUnixName + "-overworld-night-" + directionName],
         "northdirection": directionCode,
-        "renderchecks": "0",
     }
 
     renders[configWorldUnixName + "-overworld-overlay-slime-" + directionName] = {
@@ -87,5 +79,4 @@ for directionName, directionCode in d_directions.iteritems():
         "overlay": [configWorldUnixName + "-overworld-day-" + directionName,
                     configWorldUnixName + "-overworld-night-" + directionName],
         "northdirection": directionCode,
-        "renderchecks": "0",
     }

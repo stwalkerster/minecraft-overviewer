@@ -712,54 +712,10 @@ foreach( $worlds as $worldname => $world )
         markerGeneration($world, "overworld");
 		echo "}\r\n\r\n";
 			
-		echo 'renders["' . $worldname . '-' . $directionname . '-spawn"] = {' . "\r\n";
-		echo "\t" . '"world": "' . $world['title'] . '",' . "\r\n";
-		echo "\t" . '"title": "Monster Spawn",' . "\r\n";
-		echo "\t" . '"rendermode": [ClearBase(), SpawnOverlay()],' . "\r\n";
-		echo "\t" . '"dimension": "overworld",' . "\r\n";
-		echo "\t" . '"overlay": ["' . $worldname . '-overworld-day-' . $directionname . '"],' . "\r\n";
-		echo "\t" . '"northdirection": "' . $direction['code'] . '",' . "\r\n";
-		echo "\t" . '"renderchecks": "' . $world['renderchecks'] . '",' . "\r\n";
-        markerGeneration($world, "overworld");
-		echo "}\r\n\r\n";
-			
 		echo 'renders["' . $worldname . '-' . $directionname . '-slime"] = {' . "\r\n";
 		echo "\t" . '"world": "' . $world['title'] . '",' . "\r\n";
 		echo "\t" . '"title": "Slime Spawn",' . "\r\n";
 		echo "\t" . '"rendermode": [ClearBase(), SlimeOverlay()],' . "\r\n";
-		echo "\t" . '"dimension": "overworld",' . "\r\n";
-		echo "\t" . '"overlay": ["' . $worldname . '-overworld-day-' . $directionname . '"],' . "\r\n";
-		echo "\t" . '"northdirection": "' . $direction['code'] . '",' . "\r\n";
-		echo "\t" . '"renderchecks": "' . $world['renderchecks'] . '",' . "\r\n";
-        markerGeneration($world, "overworld");
-		echo "}\r\n\r\n";
-			
-		echo 'renders["' . $worldname . '-' . $directionname . '-horse"] = {' . "\r\n";
-		echo "\t" . '"world": "' . $world['title'] . '",' . "\r\n";
-		echo "\t" . '"title": "Horse Spawn",' . "\r\n";
-		echo "\t" . '"rendermode": [ClearBase(), BiomeOverlay(biomes=[("Plains", (0, 255, 0))])],' . "\r\n";
-		echo "\t" . '"dimension": "overworld",' . "\r\n";
-		echo "\t" . '"overlay": ["' . $worldname . '-overworld-day-' . $directionname . '"],' . "\r\n";
-		echo "\t" . '"northdirection": "' . $direction['code'] . '",' . "\r\n";
-		echo "\t" . '"renderchecks": "' . $world['renderchecks'] . '",' . "\r\n";
-        markerGeneration($world, "overworld");
-		echo "}\r\n\r\n";
-			
-		echo 'renders["' . $worldname . '-' . $directionname . '-ocelot"] = {' . "\r\n";
-		echo "\t" . '"world": "' . $world['title'] . '",' . "\r\n";
-		echo "\t" . '"title": "Ocelot Spawn",' . "\r\n";
-		echo "\t" . '"rendermode": [ClearBase(), BiomeOverlay(biomes=[("Jungle", (0, 255, 0))])],' . "\r\n";
-		echo "\t" . '"dimension": "overworld",' . "\r\n";
-		echo "\t" . '"overlay": ["' . $worldname . '-overworld-day-' . $directionname . '"],' . "\r\n";
-		echo "\t" . '"northdirection": "' . $direction['code'] . '",' . "\r\n";
-		echo "\t" . '"renderchecks": "' . $world['renderchecks'] . '",' . "\r\n";
-        markerGeneration($world, "overworld");
-		echo "}\r\n\r\n";
-			
-		echo 'renders["' . $worldname . '-' . $directionname . '-wolf"] = {' . "\r\n";
-		echo "\t" . '"world": "' . $world['title'] . '",' . "\r\n";
-		echo "\t" . '"title": "Wolf Spawn",' . "\r\n";
-		echo "\t" . '"rendermode": [ClearBase(), BiomeOverlay(biomes=[("Forest", (0, 255, 0)), ("Taiga", (0, 255, 0))])],' . "\r\n";
 		echo "\t" . '"dimension": "overworld",' . "\r\n";
 		echo "\t" . '"overlay": ["' . $worldname . '-overworld-day-' . $directionname . '"],' . "\r\n";
 		echo "\t" . '"northdirection": "' . $direction['code'] . '",' . "\r\n";
