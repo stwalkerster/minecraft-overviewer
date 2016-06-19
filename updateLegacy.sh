@@ -21,10 +21,35 @@ rsync -avz -e "ssh -i /var/lib/jenkins/.ssh/minecraft.metapod.id_rsa" --exclude 
 rsync -avz -e "ssh -i /var/lib/jenkins/.ssh/minecraft.metapod.id_rsa" --exclude lost+found --exclude '*.tar.bz' minecraft@metapod.lon.stwalkerster.net:/mnt/minecraft/ohai/ $WORKSPACE/worlds/ohai
 rsync -avz -e "ssh -i /var/lib/jenkins/.ssh/minecraft.metapod.id_rsa" --exclude lost+found --exclude '*.tar.bz' minecraft@metapod.lon.stwalkerster.net:/mnt/minecraft/os-gb/ $WORKSPACE/worlds/os-gb
 
-exit
+function renderOne {
+    mv $BUILD_WORLD_UNIX_NAME server
+    echo "Building world '" $BUILD_WORLD_NAME "' with unix name '" $BUILD_WORLD_UNIX_NAME "'"
+    mkdir -p maps/$BUILD_WORLD_UNIX_NAME
+    PYTHONPATH=`pwd` overviewer.py --config=config.py --genpoi
+    PYTHONPATH=`pwd` overviewer.py --config=config.py
+    mv server $BUILD_WORLD_UNIX_NAME
+}
 
-php genconfig.php > overviewerconfig
+# beta 1.8
+export BUILD_WORLD_UNIX_NAME='beta1.8'
+export BUILD_WORLD_NAME='Beta 1.8'
+renderOne
 
-overviewer.py --config=overviewerconfig --genpoi
+# freebuild
+mv freebuild/world3 freebuild/world
+export BUILD_WORLD_UNIX_NAME='freebuild'
+export BUILD_WORLD_NAME='Freebuild'
+renderOne
 
-overviewer.py --config=overviewerconfig
+# mc1
+mkdir mc1
+mv mc1-world mc1/world
+export BUILD_WORLD_UNIX_NAME='mc1'
+export BUILD_WORLD_NAME='MC 1'
+renderOne
+
+# survival
+export BUILD_WORLD_UNIX_NAME='survival'
+export BUILD_WORLD_NAME='Survival'
+renderOne
+
