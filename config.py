@@ -16,7 +16,7 @@ configRenderNether = os.path.isdir(configWorldPath + "/DIM-1/region")
 configRenderEnd = os.path.isdir(configWorldPath + "/DIM1/region")
 
 # Start of overviewer config
-outputdir = "maps/" + configWorldUnixName
+outputdir = "/mnt/maps/" + configWorldUnixName
 customwebassets = "assets"
 processes = 2
 
