@@ -4,11 +4,17 @@ function serverCommand {
     ssh -p 8022 -o StrictHostKeyChecking=no jenkins@localhost 'echo '"'"$1"'"' > /mnt/minecraft/minecraft-'$BUILD_WORLD_UNIX_NAME'.fifo'
 }
 
-echo "deb http://overviewer.org/debian ./" | sudo tee /etc/apt/sources.list.d/overviewer.list
-wget -O - http://overviewer.org/debian/overviewer.gpg.asc | sudo apt-key add -
+# check if overviewer is installed?
+if ! dpkg -s minecraft-overviewer 2>&1 >/dev/null; then
+    echo "deb http://overviewer.org/debian ./" | sudo tee /etc/apt/sources.list.d/overviewer.list
+    wget -O - http://overviewer.org/debian/overviewer.gpg.asc | sudo apt-key add -
 
-sudo apt-get update
-sudo apt-get install minecraft-overviewer -qy
+    sudo apt-get update
+    sudo apt-get install minecraft-overviewer -qy
+
+    # install textures
+    wget https://s3.amazonaws.com/Minecraft.Download/versions/1.10/1.10.jar -P ~/.minecraft/versions/1.10/
+fi
 
 # open SSH tunnel to metapod
 ssh -Nf -L 8022:metapod:22 -o ExitOnForwardFailure=yes -o ControlPath=~/.ssh/fearow.lon.stwalkerster.net.ctl jenkins@fearow.lon.stwalkerster.net
