@@ -2,7 +2,7 @@ worlds["world"] = "worlds/combatupdate"
 outputdir = "maps/combatupdate"
 
 stw_gen_nether = True
-stw_gen_end = True
+stw_gen_end = False
 
 stw_markers = [
 		dict(name="Witch Huts", filterFunction=witchHutSignFilter, icon="../icons/marker_witch.png"),
