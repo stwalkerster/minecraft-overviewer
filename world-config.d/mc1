@@ -1,0 +1,14 @@
+worlds["world"] = "worlds/mc1"
+outputdir = "maps/mc1"
+
+stw_gen_nether = True
+stw_gen_end = True
+
+stw_markers = [
+		dict(name="Players", filterFunction=playerFilter, checked="true"),
+	]
+
+stw_nether_markers = []
+
+stw_end_markers = []
+

@@ -1,8 +1,8 @@
-worlds["world"] = "worlds/combatupdate"
-outputdir = "maps/combatupdate"
+worlds["world"] = "worlds/cowgate"
+outputdir = "maps/cowgate"
 
 stw_gen_nether = True
-stw_gen_end = False
+stw_gen_end = True
 
 stw_markers = [
 		dict(name="Witch Huts", filterFunction=witchHutSignFilter, icon="../icons/marker_witch.png"),
@@ -21,6 +21,7 @@ stw_markers = [
 		dict(name="Huts", filterFunction=hutFilter, icon="../icons/bunker-2-2.png", checked="true"),
 		dict(name="Igloos", filterFunction=iglooFilter, icon="../icons/bunker.png", checked="true"),
 		dict(name="Players", filterFunction=playerFilter, checked="true"),
+		dict(name="Underbelly", filterFunction=underbellyFilter, checked="true", icon="../icons/marker_ub.png"),
 	]
 
 stw_nether_markers = [
