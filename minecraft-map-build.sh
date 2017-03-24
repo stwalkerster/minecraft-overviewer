@@ -97,7 +97,7 @@ fi
 for wc in `ls world-config.d`; do
 	mkdir -p maps/$wc
 	rm -f build-parts.d/50-worldconfig.py
-	cp ../world-config.d/$wc build-parts.d/50-worldconfig.py
+	cp world-config.d/$wc build-parts.d/50-worldconfig.py
 	cat build-parts.d/* > overviewerconfig
 
 	overviewer.py --config=overviewerconfig --genpoi
