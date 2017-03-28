@@ -1,8 +1,8 @@
 worlds["world"] = "worlds/creative"
 outputdir = "maps/creative"
 
-stw_gen_nether = True
-stw_gen_end = True
+stw_gen_nether = False
+stw_gen_end = False
 
 stw_markers = [
 		dict(name="Players", filterFunction=playerFilter, checked="true"),

@@ -103,5 +103,7 @@ for wc in `ls world-config.d`; do
 	overviewer.py --config=overviewerconfig --genpoi
 	overviewer.py --config=overviewerconfig
 	
+    sed -i 's/\?sensor=false/&\&key=AIzaSyBAfZmmGr45hjORB8qUBBlZ9t_ds4sUllg/g' maps/$wc/index.html
+    
 	rm -f build-parts.d/50-worldconfig.py
 done;
