@@ -1,24 +1,25 @@
-#!/bin/bash -ex
-
-echo "Building world '" $BUILD_WORLD_NAME "' with unix name '" $BUILD_WORLD_UNIX_NAME "'"
-
-mkdir -p maps/$BUILD_WORLD_UNIX_NAME
+#!/bin/bash -xe
 
 function serverCommand {
-    ssh jenkins@metapod.lon.stwalkerster.net 'echo '"'"$1"'"' > /mnt/minecraft/minecraft-'$BUILD_WORLD_UNIX_NAME'.fifo'
+    echo "$1" > /opt/minecraft/tantallon/stdin.fifo
 }
 
-serverCommand 'tellraw @a {"text":"[Jenkins: Initiating new POI update job]","color":"gray","italic":true}'
+serverCommand 'tellraw @a {"text":"[ninetales: Initiating POI update job]","color":"gray","italic":true}'
 serverCommand 'save-off'
-serverCommand 'save-all force'
-serverCommand 'tellraw @a {"text":"[Jenkins: Waiting for save to complete, then transferring world]","color":"gray","italic":true}'
+serverCommand 'save-all flush'
 
 sleep 5
 
-rsync -avz -e "ssh -i /var/lib/jenkins/.ssh/minecraft.metapod.id_rsa" --exclude lost+found --exclude '*.tar.bz' minecraft@metapod.lon.stwalkerster.net:/mnt/minecraft/$BUILD_WORLD_UNIX_NAME/ $WORKSPACE/server
+rsync -avz /opt/minecraft/ /home/minecraft/minecraft-overviewer/worlds/
 
 serverCommand 'save-on'
 
-PYTHONPATH=`pwd` overviewer.py --config=config.py --genpoi
+php genconfig.php > overviewerconfig
 
-serverCommand 'tellraw @a {"text":"[Jenkins: POI update complete. ]","color":"gray","italic":true}'
+PYTHONPATH=`pwd`
+
+nice --adjustment=10 /home/minecraft/overviewer/overviewer.py --config=overviewerconfig --genpoi
+# nice --adjustment=10 /home/minecraft/overviewer/overviewer.py --config=overviewerconfig -p 4
+
+serverCommand 'tellraw @a {"text":"[ninetales: Update complete.]","color":"gray","italic":true}'
+serverCommand 'tellraw @a {"text":"          https://scimonshouse.net/minecraft/","italic":false,"color":"yellow","clickEvent":{"action":"open_url","value":"https://scimonshouse.net/minecraft/"}}'

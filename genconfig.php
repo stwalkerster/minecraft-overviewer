@@ -11,92 +11,132 @@ def horseFilter(poi):
         return poi['name']
 
 def underbellyFilter(poi):
-    if poi['id'] == 'Sign':
+    if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
         if "Underbelly" in poi['Text1']:
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
-            
+
 def spawnerFilter(poi):
-    if poi['id'] == 'Sign':
-        if "[Spawner]" == poi['Text1']:
+    if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
+        if "Spawner" in poi['Text1']:
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
 
 def witchHutSignFilter(poi):
-    if poi['id'] == 'Sign':
+    if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
         if "Witch Hut" in poi['Text1']:
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
 
 def templeSignFilter(poi):
-    if poi['id'] == 'Sign':
+    if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
         if "Temple" in poi['Text1']:
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
 
 def houseSignFilter(poi):
-    if poi['id'] == 'Sign':
+    if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
         if "House" in poi['Text1']:
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
 
 def townSignFilter(poi):
-    if poi['id'] == 'Sign':
+    if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
         if "Town" in poi['Text1']:
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
 
 def portalSignFilter(poi):
-    if poi['id'] == 'Sign':
+    if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
         if "Portal" in poi['Text1']:
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
 
 def pointOfInterestSignFilter(poi):
-    if poi['id'] == 'Sign':
+    if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
         if "POI" in poi['Text1']:
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
-            
+
 def trainSignFilter(poi):
-    if poi['id'] == 'Sign':
+    if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
         if "Station" in poi['Text1']:
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
-            
+
 def dockSignFilter(poi):
-    if poi['id'] == 'Sign':
+    if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
         if "Dock" in poi['Text1']:
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
-			
+
 def canalSignFilter(poi):
-    if poi['id'] == 'Sign':
+    if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
         if "Canal" in poi['Text1']:
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
 
 def netherFastTransportSignFilter(poi):
-    if poi['id'] == 'Sign':
+    if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
         if "NFT" in poi['Text1']:
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
 
 def mineSignFilter(poi):
-    if poi['id'] == 'Sign':
-        if "Mine" in poi['Text1']:
+    if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
+        if "[Mine]" in poi['Text1']:
+            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
+
+def mineshaftSignFilter(poi):
+    if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
+        if "Mineshaft" in poi['Text1']:
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
 
 def enclosureSignFilter(poi):
-    if poi['id'] == 'Sign':
+    if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
         if "Enclosure" in poi['Text1']:
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
 
 def fieldSignFilter(poi):
-    if poi['id'] == 'Sign':
+    if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
         if "Field" in poi['Text1']:
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
 
 def fortressSignFilter(poi):
-    if poi['id'] == 'Sign':
+    if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
         if "Fortress" in poi['Text1']:
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
 
 def hutFilter(poi):
-    if poi['id'] == 'Sign':
-        if "[Hut]" in poi['Text1']:
+    if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
+        if "Hut" in poi['Text1']:
+            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
+
+def strongholdFilter(poi):
+    if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
+        if "Stronghold" in poi['Text1']:
+            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
+
+def shipwreckFilter(poi):
+    if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
+        if "Shipwreck" in poi['Text1']:
+            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
+
+def mansionFilter(poi):
+    if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
+        if "Mansion" in poi['Text1']:
+            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
+
+def monumentFilter(poi):
+    if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
+        if "Monument" in poi['Text1']:
+            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
+
+def ruinsFilter(poi):
+    if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
+        if "Ruins" in poi['Text1']:
+            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
+
+def minecampFilter(poi):
+    if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
+        if "Minecamp" in poi['Text1']:
+            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
+
+def arboretaFilter(poi):
+    if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
+        if "Arboretum" in poi['Text1']:
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
 
 def iglooFilter(poi):
-    if poi['id'] == 'Sign':
+    if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
         if "Igloo" in poi['Text1']:
             return "\n".join([poi['Text1'], "", poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
 
@@ -108,16 +148,16 @@ def playerFilter(poi):
 outputdir = "maps"
 customwebassets = "assets"
 processes = 2
-			
-from observer import JSObserver
-observer = JSObserver(outputdir=outputdir, minrefresh=10)
+
+from observer import JSObserver,ServerAnnounceObserver,MultiplexingObserver
+observer = MultiplexingObserver(JSObserver(outputdir=outputdir, minrefresh=10), ServerAnnounceObserver("/opt/minecraft/tantallon/stdin.fifo", 1))
 
 <?php
 
 $worlds = array(
-	"combatupdate" => array(
-		'path' => "worlds/combatupdate/world/",
-		'title' => "Combat Update",
+	"tantallon" => array(
+		'path' => "worlds/tantallon/world",
+		'title' => "Tantallon map",
 		'renderchecks' => 0,
 		'overworld' => true,
 		'nether' => true,
@@ -127,89 +167,131 @@ $worlds = array(
 			array(
 				"name"           => "Witch Huts",
 				"filterFunction" => "witchHutSignFilter",
-				"icon"           => "../icons/marker_witch.png",
+				"icon"           => "custom-icons/marker_witch.png",
 			),
 			array(
 				"name"           => "Temples",
 				"filterFunction" => "templeSignFilter",
-				"icon"           => "../icons/temple-2.png",
+				"icon"           => "custom-icons/temple-2.png",
 			),
 			array(
 				"name"           => "Houses",
 				"filterFunction" => "houseSignFilter",
-				"icon"           => "../icons/marker_house.png",
+				"icon"           => "custom-icons/marker_house.png",
 				"checked"        => "true",
 			),
 			array(
 				"name"           => "Towns",
 				"filterFunction" => "townSignFilter",
-				"icon"           => "../icons/marker_town.png",
+				"icon"           => "custom-icons/marker_town.png",
 				"checked"        => "true",
 			),
 			array(
 				"name"           => "Portals",
 				"filterFunction" => "portalSignFilter",
-				"icon"           => "../icons/marker_portal.png",
+				"icon"           => "custom-icons/marker_portal.png",
 				"checked"        => "true",
 			),
 			array(
 				"name"           => "Points of Interest",
 				"filterFunction" => "pointOfInterestSignFilter",
-				"icon"           => "../icons/treasure-mark.png",
+				"icon"           => "custom-icons/treasure-mark.png",
 				"checked"        => "true",
 			),
 			array(
 				"name"           => "Minecart Station",
 				"filterFunction" => "trainSignFilter",
-				"icon"           => "../icons/marker-train.png",
+				"icon"           => "custom-icons/marker-train.png",
 				"checked"        => "true",
 			),
 			array(
 				"name"           => "Dock",
 				"filterFunction" => "dockSignFilter",
-				"icon"           => "../icons/harbor.png",
+				"icon"           => "custom-icons/harbor.png",
 				"checked"        => "true",
 			),
 			array(
 				"name"           => "Canal",
 				"filterFunction" => "canalSignFilter",
-				"icon"           => "../icons/taxiboat.png",
+				"icon"           => "custom-icons/taxiboat.png",
 				"checked"        => "true",
 			),
 			array(
 				"name"           => "Spawners",
 				"filterFunction" => "spawnerFilter",
-				"icon"           => "../icons/zombie-outbreak1.png",
+				"icon"           => "custom-icons/zombie-outbreak1.png",
 				"checked"        => "false",
 			),
 			array(
 				"name"           => "Mines",
 				"filterFunction" => "mineSignFilter",
-				"icon"           => "../icons/mine.png",
+				"icon"           => "custom-icons/construction.png",
+				"checked"        => "true",
+			),
+			array(
+				"name"           => "Abandoned Mineshafts",
+				"filterFunction" => "mineshaftSignFilter",
+				"icon"           => "custom-icons/mine.png",
+				"checked"        => "true",
+			),
+			array(
+				"name"           => "Mining camps",
+				"filterFunction" => "minecampFilter",
+				"icon"           => "custom-icons/tents.png",
 				"checked"        => "true",
 			),
 			array(
 				"name"           => "Farming: Fields",
 				"filterFunction" => "fieldSignFilter",
-				"icon"           => "../icons/field.png",
+				"icon"           => "custom-icons/field.png",
 				"checked"        => "true",
 			),
 			array(
 				"name"           => "Farming: Enclosures",
 				"filterFunction" => "enclosureSignFilter",
-				"icon"           => "../icons/enclosure.png",
+				"icon"           => "custom-icons/enclosure.png",
 				"checked"        => "true",
 			),
 			array(
 				"name"           => "Huts",
 				"filterFunction" => "hutFilter",
-				"icon"           => "../icons/bunker-2-2.png",
+				"icon"           => "custom-icons/bunker-2-2.png",
 				"checked"        => "true",
 			),
 			array(
-				"name"           => "Igloos",
-				"filterFunction" => "iglooFilter",
-				"icon"           => "../icons/bunker.png",
+				"name"           => "Strongholds",
+				"filterFunction" => "strongholdFilter",
+				"icon"           => "custom-icons/citywalls.png",
+				"checked"        => "true",
+			),
+			array(
+				"name"           => "Shipwrecks",
+				"filterFunction" => "shipwreckFilter",
+				"icon"           => "custom-icons/shipwreck.png",
+				"checked"        => "true",
+			),
+			array(
+				"name"           => "Mansions",
+				"filterFunction" => "mansionFilter",
+				"icon"           => "custom-icons/hostel_0star.png",
+				"checked"        => "true",
+			),
+			array(
+				"name"           => "Ocean Monuments",
+				"filterFunction" => "monumentFilter",
+				"icon"           => "custom-icons/arch.png",
+				"checked"        => "true",
+			),
+			array(
+				"name"           => "Ruins",
+				"filterFunction" => "ruinsFilter",
+				"icon"           => "custom-icons/ruins-2.png",
+				"checked"        => "true",
+			),
+			array(
+				"name"           => "Arboreta",
+				"filterFunction" => "arboretaFilter",
+				"icon"           => "custom-icons/forest2.png",
 				"checked"        => "true",
 			),
 			array(
@@ -263,211 +345,6 @@ $worlds = array(
 			),
 		), // netherMarkers
 	), // combatupdate
-	"cowgate" => array(
-		'path' => "worlds/cowgate/cowgate/",
-		'title' => "Underbelly Cowgate",
-		'renderchecks' => 0,
-		'overworld' => true,
-		'nether' => true,
-		'end' => false,
-		'manualpois' => array(
-			/*array(
-				'id'   => 'Town',
-				'x'    => 815,
-				'y'    => 70,
-				'z'    => -891,
-				'name' => 'Plains Town 2'
-			),*/
-		), // manualpoi
-		"markers" => array(
-			array(
-				"name"           => "Witch Huts",
-				"filterFunction" => "witchHutSignFilter",
-				"checked"        => "true",
-				"icon"           => "../icons/marker_witch.png",
-			),
-			array(
-				"name"           => "Temples",
-				"filterFunction" => "templeSignFilter",
-				"icon"           => "../icons/temple-2.png",
-				"checked"        => "true",
-			),
-			array(
-				"name"           => "Underbelly",
-				"filterFunction" => "underbellyFilter",
-				"icon"           => "../icons/marker_ub.png",
-			),
-			array(
-				"name"           => "Houses",
-				"filterFunction" => "houseSignFilter",
-				"icon"           => "../icons/marker_house.png",
-				"checked"        => "true",
-			),
-			array(
-				"name"           => "Towns",
-				"filterFunction" => "townSignFilter",
-				"icon"           => "../icons/marker_town.png",
-				"checked"        => "true",
-			),
-			array(
-				"name"           => "Portals",
-				"filterFunction" => "portalSignFilter",
-				"icon"           => "../icons/marker_portal.png",
-				"checked"        => "true",
-			),
-			array(
-				"name"           => "Points of Interest",
-				"filterFunction" => "pointOfInterestSignFilter",
-				"icon"           => "../icons/treasure-mark.png",
-				"checked"        => "true",
-			),
-			array(
-				"name"           => "Minecart Station",
-				"filterFunction" => "trainSignFilter",
-				"icon"           => "../icons/marker-train.png",
-				"checked"        => "true",
-			),
-			array(
-				"name"           => "Dock",
-				"filterFunction" => "dockSignFilter",
-				"icon"           => "../icons/harbor.png",
-				"checked"        => "true",
-			),
-			array(
-				"name"           => "Canal",
-				"filterFunction" => "canalSignFilter",
-				"icon"           => "../icons/taxiboat.png",
-				"checked"        => "true",
-			),
-			array(
-				"name"           => "Spawners",
-				"filterFunction" => "spawnerFilter",
-				"icon"           => "../icons/zombie-outbreak1.png",
-				"checked"        => "false",
-			),
-			array(
-				"name"           => "Mines",
-				"filterFunction" => "mineSignFilter",
-				"icon"           => "../icons/mine.png",
-				"checked"        => "true",
-			),
-			array(
-				"name"           => "Farming: Fields",
-				"filterFunction" => "fieldSignFilter",
-				"icon"           => "../icons/field.png",
-				"checked"        => "true",
-			),
-			array(
-				"name"           => "Farming: Enclosures",
-				"filterFunction" => "enclosureSignFilter",
-				"icon"           => "../icons/enclosure.png",
-				"checked"        => "true",
-			),
-			array(
-				"name"           => "Huts",
-				"filterFunction" => "hutFilter",
-				"icon"           => "../icons/bunker-2-2.png",
-				"checked"        => "true",
-			),
-			array(
-				"name"           => "Players",
-				"filterFunction" => "playerFilter",
-				"checked"        => "true",
-			),
-        ), // markers
-		"netherMarkers" => array(
-			array(
-				"name"           => "Nether Fast Transport",
-				"filterFunction" => "netherFastTransportSignFilter",
-				"icon"           => "../icons/underground.png",
-				"checked"        => "true",
-			),
-			array(
-				"name"           => "Points of Interest",
-				"filterFunction" => "pointOfInterestSignFilter",
-				"icon"           => "../icons/treasure-mark.png",
-				"checked"        => "true",
-			),
-			array(
-				"name"           => "Houses",
-				"filterFunction" => "houseSignFilter",
-				"icon"           => "../icons/marker_house.png",
-				"checked"        => "true",
-			),
-			array(
-				"name"           => "Spawners",
-				"filterFunction" => "spawnerFilter",
-				"icon"           => "../icons/zombie-outbreak1.png",
-				"checked"        => "false",
-			),
-			array(
-				"name"           => "Huts",
-				"filterFunction" => "hutFilter",
-				"icon"           => "../icons/bunker-2-2.png",
-				"checked"        => "true",
-			),
-		), // netherMarkers
-	), // cowgate
-	"creative" => array(
-		'path' => "worlds/creative/world/",
-		'title' => "Creative",
-		'renderchecks' => 3,
-		'overworld' => true,
-		'nether' => false,
-		'end' => false,
-		'markers' => array(
-			array(
-				"name"           => "Players",
-				"filterFunction" => "playerFilter",
-				"checked"        => "true",
-			),
-		),
-	),
-	"ohai" => array(
-		'path' => "worlds/ohai/world/",
-		'title' => "Ohai!",
-		'renderchecks' => 3,
-		'overworld' => true,
-		'nether' => false,
-		'end' => false,
-		'markers' => array(
-			array(
-				"name"           => "Players",
-				"filterFunction" => "playerFilter",
-				"checked"        => "true",
-			),
-		),
-	),
-	"mc1.5" => array(
-		'path' => "worlds/mc1.5/world/",
-		'title' => "MC 1.5",
-		'renderchecks' => 3,
-		'overworld' => true,
-		'nether' => true,
-		'end' => false,
-		'markers' => array(
-			array(
-				"name"           => "Players",
-				"filterFunction" => "playerFilter",
-				"checked"        => "true",
-			),
-		),
-	),
-	"mc1" => array(
-		'path' => "mc1-world/",
-		'title' => "MC 1",
-		'renderchecks' => 3,
-		'overworld' => true,
-		'nether' => true,
-		'end' => true,
-		'markers' => array(
-			array(
-				"name"           => "Players",
-				"filterFunction" => "playerFilter",
-				"checked"        => "true",
-			),
-		),
-	),
 ); // worlds
 
 if(getenv('forcerender') == 'true')
@@ -496,6 +373,11 @@ $renders = array(
 	"nether" => array(
 		'title' => 'Nether',
 		'rendermode' => 'nether_smooth_lighting',
+		'dimension' => 'nether',
+	),
+	"nether-unlit" => array(
+		'title' => 'Nether (no lighting)',
+		'rendermode' => 'nether',
 		'dimension' => 'nether',
 	),
 	"end" => array(
@@ -566,7 +448,7 @@ function markerGeneration($world, $dimension)
         }
         echo "\t],\r\n";
     }
-    
+
     if( $dimension == "nether" && isset( $world['netherMarkers' ] ) && is_array( $world[ 'netherMarkers' ] ) )
     {
         echo "\t'markers' : [\r\n";
@@ -607,10 +489,10 @@ foreach( $worlds as $worldname => $world )
 				echo "}\r\n\r\n";
 			}
 		}
-	
+
 		echo 'renders["' . $worldname . '-' . $directionname . '-biome"] = {' . "\r\n";
 		echo "\t" . '"world": "' . $world['title'] . '",' . "\r\n";
-		echo "\t" . '"title": "Biomes",' . "\r\n";
+		echo "\t" . '"title": "Biomes (' . $directionname . ')",' . "\r\n";
 		echo "\t" . '"rendermode": [ClearBase(), BiomeOverlay()],' . "\r\n";
 		echo "\t" . '"dimension": "overworld",' . "\r\n";
 		echo "\t" . '"overlay": ["' . $worldname . '-overworld-day-' . $directionname . '"],' . "\r\n";
@@ -618,7 +500,7 @@ foreach( $worlds as $worldname => $world )
 		echo "\t" . '"renderchecks": "' . $world['renderchecks'] . '",' . "\r\n";
         markerGeneration($world, "overworld");
 		echo "}\r\n\r\n";
-			
+
 		echo 'renders["' . $worldname . '-' . $directionname . '-slime"] = {' . "\r\n";
 		echo "\t" . '"world": "' . $world['title'] . '",' . "\r\n";
 		echo "\t" . '"title": "Slime Spawn",' . "\r\n";
