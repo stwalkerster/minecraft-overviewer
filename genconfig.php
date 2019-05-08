@@ -150,7 +150,7 @@ customwebassets = "assets"
 processes = 2
 
 from observer import JSObserver,ServerAnnounceObserver,MultiplexingObserver
-observer = MultiplexingObserver(JSObserver(outputdir=outputdir, minrefresh=10), ServerAnnounceObserver("/opt/minecraft/tantallon/stdin.fifo", 1))
+observer = MultiplexingObserver(JSObserver(outputdir=outputdir, minrefresh=10))
 
 <?php
 
