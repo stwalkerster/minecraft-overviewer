@@ -1,6 +1,7 @@
 Thumbs.db
 output
 maps/
-overviewerconfig
+maps-pillage/
+overviewerconfig-*
 .idea/*
 worlds/
