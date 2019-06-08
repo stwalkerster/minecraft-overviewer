@@ -173,11 +173,13 @@ $worlds = array(
 				"name"           => "Witch Huts",
 				"filterFunction" => "witchHutSignFilter",
 				"icon"           => "custom-icons/marker_witch.png",
+				"checked"        => "true",
 			),
 			array(
 				"name"           => "Temples",
 				"filterFunction" => "templeSignFilter",
 				"icon"           => "custom-icons/marker_temple.png",
+				"checked"        => "true",
 			),
 			array(
 				"name"           => "Houses",
