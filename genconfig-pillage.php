@@ -169,7 +169,7 @@ $worlds = array(
 			array(
 				"name"           => "Temples",
 				"filterFunction" => "templeSignFilter",
-				"icon"           => "custom-icons/temple-2.png",
+				"icon"           => "custom-icons/marker_temple.png",
 			),
 			array(
 				"name"           => "Houses",
@@ -192,7 +192,7 @@ $worlds = array(
 			array(
 				"name"           => "Points of Interest",
 				"filterFunction" => "pointOfInterestSignFilter",
-				"icon"           => "custom-icons/treasure-mark.png",
+				"icon"           => "custom-icons/marker_poi.png",
 				"checked"        => "true",
 			),
 			array(
@@ -204,37 +204,37 @@ $worlds = array(
 			array(
 				"name"           => "Dock",
 				"filterFunction" => "dockSignFilter",
-				"icon"           => "custom-icons/harbor.png",
+				"icon"           => "custom-icons/marker_dock.png",
 				"checked"        => "true",
 			),
 			array(
 				"name"           => "Canal",
 				"filterFunction" => "canalSignFilter",
-				"icon"           => "custom-icons/taxiboat.png",
+				"icon"           => "custom-icons/marker_canal.png",
 				"checked"        => "true",
 			),
 			array(
 				"name"           => "Spawners",
 				"filterFunction" => "spawnerFilter",
-				"icon"           => "custom-icons/zombie-outbreak1.png",
+				"icon"           => "custom-icons/marker_spawner.png",
 				"checked"        => "false",
 			),
 			array(
 				"name"           => "Mines",
 				"filterFunction" => "mineSignFilter",
-				"icon"           => "custom-icons/construction.png",
+				"icon"           => "custom-icons/marker_mines.png",
 				"checked"        => "true",
 			),
 			array(
 				"name"           => "Abandoned Mineshafts",
 				"filterFunction" => "mineshaftSignFilter",
-				"icon"           => "custom-icons/mine.png",
+				"icon"           => "custom-icons/marker_mineshaft.png",
 				"checked"        => "true",
 			),
 			array(
 				"name"           => "Mining camps",
 				"filterFunction" => "minecampFilter",
-				"icon"           => "custom-icons/tents.png",
+				"icon"           => "custom-icons/marker_miningcamp.png",
 				"checked"        => "true",
 			),
 			array(
@@ -252,13 +252,13 @@ $worlds = array(
 			array(
 				"name"           => "Huts",
 				"filterFunction" => "hutFilter",
-				"icon"           => "custom-icons/bunker-2-2.png",
+				"icon"           => "custom-icons/marker_hut.png",
 				"checked"        => "true",
 			),
 			array(
 				"name"           => "Strongholds",
 				"filterFunction" => "strongholdFilter",
-				"icon"           => "custom-icons/citywalls.png",
+				"icon"           => "custom-icons/marker_stronghold.png",
 				"checked"        => "true",
 			),
 			array(
@@ -270,25 +270,25 @@ $worlds = array(
 			array(
 				"name"           => "Mansions",
 				"filterFunction" => "mansionFilter",
-				"icon"           => "custom-icons/hostel_0star.png",
+				"icon"           => "custom-icons/marker_mansion.png",
 				"checked"        => "true",
 			),
 			array(
 				"name"           => "Ocean Monuments",
 				"filterFunction" => "monumentFilter",
-				"icon"           => "custom-icons/arch.png",
+				"icon"           => "custom-icons/marker_monument.png",
 				"checked"        => "true",
 			),
 			array(
 				"name"           => "Ruins",
 				"filterFunction" => "ruinsFilter",
-				"icon"           => "custom-icons/ruins-2.png",
+				"icon"           => "custom-icons/marker_ruins.png",
 				"checked"        => "true",
 			),
 			array(
 				"name"           => "Arboreta",
 				"filterFunction" => "arboretaFilter",
-				"icon"           => "custom-icons/forest2.png",
+				"icon"           => "custom-icons/marker_arboreta.png",
 				"checked"        => "true",
 			),
 			array(
@@ -307,7 +307,7 @@ $worlds = array(
 			array(
 				"name"           => "Points of Interest",
 				"filterFunction" => "pointOfInterestSignFilter",
-				"icon"           => "../icons/treasure-mark.png",
+				"icon"           => "../icons/marker_poi.png",
 				"checked"        => "true",
 			),
 			array(
@@ -325,19 +325,19 @@ $worlds = array(
 			array(
 				"name"           => "Nether Fortresses",
 				"filterFunction" => "fortressSignFilter",
-				"icon"           => "../icons/castle-2.png",
+				"icon"           => "../icons/marker_fortress.png",
 				"checked"        => "true",
 			),
 			array(
 				"name"           => "Spawners",
 				"filterFunction" => "spawnerFilter",
-				"icon"           => "../icons/zombie-outbreak1.png",
+				"icon"           => "../icons/marker_spawner.png",
 				"checked"        => "false",
 			),
 			array(
 				"name"           => "Huts",
 				"filterFunction" => "hutFilter",
-				"icon"           => "../icons/bunker-2-2.png",
+				"icon"           => "../icons/marker_hut.png",
 				"checked"        => "true",
 			),
 		), // netherMarkers
