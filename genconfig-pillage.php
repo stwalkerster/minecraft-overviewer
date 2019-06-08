@@ -152,13 +152,23 @@ $worlds = array(
 		'end' => false,
 		'manualpois' => array(
 [ 'x'=>1253, 'y'=>64 , 'z'=>1377, 'Text1'=>'[POI]', 'Text2'=>'Witch hut', 'Text3'=>'', 'Text4'=>'', 'id'=>'minecraft:sign' ],
+
 [ 'x'=>1742, 'y'=>64 , 'z'=>776, 'Text1'=>'[POI]', 'Text2'=>'Temple', 'Text3'=>'', 'Text4'=>'', 'id'=>'minecraft:sign' ],
+
 [ 'x'=>1829, 'y'=>64 , 'z'=>2038, 'Text1'=>'[POI]', 'Text2'=>'Town', 'Text3'=>'', 'Text4'=>'', 'id'=>'minecraft:sign' ],
 [ 'x'=>2341, 'y'=>64 , 'z'=>1700, 'Text1'=>'[POI]', 'Text2'=>'Town', 'Text3'=>'', 'Text4'=>'', 'id'=>'minecraft:sign' ],
 [ 'x'=>2783, 'y'=>64 , 'z'=>1078, 'Text1'=>'[POI]', 'Text2'=>'Town', 'Text3'=>'', 'Text4'=>'', 'id'=>'minecraft:sign' ],
-[ 'x'=>3147, 'y'=>64 , 'z'=>2320, 'Text1'=>'[POI]', 'Text2'=>'Illager outpost', 'Text3'=>'', 'Text4'=>'', 'id'=>'minecraft:sign' ],
-[ 'x'=>3133, 'y'=>64 , 'z'=>1017, 'Text1'=>'[POI]', 'Text2'=>'Town', 'Text3'=>'', 'Text4'=>'', 'id'=>'minecraft:sign' ],
+
+[ 'x'=>3173, 'y'=>64 , 'z'=>2317, 'Text1'=>'[POI]', 'Text2'=>'Illager outpost', 'Text3'=>'', 'Text4'=>'', 'id'=>'minecraft:sign' ],
+
 [ 'x'=>3234, 'y'=>64 , 'z'=>669, 'Text1'=>'[POI]', 'Text2'=>'Odd town', 'Text3'=>'', 'Text4'=>'', 'id'=>'minecraft:sign' ],
+
+[ 'x'=>3847, 'y'=>64 , 'z'=>1668, 'Text1'=>'[POI]', 'Text2'=>'Shipwreck', 'Text3'=>'', 'Text4'=>'', 'id'=>'minecraft:sign' ],
+[ 'x'=>3711, 'y'=>64 , 'z'=>1722, 'Text1'=>'[POI]', 'Text2'=>'Shipwreck', 'Text3'=>'', 'Text4'=>'', 'id'=>'minecraft:sign' ],
+
+[ 'x'=>3234, 'y'=>64 , 'z'=>2400, 'Text1'=>'[POI]', 'Text2'=>'Spawner', 'Text3'=>'', 'Text4'=>'', 'id'=>'minecraft:sign' ],
+[ 'x'=>1470, 'y'=>64 , 'z'=>-84, 'Text1'=>'[POI]', 'Text2'=>'Spawner', 'Text3'=>'', 'Text4'=>'', 'id'=>'minecraft:sign' ],
+[ 'x'=>2971, 'y'=>64 , 'z'=>561, 'Text1'=>'[POI]', 'Text2'=>'Spawner', 'Text3'=>'', 'Text4'=>'', 'id'=>'minecraft:sign' ],
 		),
 		"markers" => array(
 			array(
