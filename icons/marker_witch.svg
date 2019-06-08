@@ -10,11 +10,14 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    version="1.1"
-   width="32"
-   height="37"
+   width="26.065481"
+   height="31.0655"
    id="svg2"
-   inkscape:version="0.48.4 r9939"
-   sodipodi:docname="marker_ranch.png">
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   sodipodi:docname="marker_witch.svg"
+   inkscape:export-filename="/home/stwalkerster/minecraft-overviewer/icons/marker_witch.svg.png"
+   inkscape:export-xdpi="80.432434"
+   inkscape:export-ydpi="80.432434">
   <sodipodi:namedview
      pagecolor="#ffffff"
      bordercolor="#666666"
@@ -24,17 +27,21 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="1600"
-     inkscape:window-height="847"
+     inkscape:window-width="1920"
+     inkscape:window-height="967"
      id="namedview3276"
      showgrid="false"
-     inkscape:zoom="9.0203892"
-     inkscape:cx="4.4990362"
-     inkscape:cy="15.489112"
-     inkscape:window-x="-8"
-     inkscape:window-y="-8"
+     inkscape:zoom="18.040778"
+     inkscape:cx="1.4378493"
+     inkscape:cy="16.581766"
+     inkscape:window-x="1920"
+     inkscape:window-y="27"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg2" />
+     inkscape:current-layer="svg2"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
   <defs
      id="defs4">
     <filter
@@ -42,7 +49,9 @@
        y="-0.25"
        width="1.5"
        height="1.5"
-       id="filter3802">
+       id="filter3802"
+       style="color-interpolation-filters:sRGB"
+       inkscape:label="Drop Shadow">
       <feGaussianBlur
          result="blur"
          stdDeviation="2"
@@ -60,7 +69,8 @@
          in="bluralpha"
          id="feOffset3808" />
       <feMerge
-         id="feMerge3810">
+         id="feMerge3810"
+         result="fbSourceGraphic">
         <feMergeNode
            in="offsetBlur"
            id="feMergeNode3812" />
@@ -68,6 +78,39 @@
            in="SourceGraphic"
            id="feMergeNode3814" />
       </feMerge>
+      <feColorMatrix
+         result="fbSourceGraphicAlpha"
+         in="fbSourceGraphic"
+         values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0"
+         id="feColorMatrix4529" />
+      <feFlood
+         id="feFlood4531"
+         flood-opacity="0.498039"
+         flood-color="rgb(0,255,0)"
+         result="flood"
+         in="fbSourceGraphic" />
+      <feComposite
+         in2="fbSourceGraphic"
+         id="feComposite4533"
+         in="flood"
+         operator="in"
+         result="composite1" />
+      <feGaussianBlur
+         id="feGaussianBlur4535"
+         in="composite1"
+         stdDeviation="0"
+         result="blur" />
+      <feOffset
+         id="feOffset4537"
+         dx="6"
+         dy="6"
+         result="offset" />
+      <feComposite
+         in2="offset"
+         id="feComposite4539"
+         in="fbSourceGraphic"
+         operator="over"
+         result="composite2" />
     </filter>
   </defs>
   <metadata
@@ -82,31 +125,22 @@
       </cc:Work>
     </rdf:RDF>
   </metadata>
-  <g
-     transform="translate(0,-1015.3622)"
-     id="layer1">
-    <path
-       d="m 5.3953731,1018.8294 c -1.0681842,0 -1.928114,0.8381 -1.928114,1.8793 l 0,20.6699 c 0,1.0409 0.8599298,1.879 1.928114,1.879 l 4.3382568,0 5.7843411,5.6373 0.964058,0 5.784341,-5.6373 4.338257,0 c 1.068185,0 1.928114,-0.8381 1.928114,-1.879 l 0,-20.6699 c 0,-1.0412 -0.859929,-1.8793 -1.928114,-1.8793 l -21.2092539,0 z"
-       id="rect2987"
-       style="fill:#6e68e3;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:1;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;filter:url(#filter3802)" />
-  </g>
-  <g
-     id="g4590"
-     transform="matrix(0.02763994,0,0,0.02763994,6.140078,5.009078)">
-    <path
-       d="m 624.27429,592.7428 c 0,57.46286 -118.4923,104.04572 -264.65997,104.04572 -146.16767,0 -264.659974,-46.58286 -264.659974,-104.04572 0,-57.46287 118.492304,-104.04573 264.659974,-104.04573 146.16767,0 264.65997,46.58286 264.65997,104.04573 z"
-       sodipodi:ry="104.04572"
-       sodipodi:rx="264.65997"
-       sodipodi:cy="592.7428"
-       sodipodi:cx="359.61432"
-       id="path4572"
-       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:11.56599998;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-       sodipodi:type="arc" />
-    <path
-       sodipodi:nodetypes="cccc"
-       inkscape:connector-curvature="0"
-       id="path4574"
-       d="M 361.63344,76.637985 169.78879,585.41772 c 154.92704,95.73382 314.15448,31.32731 381.67134,4.77018 z"
-       style="fill:#ffffff;stroke:#000000;stroke-width:11.56599998;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
-  </g>
+  <path
+     inkscape:connector-curvature="0"
+     style="fill:#c03638;fill-opacity:1;fill-rule:nonzero;stroke:#8e0406;stroke-width:1;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     id="rect2987"
+     d="M 2.428114,0.5 C 1.3599298,0.5 0.5,1.3381 0.5,2.3793 v 20.6699 c 0,1.0409 0.8599298,1.879 1.928114,1.879 h 4.3382568 l 5.7843412,5.6373 h 0.964058 l 5.784341,-5.6373 h 4.338257 c 1.068185,0 1.928114,-0.8381 1.928114,-1.879 V 2.3793 C 25.565482,1.3381 24.705553,0.5 23.637368,0.5 Z" />
+  <ellipse
+     ry="2.8758175"
+     rx="7.3151855"
+     cy="18.425255"
+     cx="13.112536"
+     style="fill:#ffffff;fill-opacity:1;stroke:#8e0406;stroke-width:0.72000003;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     id="path4572" />
+  <path
+     style="fill:#ffffff;stroke:#8e0406;stroke-width:0.72000003;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="M 13.168346,4.1601473 7.8657709,18.222789 c 4.2821741,2.646077 8.6832111,0.865885 10.5493731,0.131847 z"
+     id="path4574"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="cccc" />
 </svg>
