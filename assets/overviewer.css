@@ -151,3 +151,14 @@ div.searchResultItem img {
     width: 24px;
     height: 24px;
 }
+
+.leaflet-div-icon {
+    background: transparent;
+    border: none;
+}
+
+img.ov-marker {
+    margin-left: -16px;
+    margin-top: -30px;
+    padding-bottom: 12px;
+}
