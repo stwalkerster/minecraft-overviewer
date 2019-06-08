@@ -165,6 +165,7 @@ $worlds = array(
 
 [ 'x'=>3847, 'y'=>64 , 'z'=>1668, 'Text1'=>'[POI]', 'Text2'=>'Shipwreck', 'Text3'=>'', 'Text4'=>'', 'id'=>'minecraft:sign' ],
 [ 'x'=>3711, 'y'=>64 , 'z'=>1722, 'Text1'=>'[POI]', 'Text2'=>'Shipwreck', 'Text3'=>'', 'Text4'=>'', 'id'=>'minecraft:sign' ],
+[ 'x'=>3844, 'y'=>64 , 'z'=>1411, 'Text1'=>'[POI]', 'Text2'=>'Shipwreck', 'Text3'=>'', 'Text4'=>'', 'id'=>'minecraft:sign' ],
 
 [ 'x'=>3234, 'y'=>64 , 'z'=>2400, 'Text1'=>'[POI]', 'Text2'=>'Spawner', 'Text3'=>'', 'Text4'=>'', 'id'=>'minecraft:sign' ],
 [ 'x'=>1470, 'y'=>64 , 'z'=>-84, 'Text1'=>'[POI]', 'Text2'=>'Spawner', 'Text3'=>'', 'Text4'=>'', 'id'=>'minecraft:sign' ],
