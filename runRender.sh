@@ -2,7 +2,7 @@
 
 export ServerHost=ninetales
 export RenderHost=growlithe
-export InstanceName=pillage
+export InstanceName=covid
 
 function serverCommand {
     ssh minecraft@${ServerHost}.scimonshouse.net 'echo '"'"$1"'"' > /opt/minecraft/'$InstanceName'/stdin.fifo'
@@ -14,7 +14,10 @@ serverCommand 'save-all'
 
 sleep 5
 
-rsync -avz minecraft@${ServerHost}.scimonshouse.net:/opt/minecraft/ /home/minecraft/minecraft-overviewer/worlds/
+rsync -avz  --delete minecraft@${ServerHost}.scimonshouse.net:/opt/minecraft/ /home/minecraft/minecraft-overviewer/worlds/
+
+ln -sf /home/minecraft/minecraft-overviewer/worlds/${InstanceName}/world_nether/DIM-1 /home/minecraft/minecraft-overviewer/worlds/${InstanceName}/world/DIM-1
+ln -sf /home/minecraft/minecraft-overviewer/worlds/${InstanceName}/world_the_end/DIM1 /home/minecraft/minecraft-overviewer/worlds/${InstanceName}/world/DIM1
 
 serverCommand 'save-on'
 serverCommand 'tellraw @a {"text":"['$RenderHost': Clone of world complete. Initiating render.]","color":"gray","italic":true}'

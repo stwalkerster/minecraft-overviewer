@@ -138,7 +138,7 @@ def playerFilter(poi):
         poi['icon'] = "http://cravatar.eu/helmavatar/%s" % poi['EntityId']
         return "Last known location for %s" % poi['EntityId']
 
-outputdir = "maps-pillage"
+outputdir = "maps-covid"
 customwebassets = "assets"
 processes = 2
 
@@ -148,64 +148,15 @@ observer = MultiplexingObserver(JSObserver(outputdir=outputdir, minrefresh=10))
 <?php
 
 $worlds = array(
-	"pillage" => array(
-		'path' => "worlds/pillage/world",
-		'title' => "Village+Pillage",
+	"covid" => array(
+		'path' => "worlds/covid/world",
+		'title' => "COVID",
 		'renderchecks' => 0,
 		'overworld' => true,
-		'nether' => true,
+		'nether' => false,
 		'end' => false,
 		'manualpois' => array(
-[ 'x'=>1253, 'y'=>64 , 'z'=>1377, 'Text1'=>'[POI]', 'Text2'=>'Witch hut', 'Text3'=>'', 'Text4'=>'', 'id'=>'minecraft:sign' ],
-[ 'x'=>661, 'y'=>64 , 'z'=>370, 'Text1'=>'[POI]', 'Text2'=>'Witch hut', 'Text3'=>'', 'Text4'=>'', 'id'=>'minecraft:sign' ],
-[ 'x'=>3317, 'y'=>64 , 'z'=>3333, 'Text1'=>'[POI]', 'Text2'=>'Witch hut', 'Text3'=>'', 'Text4'=>'', 'id'=>'minecraft:sign' ],
-[ 'x'=>3714, 'y'=>64 , 'z'=>-987, 'Text1'=>'[POI]', 'Text2'=>'Witch hut', 'Text3'=>'', 'Text4'=>'', 'id'=>'minecraft:sign' ],
-
-[ 'x'=>1742, 'y'=>64 , 'z'=>776, 'Text1'=>'[POI]', 'Text2'=>'Temple', 'Text3'=>'', 'Text4'=>'', 'id'=>'minecraft:sign' ],
-[ 'x'=>2418, 'y'=>64 , 'z'=>536, 'Text1'=>'[POI]', 'Text2'=>'Temple 2', 'Text3'=>'', 'Text4'=>'', 'id'=>'minecraft:sign' ],
-[ 'x'=>2600, 'y'=>64 , 'z'=>150, 'Text1'=>'[POI]', 'Text2'=>'Temple 3', 'Text3'=>'', 'Text4'=>'', 'id'=>'minecraft:sign' ],
-
-[ 'x'=>1829, 'y'=>64 , 'z'=>2038, 'Text1'=>'[POI]', 'Text2'=>'Town 1', 'Text3'=>'', 'Text4'=>'', 'id'=>'minecraft:sign' ],
-[ 'x'=>2341, 'y'=>64 , 'z'=>1700, 'Text1'=>'[POI]', 'Text2'=>'Town 2', 'Text3'=>'', 'Text4'=>'', 'id'=>'minecraft:sign' ],
-[ 'x'=>3078, 'y'=>64 , 'z'=>196,  'Text1'=>'[POI]', 'Text2'=>'Town 3', 'Text3'=>'', 'Text4'=>'', 'id'=>'minecraft:sign' ],
-[ 'x'=>4849, 'y'=>64 , 'z'=>4170, 'Text1'=>'[POI]', 'Text2'=>'Town 4', 'Text3'=>'', 'Text4'=>'', 'id'=>'minecraft:sign' ],
-[ 'x'=>4224, 'y'=>64 , 'z'=>4368, 'Text1'=>'[POI]', 'Text2'=>'Town 5', 'Text3'=>'', 'Text4'=>'', 'id'=>'minecraft:sign' ],
-[ 'x'=>3640, 'y'=>64 , 'z'=>3886, 'Text1'=>'[POI]', 'Text2'=>'Town 6', 'Text3'=>'', 'Text4'=>'', 'id'=>'minecraft:sign' ],
-[ 'x'=>2290, 'y'=>64 , 'z'=>200,  'Text1'=>'[POI]', 'Text2'=>'Town 7', 'Text3'=>'', 'Text4'=>'', 'id'=>'minecraft:sign' ],
-[ 'x'=>3200, 'y'=>64 , 'z'=>-220, 'Text1'=>'[POI]', 'Text2'=>'Town 8', 'Text3'=>'', 'Text4'=>'', 'id'=>'minecraft:sign' ],
-[ 'x'=>3750, 'y'=>64 , 'z'=>-220, 'Text1'=>'[POI]', 'Text2'=>'Town 9', 'Text3'=>'', 'Text4'=>'', 'id'=>'minecraft:sign' ],
-[ 'x'=>12621, 'y'=>64 , 'z'=>250, 'Text1'=>'[POI]', 'Text2'=>'Town 12', 'Text3'=>'', 'Text4'=>'', 'id'=>'minecraft:sign' ],
-
-
-[ 'x'=>5214, 'y'=>64 , 'z'=>2303, 'Text1'=>'[POI]', 'Text2'=>'Ocean Monument', 'Text3'=>'', 'Text4'=>'', 'id'=>'minecraft:sign' ],
-[ 'x'=>4718, 'y'=>64 , 'z'=>3296, 'Text1'=>'[POI]', 'Text2'=>'Ocean Monument', 'Text3'=>'', 'Text4'=>'', 'id'=>'minecraft:sign' ],
-[ 'x'=>4824, 'y'=>64 , 'z'=>2874, 'Text1'=>'[POI]', 'Text2'=>'Possible Monument?', 'Text3'=>'', 'Text4'=>'', 'id'=>'minecraft:sign' ],
-[ 'x'=>4761, 'y'=>64 , 'z'=>2378, 'Text1'=>'[POI]', 'Text2'=>'Possible Monument 2?', 'Text3'=>'', 'Text4'=>'', 'id'=>'minecraft:sign' ],
-[ 'x'=>4483, 'y'=>64 , 'z'=>2222, 'Text1'=>'[POI]', 'Text2'=>'Possible Monument 3?', 'Text3'=>'', 'Text4'=>'', 'id'=>'minecraft:sign' ],
-
-[ 'x'=>3173, 'y'=>64 , 'z'=>2317, 'Text1'=>'[Illager]', 'Text2'=>'Illager outpost', 'Text3'=>'', 'Text4'=>'', 'id'=>'minecraft:sign' ],
-
-[ 'x'=>4402, 'y'=>64 , 'z'=>1295, 'Text1'=>'[Shipwreck]', 'Text2'=>'(visited, no sign)', 'Text3'=>'', 'Text4'=>'', 'id'=>'minecraft:sign' ],
-[ 'x'=>4672, 'y'=>64 , 'z'=>3344, 'Text1'=>'[POI]', 'Text2'=>'Shipwreck 1', 'Text3'=>'', 'Text4'=>'', 'id'=>'minecraft:sign' ],
-[ 'x'=>4195, 'y'=>64 , 'z'=>3428, 'Text1'=>'[POI]', 'Text2'=>'Shipwreck 2', 'Text3'=>'', 'Text4'=>'', 'id'=>'minecraft:sign' ],
-[ 'x'=>3909, 'y'=>64 , 'z'=>2909, 'Text1'=>'[POI]', 'Text2'=>'Shipwreck 3', 'Text3'=>'', 'Text4'=>'', 'id'=>'minecraft:sign' ],
-[ 'x'=>3170, 'y'=>64 , 'z'=>-190, 'Text1'=>'[POI]', 'Text2'=>'Shipwreck 4', 'Text3'=>'', 'Text4'=>'', 'id'=>'minecraft:sign' ],
-
-
-[ 'x'=>4477, 'y'=>64 , 'z'=>3625, 'Text1'=>'[POI]', 'Text2'=>'Ruins 1', 'Text3'=>'', 'Text4'=>'', 'id'=>'minecraft:sign' ],
-[ 'x'=>4127, 'y'=>64 , 'z'=>-1439, 'Text1'=>'[POI]', 'Text2'=>'Ruins 2', 'Text3'=>'', 'Text4'=>'', 'id'=>'minecraft:sign' ],
-
-[ 'x'=>3234, 'y'=>64 , 'z'=>2400, 'Text1'=>'[POI]', 'Text2'=>'Spawner 1', 'Text3'=>'', 'Text4'=>'', 'id'=>'minecraft:sign' ],
-[ 'x'=>1470, 'y'=>64 , 'z'=>-84, 'Text1'=>'[POI]', 'Text2'=>'Spawner 2', 'Text3'=>'', 'Text4'=>'', 'id'=>'minecraft:sign' ],
-[ 'x'=>2971, 'y'=>64 , 'z'=>561, 'Text1'=>'[POI]', 'Text2'=>'Spawner 3', 'Text3'=>'', 'Text4'=>'', 'id'=>'minecraft:sign' ],
-[ 'x'=>2422, 'y'=>64 , 'z'=>885, 'Text1'=>'[POI]', 'Text2'=>'Spawner 4', 'Text3'=>'', 'Text4'=>'', 'id'=>'minecraft:sign' ],
-[ 'x'=>2431, 'y'=>64 , 'z'=>611, 'Text1'=>'[POI]', 'Text2'=>'Spawner 5', 'Text3'=>'', 'Text4'=>'', 'id'=>'minecraft:sign' ],
-[ 'x'=>2400, 'y'=>64 , 'z'=>1437, 'Text1'=>'[POI]', 'Text2'=>'Spawner 6', 'Text3'=>'', 'Text4'=>'', 'id'=>'minecraft:sign' ],
-[ 'x'=>12000, 'y'=>64 , 'z'=>227, 'Text1'=>'[POI]', 'Text2'=>'Spawner 7', 'Text3'=>'', 'Text4'=>'', 'id'=>'minecraft:sign' ],
-
-[ 'x'=>3445, 'y'=>64 , 'z'=>2600, 'Text1'=>'[POI]', 'Text2'=>'Unknown thing underwater', 'Text3'=>'', 'Text4'=>'', 'id'=>'minecraft:sign' ],
-
-[ 'x'=>3164, 'y'=>64 , 'z'=>2640, 'Text1'=>'[POI]', 'Text2'=>'Mining camp', 'Text3'=>'', 'Text4'=>'', 'id'=>'minecraft:sign' ],
+// [ 'x'=>3164, 'y'=>64 , 'z'=>2640, 'Text1'=>'[POI]', 'Text2'=>'Mining camp', 'Text3'=>'', 'Text4'=>'', 'id'=>'minecraft:sign' ],
 		),
 		"markers" => array(
 			array(
