@@ -5,7 +5,7 @@ export RenderHost=spearow.lon.stwalkerster.net
 export InstanceName=gloom
 
 function serverCommand {
-    ssh minecraft@${ServerHost}.scimonshouse.net 'echo '"'"$1"'"' > /run/minecraft-'$InstanceName'.control'
+    ssh minecraft@${ServerHost} 'echo '"'"$1"'"' > /run/minecraft-'$InstanceName'.control'
 }
 
 serverCommand 'tellraw @a {"text":"['$RenderHost': Initiating new render job]","color":"gray","italic":true}'
