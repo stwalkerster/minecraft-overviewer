@@ -138,7 +138,7 @@ def playerFilter(poi):
         poi['icon'] = "http://cravatar.eu/helmavatar/%s" % poi['EntityId']
         return "Last known location for %s" % poi['EntityId']
 
-outputdir = "maps-covid"
+outputdir = "/opt/render/output"
 customwebassets = "assets"
 processes = 2
 
@@ -148,9 +148,9 @@ observer = MultiplexingObserver(JSObserver(outputdir=outputdir, minrefresh=10))
 <?php
 
 $worlds = array(
-	"covid" => array(
-		'path' => "worlds/covid/world",
-		'title' => "COVID",
+	"gloom" => array(
+		'path' => "/opt/render/worlds/gloom/world",
+		'title' => "minecraft.stwalkerster.co.uk",
 		'renderchecks' => 0,
 		'overworld' => true,
 		'nether' => false,
