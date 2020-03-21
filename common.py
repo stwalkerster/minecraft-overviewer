@@ -184,5 +184,5 @@ def pillagerFilter(poi):
 
 def playerFilter(poi):
     if poi['id'] == 'Player':
-        poi['icon'] = "http://cravatar.eu/helmavatar/%s" % poi['EntityId']
-        return "Last known location for %s" % poi['EntityId']
+        poi['icon'] = "https://cravatar.eu/helmavatar/%s" % poi['EntityId']
+        return "Last known location for %s" % poi.keys()
