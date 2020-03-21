@@ -29,7 +29,7 @@ worlds[configWorldHumanName] = configWorldPath
 world = configWorldHumanName
 
 
-for directionName, directionCode in d_directions.iteritems():
+for directionName, directionCode in d_directions.items():
     renders[configWorldUnixName + "-overworld-day-" + directionName] = {
         "title": "Day - " + directionName,
         "dimension": "overworld",
