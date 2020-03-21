@@ -1,5 +1,5 @@
 import os
-from observer import JSObserver
+from .observer import JSObserver
 from common import marker_definitions, nether_marker_definitions, end_marker_definitions
 
 # General config
