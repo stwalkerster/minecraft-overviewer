@@ -10,13 +10,13 @@ d_directions = dict(North="upper-left", South="lower-right", East="upper-right",
 configWorldUnixName = os.environ.get('BUILD_WORLD_UNIX_NAME')
 configWorldHumanName = os.environ.get('BUILD_WORLD_NAME')
 
-configWorldPath = "server/world"
+configWorldPath = "/world"
 
 configRenderNether = os.path.isdir(configWorldPath + "/DIM-1/region")
 configRenderEnd = os.path.isdir(configWorldPath + "/DIM1/region")
 
 # Start of overviewer config
-outputdir = "/mnt/maps/" + configWorldUnixName
+outputdir = "/map/" + configWorldUnixName
 customwebassets = "assets"
 processes = 2
 
