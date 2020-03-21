@@ -16,7 +16,7 @@ configRenderEnd = os.path.isdir(configWorldPath + "/DIM1/region")
 
 # Start of overviewer config
 outputdir = "/map/" + configWorldUnixName
-customwebassets = "assets"
+customwebassets = "/config/assets"
 processes = 2
 
 observer = JSObserver(outputdir=outputdir, minrefresh=10)
