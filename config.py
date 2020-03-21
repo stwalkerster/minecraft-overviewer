@@ -58,7 +58,7 @@ for directionName, directionCode in d_directions.items():
             "title": directionName,
             "dimension": "end",
             "northdirection": directionCode,
-            "rendermode": "end_smooth_lighting",
+            "rendermode": "smooth_lighting",
             'markers': end_marker_definitions(),
         }
 
