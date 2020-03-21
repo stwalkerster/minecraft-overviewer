@@ -22,7 +22,7 @@ def marker_definitions():
         dict(name="Ocean Monuments", filterFunction=monumentFilter, icon="custom-icons/marker_monument.png", checked="true"),
         dict(name="Ruins", filterFunction=ruinsFilter, icon="custom-icons/marker_ruins.png", checked="true"),
         dict(name="Arboreta", filterFunction=arboretaFilter, icon="custom-icons/marker_arboreta.png", checked="true"),
-        dict(name="Illager outposts", filterFunction=illagerFilter, icon="custom-icons/marker_illager.png", checked="true"),
+        dict(name="Pillager outposts", filterFunction=pillagerFilter, icon="custom-icons/marker_illager.png", checked="true"),
         dict(name="Players", filterFunction=playerFilter, checked="true"),
     ]
 
@@ -48,67 +48,67 @@ def end_marker_definitions():
 
 
 def underbellyFilter(poi):
-    if poi['id'] == 'Sign':
+    if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
         if "[Underbelly]" in poi['Text1']:
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
 
 def spawnerFilter(poi):
-    if poi['id'] == 'Sign':
+    if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
         if "[Spawner]" == poi['Text1']:
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
 
 def witchHutSignFilter(poi):
-    if poi['id'] == 'Sign':
+    if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
         if "[Witch Hut]" in poi['Text1']:
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
 
 def templeSignFilter(poi):
-    if poi['id'] == 'Sign':
+    if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
         if "[Temple]" in poi['Text1']:
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
 
 def houseSignFilter(poi):
-    if poi['id'] == 'Sign':
+    if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
         if "[House]" in poi['Text1']:
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
 
 def townSignFilter(poi):
-    if poi['id'] == 'Sign':
+    if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
         if "[Town]" in poi['Text1']:
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
 
 def portalSignFilter(poi):
-    if poi['id'] == 'Sign':
+    if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
         if "[Portal]" in poi['Text1']:
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
 
 def pointOfInterestSignFilter(poi):
-    if poi['id'] == 'Sign':
+    if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
         if "[POI]" in poi['Text1']:
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
 
 def trainSignFilter(poi):
-    if poi['id'] == 'Sign':
+    if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
         if "[Station]" in poi['Text1']:
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
 
 def dockSignFilter(poi):
-    if poi['id'] == 'Sign':
+    if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
         if "[Dock]" in poi['Text1']:
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
 
 def canalSignFilter(poi):
-    if poi['id'] == 'Sign':
+    if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
         if "[Canal]" in poi['Text1']:
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
 
 def netherFastTransportSignFilter(poi):
-    if poi['id'] == 'Sign':
+    if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
         if "[NFT]" in poi['Text1']:
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
 
 def mineSignFilter(poi):
-    if poi['id'] == 'Sign':
+    if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
         if "[Mine]" in poi['Text1']:
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
 
@@ -118,22 +118,22 @@ def mineshaftSignFilter(poi):
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
 
 def enclosureSignFilter(poi):
-    if poi['id'] == 'Sign':
+    if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
         if "[Enclosure]" in poi['Text1']:
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
 
 def fieldSignFilter(poi):
-    if poi['id'] == 'Sign':
+    if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
         if "[Field]" in poi['Text1']:
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
 
 def fortressSignFilter(poi):
-    if poi['id'] == 'Sign':
+    if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
         if "[Fortress]" in poi['Text1']:
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
 
 def hutFilter(poi):
-    if poi['id'] == 'Sign':
+    if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
         if "[Hut]" in poi['Text1']:
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
 
@@ -173,13 +173,13 @@ def arboretaFilter(poi):
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
 
 def iglooFilter(poi):
-    if poi['id'] == 'Sign':
+    if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
         if "[Igloo]" in poi['Text1']:
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
 
-def illagerFilter(poi):
+def pillagerFilter(poi):
     if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
-        if "[Illager]" in poi['Text1']:
+        if "[Illager]" in poi['Text1'] or "[Pillager]" in poi['Text1']:
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
 
 def playerFilter(poi):
