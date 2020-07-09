@@ -167,3 +167,8 @@ img.ov-marker {
     background-color: rgba(255,255,255,0.4);
     padding: 0px 4px;
 }
+
+img.ov-marker-legend {
+    float: left;
+    height: 20px;
+}
