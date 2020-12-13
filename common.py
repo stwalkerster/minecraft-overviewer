@@ -12,6 +12,7 @@ def marker_definitions():
         dict(name="Mines", filterFunction=mineSignFilter, icon="custom-icons/marker_mines.png", checked="true"),
         dict(name="Mining camps", filterFunction=minecampFilter, icon="custom-icons/marker_miningcamp.png", checked="true"),
         dict(name="Minecart Station", filterFunction=trainSignFilter, icon="custom-icons/marker-train.png", checked="true"),
+        dict(name="Fast Travel", filterFunction=fastTravelSignFilter, icon="custom-icons/marker-fasttravel.png", checked="true"),
         dict(name="Spawners", filterFunction=spawnerFilter, icon="custom-icons/marker_spawner.png", checked="false"),
         dict(name="Pillager outposts", filterFunction=pillagerFilter, icon="custom-icons/marker_illager.png", checked="true"),
         dict(name="Mansions", filterFunction=mansionFilter, icon="custom-icons/marker_mansion.png", checked="true"),
@@ -94,6 +95,13 @@ def trainSignFilter(poi):
     if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
         if "[Station]" in poi['Text1'] or "[NFT]" in poi['Text1']:
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
+
+def fastTravelSignFilter(poi):
+    if poi['id'] == 'Sign':
+        if "Fast Travel" in poi['Text1']:
+            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'],
+                              "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
+
 
 def dockSignFilter(poi):
     if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
