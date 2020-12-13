@@ -8,6 +8,7 @@ def marker_definitions():
         dict(name="Points of Interest", filterFunction=pointOfInterestSignFilter, icon="../treasure-mark.png",
              checked="true"),
         dict(name="Minecart Station", filterFunction=trainSignFilter, icon="../marker-train.png", checked="true"),
+        dict(name="Fast Travel", filterFunction=fastTravelSignFilter, icon="../marker-fasttravel.png", checked="true"),
         dict(name="Dock", filterFunction=dockSignFilter, icon="../harbor.png", checked="true"),
         dict(name="Canal", filterFunction=canalSignFilter, icon="../taxiboat.png", checked="true"),
         dict(name="Spawners", filterFunction=spawnerFilter, icon="../zombie-outbreak1.png", checked="false"),
@@ -103,6 +104,13 @@ def pointOfInterestSignFilter(poi):
 def trainSignFilter(poi):
     if poi['id'] == 'Sign':
         if "Station" in poi['Text1']:
+            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'],
+                              "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
+
+
+def fastTravelSignFilter(poi):
+    if poi['id'] == 'Sign':
+        if "Fast Travel" in poi['Text1']:
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'],
                               "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
 
