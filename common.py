@@ -38,6 +38,7 @@ def nether_marker_definitions():
         dict(name="Minecart Station", filterFunction=trainSignFilter, icon="custom-icons/marker-train.png", checked="true"),
         dict(name="Spawners", filterFunction=spawnerFilter, icon="custom-icons/marker_spawner.png", checked="false"),
         dict(name="Nether Fortresses", filterFunction=fortressSignFilter, icon="custom-icons/marker_fortress.png", checked="true"),
+        dict(name="Bastion Remnants", filterFunction=bastionRemnamtSignFilter, icon="custom-icons/marker_fortress.png", checked="true"),
     ]
 
 
@@ -136,6 +137,11 @@ def fieldSignFilter(poi):
 def fortressSignFilter(poi):
     if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
         if "[Fortress]" in poi['Text1']:
+            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
+
+def bastionRemnantSignFilter(poi):
+    if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
+        if "[Bastion]" in poi['Text1']:
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
 
 def hutFilter(poi):

@@ -52,6 +52,13 @@ for directionName, directionCode in d_directions.items():
             "rendermode": "nether_smooth_lighting",
             'markers': nether_marker_definitions(),
         }
+        renders[configWorldUnixName + "-nether-nolighting-" + directionName] = {
+            "title": "No lighting - " + directionName,
+            "dimension": "nether",
+            "northdirection": directionCode,
+            "rendermode": "nether",
+            'markers': nether_marker_definitions(),
+        }
 
     if configRenderEnd:
         renders[configWorldUnixName + "-end-" + directionName] = {
@@ -59,6 +66,13 @@ for directionName, directionCode in d_directions.items():
             "dimension": "end",
             "northdirection": directionCode,
             "rendermode": "smooth_lighting",
+            'markers': end_marker_definitions(),
+        }
+        renders[configWorldUnixName + "-end-nolighting-" + directionName] = {
+            "title": directionName,
+            "dimension": "end",
+            "northdirection": directionCode,
+            "rendermode": "normal",
             'markers': end_marker_definitions(),
         }
 
