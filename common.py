@@ -38,7 +38,7 @@ def nether_marker_definitions():
         dict(name="Minecart Station", filterFunction=trainSignFilter, icon="custom-icons/marker-train.png", checked="true"),
         dict(name="Spawners", filterFunction=spawnerFilter, icon="custom-icons/marker_spawner.png", checked="false"),
         dict(name="Nether Fortresses", filterFunction=fortressSignFilter, icon="custom-icons/marker_fortress.png", checked="true"),
-        dict(name="Bastion Remnants", filterFunction=bastionRemnamtSignFilter, icon="custom-icons/marker_fortress.png", checked="true"),
+        dict(name="Bastion Remnants", filterFunction=bastionRemnantSignFilter, icon="custom-icons/marker_fortress.png", checked="true"),
     ]
 
 
