@@ -98,7 +98,7 @@ def trainSignFilter(poi):
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
 
 def fastTravelSignFilter(poi):
-    if poi['id'] == 'Sign':
+    if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
         if "Fast Travel" in poi['Text1']:
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'],
                               "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
