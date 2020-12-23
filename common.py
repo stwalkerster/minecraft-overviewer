@@ -1,7 +1,8 @@
 def marker_definitions():
     return [
         dict(name="Houses", filterFunction=houseSignFilter, icon="custom-icons/marker_house.png", checked="true"),
-        dict(name="Huts", filterFunction=hutFilter, icon="custom-icons/marker_hut.png", checked="true"),
+        dict(name="Ender Chests", filterFunction=enderchestFilter, icon="custom-icons/marker_enderchest.png", checked="true"),
+        # dict(name="Huts", filterFunction=hutFilter, icon="custom-icons/marker_hut.png", checked="true"),
         dict(name="Points of Interest", filterFunction=pointOfInterestSignFilter, icon="custom-icons/marker_poi.png", checked="true"),
         dict(name="Portals", filterFunction=portalSignFilter, icon="custom-icons/marker_portal.png", checked="true"),
         dict(name="Farming: Enclosures", filterFunction=enclosureSignFilter, icon="custom-icons/enclosure.png", checked="true"),
@@ -10,7 +11,7 @@ def marker_definitions():
         dict(name="Canal", filterFunction=canalSignFilter, icon="custom-icons/marker_canal.png", checked="true"),
         dict(name="Dock", filterFunction=dockSignFilter, icon="custom-icons/marker_dock.png", checked="true"),
         dict(name="Mines", filterFunction=mineSignFilter, icon="custom-icons/marker_mines.png", checked="true"),
-        dict(name="Mining camps", filterFunction=minecampFilter, icon="custom-icons/marker_miningcamp.png", checked="true"),
+        # dict(name="Mining camps", filterFunction=minecampFilter, icon="custom-icons/marker_miningcamp.png", checked="true"),
         dict(name="Minecart Station", filterFunction=trainSignFilter, icon="custom-icons/marker-train.png", checked="true"),
         dict(name="Fast Travel", filterFunction=fastTravelSignFilter, icon="custom-icons/marker-fasttravel.png", checked="true"),
         dict(name="Spawners", filterFunction=spawnerFilter, icon="custom-icons/marker_spawner.png", checked="false"),
@@ -24,30 +25,29 @@ def marker_definitions():
         dict(name="Towns", filterFunction=townSignFilter, icon="custom-icons/marker_town.png", checked="true"),
         dict(name="Witch Huts", filterFunction=witchHutSignFilter, icon="custom-icons/marker_witch.png", checked="true"),
         dict(name="Shipwrecks", filterFunction=shipwreckFilter, icon="custom-icons/shipwreck.png", checked="true"),
-        dict(name="Ender Chests", filterFunction=enderchestFilter, icon="custom-icons/marker_enderchest.png", checked="true"),
     ]
 
 
 def nether_marker_definitions():
     return [
         dict(name="Houses", filterFunction=houseSignFilter, icon="custom-icons/marker_house.png", checked="true"),
-        dict(name="Huts", filterFunction=hutFilter, icon="custom-icons/marker_hut.png", checked="true"),
+        dict(name="Ender Chests", filterFunction=enderchestFilter, icon="custom-icons/marker_enderchest.png", checked="true"),
+        # dict(name="Huts", filterFunction=hutFilter, icon="custom-icons/marker_hut.png", checked="true"),
         dict(name="Points of Interest", filterFunction=pointOfInterestSignFilter, icon="custom-icons/marker_poi.png", checked="true"),
         dict(name="Portals", filterFunction=portalSignFilter, icon="custom-icons/marker_portal.png", checked="true"),
         dict(name="Mines", filterFunction=mineSignFilter, icon="custom-icons/marker_mines.png", checked="true"),
-        dict(name="Mining camps", filterFunction=minecampFilter, icon="custom-icons/marker_miningcamp.png", checked="true"),
+        # dict(name="Mining camps", filterFunction=minecampFilter, icon="custom-icons/marker_miningcamp.png", checked="true"),
         dict(name="Minecart Station", filterFunction=trainSignFilter, icon="custom-icons/marker-train.png", checked="true"),
         dict(name="Spawners", filterFunction=spawnerFilter, icon="custom-icons/marker_spawner.png", checked="false"),
         dict(name="Nether Fortresses", filterFunction=fortressSignFilter, icon="custom-icons/marker_fortress.png", checked="true"),
         dict(name="Bastion Remnants", filterFunction=bastionRemnantSignFilter, icon="custom-icons/marker_fortress.png", checked="true"),
-        dict(name="Ender Chests", filterFunction=enderchestFilter, icon="custom-icons/marker_enderchest.png", checked="true"),
     ]
 
 
 def end_marker_definitions():
     return [
         dict(name="Houses", filterFunction=houseSignFilter, icon="custom-icons/marker_house.png", checked="true"),
-        dict(name="Huts", filterFunction=hutFilter, icon="custom-icons/marker_hut.png", checked="true"),
+        # dict(name="Huts", filterFunction=hutFilter, icon="custom-icons/marker_hut.png", checked="true"),
         dict(name="Points of Interest", filterFunction=pointOfInterestSignFilter, icon="custom-icons/marker_poi.png", checked="true"),
         dict(name="Portals", filterFunction=portalSignFilter, icon="../marker_portal.png", checked="true"),
         dict(name="Minecart Station", filterFunction=trainSignFilter, icon="custom-icons/marker-train.png", checked="true"),
@@ -77,7 +77,13 @@ def templeSignFilter(poi):
 
 def houseSignFilter(poi):
     if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
-        if "[House]" in poi['Text1']:
+        if "[House]" in poi['Text1'] or "[Hut]" in poi['Text1'] or :
+            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
+        if "[Hut]" in poi['Text1'] or "[Hut]" in poi['Text1'] or :
+            poi['icon'] = "custom-icons/marker_hut.png"
+            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
+        if "[Minecamp]" in poi['Text1']:
+            poi['icon'] = "custom-icons/marker_miningcamp.png"
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
 
 def townSignFilter(poi):
@@ -147,10 +153,10 @@ def bastionRemnantSignFilter(poi):
         if "[Bastion]" in poi['Text1']:
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
 
-def hutFilter(poi):
-    if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
-        if "[Hut]" in poi['Text1']:
-            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
+#def hutFilter(poi):
+#    if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
+#        if "[Hut]" in poi['Text1']:
+#            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
 
 def strongholdFilter(poi):
     if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
@@ -177,10 +183,10 @@ def ruinsFilter(poi):
         if "[Ruins]" in poi['Text1']:
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
 
-def minecampFilter(poi):
-    if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
-        if "[Minecamp]" in poi['Text1']:
-            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
+#def minecampFilter(poi):
+#    if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
+#        if "[Minecamp]" in poi['Text1']:
+#            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
 
 def arboretaFilter(poi):
     if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
