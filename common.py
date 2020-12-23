@@ -78,10 +78,10 @@ def templeSignFilter(poi):
 
 def houseSignFilter(poi):
     if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
-        if "[House]" in poi['Text1'] or "[Hut]" in poi['Text1']:
+        if "[House]" in poi['Text1']:
             poi['icon'] = "custom-icons/marker_house.png"
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
-        if "[Hut]" in poi['Text1'] or "[Hut]" in poi['Text1']:
+        if "[Hut]" in poi['Text1']:
             poi['icon'] = "custom-icons/marker_hut.png"
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
         if "[Minecamp]" in poi['Text1']:
