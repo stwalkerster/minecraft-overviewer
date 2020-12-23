@@ -7,10 +7,8 @@ def marker_definitions():
         dict(name="Farms", filterFunction=farmSignFilter, icon="custom-icons/marker_farm.png", showIconInLegend="true"),
         dict(name="Fast Travel", filterFunction=fastTravelSignFilter, icon="custom-icons/marker_fasttravel.png", checked="true", showIconInLegend="true"),
         dict(name="Transport", filterFunction=transportSignFilter, icon="custom-icons/marker_train.png", checked="true", showIconInLegend="true"),
-
         dict(name="Towns", filterFunction=townSignFilter, icon="custom-icons/marker_town.png", checked="true", showIconInLegend="true"),
-
-        dict(name="Structures", filterFunction=generatedStructureFilter, icon="custom-icons/marker_temple.png", showIconInLegend="true"),
+        dict(name="<abbr title='Structures generated with the world'>Structures</abbr>", filterFunction=generatedStructureFilter, icon="custom-icons/marker_temple.png", showIconInLegend="true"),
     ]
 
 
@@ -23,7 +21,7 @@ def nether_marker_definitions():
         dict(name="Farms", filterFunction=farmSignFilter, icon="custom-icons/marker_farm.png", showIconInLegend="true"),
         dict(name="Transport", filterFunction=transportSignFilter, checked="true", showIconInLegend="true"),
 
-        dict(name="Structures", filterFunction=generatedStructureFilter, icon="custom-icons/marker_temple.png", showIconInLegend="true"),
+        dict(name="<abbr title='Structures generated with the world'>Structures</abbr>", filterFunction=generatedStructureFilter, icon="custom-icons/marker_temple.png", showIconInLegend="true"),
     ]
 
 
@@ -35,7 +33,7 @@ def end_marker_definitions():
         dict(name="Portals", filterFunction=portalSignFilter, icon="../marker_portal.png", checked="true"),
         dict(name="Farms", filterFunction=farmSignFilter, icon="custom-icons/marker_farm.png", checked="false", showIconInLegend="true"),
         dict(name="Transport", filterFunction=transportSignFilter, checked="true"),
-        dict(name="Structures", filterFunction=generatedStructureFilter, icon="custom-icons/marker_temple.png", showIconInLegend="true"),
+        dict(name="<abbr title='Structures generated with the world'>Structures</abbr>", filterFunction=generatedStructureFilter, icon="custom-icons/marker_temple.png", showIconInLegend="true"),
     ]
 
 
@@ -65,11 +63,14 @@ def generatedStructureFilter(poi):
         if "[Ruins]" in poi['Text1'] or "[Ruin]" in poi['Text1']:
             poi['icon'] = "custom-icons/marker_ruins.png"
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "<br />(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
-        #if "[Igloo]" in poi['Text1']:
-        #    poi['icon'] = "custom-icons/marker_stable.png"
-        #    return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "<br />(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
+        if "[Igloo]" in poi['Text1']:
+            poi['icon'] = "custom-icons/marker_unknown.png"
+            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "<br />(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
         if "[Illager]" in poi['Text1'] or "[Pillager]" in poi['Text1']:
             poi['icon'] = "custom-icons/marker_illager.png"
+            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "<br />(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
+        if "[Ruined Portal]" in poi['Text1'] or "[Pillager]" in poi['Text1']:
+            poi['icon'] = "custom-icons/marker_unknown.png"
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "<br />(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
         if "[Fortress]" in poi['Text1']:
             poi['icon'] = "custom-icons/marker_fortress.png"
@@ -77,9 +78,9 @@ def generatedStructureFilter(poi):
         if "[Bastion]" in poi['Text1']:
             poi['icon'] = "custom-icons/marker_fortress.png"
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "<br />(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
-        #if "[End City]" in poi['Text1']:
-        #    poi['icon'] = "custom-icons/marker_stable.png"
-        #    return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "<br />(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
+        if "[End City]" in poi['Text1']:
+            poi['icon'] = "custom-icons/marker_unknown.png"
+            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "<br />(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
 
 
 def houseSignFilter(poi):
