@@ -24,6 +24,7 @@ def marker_definitions():
         dict(name="Towns", filterFunction=townSignFilter, icon="custom-icons/marker_town.png", checked="true"),
         dict(name="Witch Huts", filterFunction=witchHutSignFilter, icon="custom-icons/marker_witch.png", checked="true"),
         dict(name="Shipwrecks", filterFunction=shipwreckFilter, icon="custom-icons/shipwreck.png", checked="true"),
+        dict(name="Ender Chests", filterFunction=enderchestFilter, icon="custom-icons/marker_enderchest.png", checked="true"),
     ]
 
 
@@ -39,6 +40,7 @@ def nether_marker_definitions():
         dict(name="Spawners", filterFunction=spawnerFilter, icon="custom-icons/marker_spawner.png", checked="false"),
         dict(name="Nether Fortresses", filterFunction=fortressSignFilter, icon="custom-icons/marker_fortress.png", checked="true"),
         dict(name="Bastion Remnants", filterFunction=bastionRemnantSignFilter, icon="custom-icons/marker_fortress.png", checked="true"),
+        dict(name="Ender Chests", filterFunction=enderchestFilter, icon="custom-icons/marker_enderchest.png", checked="true"),
     ]
 
 
@@ -49,6 +51,7 @@ def end_marker_definitions():
         dict(name="Points of Interest", filterFunction=pointOfInterestSignFilter, icon="custom-icons/marker_poi.png", checked="true"),
         dict(name="Portals", filterFunction=portalSignFilter, icon="../marker_portal.png", checked="true"),
         dict(name="Minecart Station", filterFunction=trainSignFilter, icon="custom-icons/marker-train.png", checked="true"),
+        dict(name="Ender Chests", filterFunction=enderchestFilter, icon="custom-icons/marker_enderchest.png", checked="true"),
     ]
 
 
@@ -193,3 +196,8 @@ def pillagerFilter(poi):
     if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
         if "[Illager]" in poi['Text1'] or "[Pillager]" in poi['Text1']:
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
+
+
+def enderchestFilter(poi):
+    if poi['id'] == 'minecraft:ender_chest':
+        return "\n".join(["Ender Chest", "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
