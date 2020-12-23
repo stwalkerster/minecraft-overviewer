@@ -15,7 +15,7 @@
    id="svg2"
    inkscape:version="0.92.3 (2405546, 2018-03-11)"
    sodipodi:docname="marker_portal.svg"
-   inkscape:export-filename="C:\Users\stwalkerster.leo\Desktop\minecraft-overviewer\marker_portal.png"
+   inkscape:export-filename="marker_portal.png"
    inkscape:export-xdpi="90"
    inkscape:export-ydpi="90">
   <sodipodi:namedview
@@ -32,7 +32,7 @@
      id="namedview3276"
      showgrid="false"
      inkscape:zoom="12.756757"
-     inkscape:cx="-6.4097323"
+     inkscape:cx="-21.774139"
      inkscape:cy="20.346702"
      inkscape:window-x="1920"
      inkscape:window-y="27"
@@ -56,7 +56,7 @@
   </metadata>
   <path
      inkscape:connector-curvature="0"
-     style="fill:#9a7050;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:1;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     style="fill:#c259b6;fill-opacity:1;fill-rule:nonzero;stroke:#902784;stroke-width:1;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
      id="rect2987"
      d="m 5.3953731,3.4672 c -1.0681842,0 -1.928114,0.8381 -1.928114,1.8793 v 20.6699 c 0,1.0409 0.8599298,1.879 1.928114,1.879 h 4.3382568 l 5.7843411,5.6373 h 0.964058 l 5.784341,-5.6373 h 4.338257 c 1.068185,0 1.928114,-0.8381 1.928114,-1.879 V 5.3465 c 0,-1.0412 -0.859929,-1.8793 -1.928114,-1.8793 z" />
   <path
@@ -82,17 +82,17 @@
   <path
      inkscape:connector-curvature="0"
      id="path3811"
-     style="fill:#290a50;fill-opacity:1;fill-rule:evenodd;stroke:none"
+     style="fill:#1b0734;fill-opacity:1;fill-rule:evenodd;stroke:none"
      d="m 12.359251,8.3473467 0,15.3832413 9.047352,-1.531606 0,-13.3616813 z" />
   <path
      inkscape:connector-curvature="0"
      id="path3813"
-     style="fill:#411080;fill-opacity:1;fill-rule:evenodd;stroke:none"
+     style="fill:#320c62;fill-opacity:1;fill-rule:evenodd;stroke:none"
      d="m 10.231987,8.5030447 2.127264,-0.155698 0,15.3832413 -2.127264,-0.486717 z" />
   <path
      inkscape:connector-curvature="0"
      id="path3811-1"
-     style="fill:#8c1ad0;fill-opacity:1;fill-rule:evenodd;stroke:none"
+     style="fill:#8f1bd2;fill-opacity:1;fill-rule:evenodd;stroke:none"
      d="m 14.565665,10.699991 -0.112765,12.69752 5.288187,-0.931137 0,-11.693492 z"
      sodipodi:nodetypes="ccccc" />
 </svg>

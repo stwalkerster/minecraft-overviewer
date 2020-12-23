@@ -12,8 +12,8 @@ def marker_definitions():
 
         dict(name="Towns", filterFunction=townSignFilter, icon="custom-icons/misc/marker_town.png", checked="true", showIconInLegend="true"),
         dict(name="<abbr title='Points of Interest'>POIs</abbr>", filterFunction=pointOfInterestSignFilter, icon="custom-icons/misc/marker_poi.png", checked="true", showIconInLegend="true"),
+        dict(name="Portals", filterFunction=portalSignFilter, icon="custom-icons/misc/marker_portal.png", checked="true", showIconInLegend="true"),
 
-        dict(name="Portals", filterFunction=portalSignFilter, icon="custom-icons/transport/marker_portal.png", checked="true", showIconInLegend="true"),
         dict(name="Fast Travel", filterFunction=fastTravelSignFilter, icon="custom-icons/transport/marker_fasttravel.png", checked="true", showIconInLegend="true"),
         dict(name="Transport", filterFunction=transportSignFilter, icon="custom-icons/transport/marker_train.png", checked="true", showIconInLegend="true"),
 
@@ -29,8 +29,8 @@ def nether_marker_definitions():
         dict(name="Ender Chests", filterFunction=enderchestFilter, icon="custom-icons/auto/marker_enderchest.png", checked="true", showIconInLegend="true"),
 
         dict(name="<abbr title='Points of Interest'>POIs</abbr>", filterFunction=pointOfInterestSignFilter, icon="custom-icons/misc/marker_poi.png", checked="true", showIconInLegend="true"),
+        dict(name="Portals", filterFunction=portalSignFilter, icon="custom-icons/misc/marker_portal.png", checked="true", showIconInLegend="true"),
 
-        dict(name="Portals", filterFunction=portalSignFilter, icon="custom-icons/transport/marker_portal.png", checked="true", showIconInLegend="true"),
         dict(name="Transport", filterFunction=transportSignFilter, icon="custom-icons/transport/marker_train.png", checked="true", showIconInLegend="true"),
 
         dict(name="<abbr title='Structures generated with the world'>Structures</abbr>", filterFunction=generatedStructureFilter, icon="custom-icons/structures/marker_temple.png", showIconInLegend="true"),
@@ -45,8 +45,8 @@ def end_marker_definitions():
         dict(name="Ender Chests", filterFunction=enderchestFilter, icon="custom-icons/auto/marker_enderchest.png", checked="true", showIconInLegend="true"),
 
         dict(name="<abbr title='Points of Interest'>POIs</abbr>", filterFunction=pointOfInterestSignFilter, icon="custom-icons/misc/marker_poi.png", showIconInLegend="true"),
+        dict(name="Portals", filterFunction=portalSignFilter, icon="custom_icons/misc/marker_portal.png", checked="true", showIconInLegend="true"),
 
-        dict(name="Portals", filterFunction=portalSignFilter, icon="custom_icons/transport/marker_portal.png", checked="true", showIconInLegend="true"),
         dict(name="Transport", filterFunction=transportSignFilter, icon="custom-icons/transport/marker_train.png", checked="true", showIconInLegend="true"),
 
         dict(name="<abbr title='Structures generated with the world'>Structures</abbr>", filterFunction=generatedStructureFilter, icon="custom-icons/structures/marker_temple.png", showIconInLegend="true"),
