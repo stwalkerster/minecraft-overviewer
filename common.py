@@ -59,7 +59,7 @@ def generatedStructureFilter(poi):
     if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
         if "[Spawner]" == poi['Text1']:
             poi['icon'] = "custom-icons/structures/marker_spawner.png"
-            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "<br />(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
+            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "<br />", getCoords(poi)])
         if "[Witch Hut]" in poi['Text1']:
             poi['icon'] = "custom-icons/structures/marker_witch.png"
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "<br />(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
