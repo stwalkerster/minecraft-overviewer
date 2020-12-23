@@ -30,7 +30,7 @@ def end_marker_definitions():
         dict(name="Houses", filterFunction=houseSignFilter, icon="custom-icons/marker_house.png", checked="true", showIconInLegend="true"),
         dict(name="Ender Chests", filterFunction=enderchestFilter, icon="custom-icons/marker_enderchest.png", checked="true", showIconInLegend="true"),
         dict(name="<abbr title='Points of Interest'>POIs</abbr>", filterFunction=pointOfInterestSignFilter, icon="custom-icons/marker_poi.png", showIconInLegend="true"),
-        dict(name="Portals", filterFunction=portalSignFilter, icon="../marker_portal.png", checked="true", showIconInLegend="true"),
+        dict(name="Portals", filterFunction=portalSignFilter, icon="custom_icons/marker_portal.png", checked="true", showIconInLegend="true"),
         dict(name="Farms", filterFunction=farmSignFilter, icon="custom-icons/marker_farm.png", showIconInLegend="true"),
         dict(name="Transport", filterFunction=transportSignFilter, icon="custom-icons/marker_train.png", checked="true", showIconInLegend="true"),
         dict(name="<abbr title='Structures generated with the world'>Structures</abbr>", filterFunction=generatedStructureFilter, icon="custom-icons/marker_temple.png", showIconInLegend="true"),
