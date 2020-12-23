@@ -5,17 +5,20 @@ def marker_definitions():
         dict(name="Points of Interest", filterFunction=pointOfInterestSignFilter, icon="custom-icons/marker_poi.png", checked="true", showIconInLegend="true"),
         dict(name="Portals", filterFunction=portalSignFilter, icon="custom-icons/marker_portal.png", checked="true", showIconInLegend="true"),
         dict(name="Farms", filterFunction=farmSignFilter, icon="custom-icons/marker_farm.png", checked="false", showIconInLegend="true"),
-        dict(name="Fast Travel", filterFunction=fastTravelSignFilter, icon="custom-icons/marker_fasttravel.png", checked="true"),
-        dict(name="Transport", filterFunction=transportSignFilter, checked="true"),
-        dict(name="Spawners", filterFunction=spawnerFilter, icon="custom-icons/marker_spawner.png", checked="false"),
+        dict(name="Fast Travel", filterFunction=fastTravelSignFilter, icon="custom-icons/marker_fasttravel.png", checked="true", showIconInLegend="true"),
+        dict(name="Transport", filterFunction=transportSignFilter, icon="custom-icons/marker_train.png", checked="true", showIconInLegend="true"),
+
+        dict(name="Towns", filterFunction=townSignFilter, icon="custom-icons/marker_town.png", checked="true", showIconInLegend="true"),
+
+        dict(name="Generated structures", filterFunction=generatedStructureFilter, icon="custom-icons/marker_temple.png", showIconInLegend="true"),
+        dict(name="Spawners", filterFunction=spawnerFilter, icon="custom-icons/marker_spawner.png"),
         dict(name="Pillager outposts", filterFunction=pillagerFilter, icon="custom-icons/marker_illager.png", checked="true"),
         dict(name="Mansions", filterFunction=mansionFilter, icon="custom-icons/marker_mansion.png", checked="true"),
         dict(name="Ocean Monuments", filterFunction=monumentFilter, icon="custom-icons/marker_monument.png", checked="true"),
-        dict(name="Ocean Ruins", filterFunction=ruinsFilter, icon="custom-icons/marker_ruins.png", checked="true"),
         dict(name="Strongholds", filterFunction=strongholdFilter, icon="custom-icons/marker_stronghold.png", checked="true"),
         dict(name="Temples", filterFunction=templeSignFilter, icon="custom-icons/marker_temple.png", checked="true"),
-        dict(name="Towns", filterFunction=townSignFilter, icon="custom-icons/marker_town.png", checked="true"),
         dict(name="Witch Huts", filterFunction=witchHutSignFilter, icon="custom-icons/marker_witch.png", checked="true"),
+        dict(name="Ocean Ruins", filterFunction=ruinsFilter, icon="custom-icons/marker_ruins.png", checked="true"),
         dict(name="Shipwrecks", filterFunction=shipwreckFilter, icon="custom-icons/marker_shipwreck.png", checked="true"),
     ]
 
@@ -26,9 +29,11 @@ def nether_marker_definitions():
         dict(name="Ender Chests", filterFunction=enderchestFilter, icon="custom-icons/marker_enderchest.png", checked="true"),
         dict(name="Points of Interest", filterFunction=pointOfInterestSignFilter, icon="custom-icons/marker_poi.png", checked="true"),
         dict(name="Portals", filterFunction=portalSignFilter, icon="custom-icons/marker_portal.png", checked="true"),
-        dict(name="Transport", filterFunction=transportSignFilter, checked="true"),
-        dict(name="Spawners", filterFunction=spawnerFilter, icon="custom-icons/marker_spawner.png", checked="false"),
         dict(name="Farms", filterFunction=farmSignFilter, icon="custom-icons/marker_farm.png", checked="false", showIconInLegend="true"),
+        dict(name="Transport", filterFunction=transportSignFilter, checked="true"),
+
+        dict(name="Generated structures", filterFunction=generatedStructureFilter, icon="custom-icons/marker_temple.png", checked="false", showIconInLegend="true"),
+        dict(name="Spawners", filterFunction=spawnerFilter, icon="custom-icons/marker_spawner.png", checked="false"),
         dict(name="Nether Fortresses", filterFunction=fortressSignFilter, icon="custom-icons/marker_fortress.png", checked="true"),
         dict(name="Bastion Remnants", filterFunction=bastionRemnantSignFilter, icon="custom-icons/marker_fortress.png", checked="true"),
     ]
@@ -37,12 +42,19 @@ def nether_marker_definitions():
 def end_marker_definitions():
     return [
         dict(name="Houses", filterFunction=houseSignFilter, icon="custom-icons/marker_house.png", checked="true"),
+        dict(name="Ender Chests", filterFunction=enderchestFilter, icon="custom-icons/marker_enderchest.png", checked="true"),
         dict(name="Points of Interest", filterFunction=pointOfInterestSignFilter, icon="custom-icons/marker_poi.png", checked="true"),
         dict(name="Portals", filterFunction=portalSignFilter, icon="../marker_portal.png", checked="true"),
+        dict(name="Farms", filterFunction=farmSignFilter, icon="custom-icons/marker_farm.png", checked="false", showIconInLegend="true"),
         dict(name="Transport", filterFunction=transportSignFilter, checked="true"),
-        dict(name="Ender Chests", filterFunction=enderchestFilter, icon="custom-icons/marker_enderchest.png", checked="true"),
+        dict(name="Generated structures", filterFunction=generatedStructureFilter, icon="custom-icons/marker_temple.png", checked="false", showIconInLegend="true"),
     ]
 
+
+def generatedStructureFilter(poi):
+    if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
+        if "[not yet implemented]" == poi['Text1']:
+            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
 
 def spawnerFilter(poi):
     if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
@@ -99,6 +111,9 @@ def transportSignFilter(poi):
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
         if "[Canal]" in poi['Text1']:
             poi['icon'] = "custom-icons/marker_canal.png"
+            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
+        if "[Stable]" in poi['Text1']:
+            poi['icon'] = "custom-icons/marker_stable.png"
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
 
 def fastTravelSignFilter(poi):
