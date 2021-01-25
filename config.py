@@ -59,6 +59,22 @@ for directionName, directionCode in d_directions.items():
             "rendermode": "nether",
             'markers': nether_marker_definitions(),
         }
+        renders[configWorldUnixName + "-nether-roof-" + directionName] = {
+            "title": "Roof - " + directionName,
+            "dimension": "nether",
+            "northdirection": directionCode,
+            "rendermode": "normal",
+            'markers': nether_marker_definitions(),
+        }
+        renders[configWorldUnixName + "-nether-overlay-biome-" + directionName] = {
+            "title": "Biomes",
+            "rendermode": [ClearBase(), BiomeOverlay()],
+            "dimension": "nether",
+            "overlay": [configWorldUnixName + "-nether-" + directionName,
+                        configWorldUnixName + "-nether-nolighting-" + directionName,
+                        configWorldUnixName + "-nether-roof-" + directionName],
+            "northdirection": directionCode,
+        }
 
     if configRenderEnd:
         renders[configWorldUnixName + "-end-" + directionName] = {
