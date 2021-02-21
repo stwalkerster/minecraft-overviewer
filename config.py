@@ -49,21 +49,21 @@ for directionName, directionCode in d_directions.items():
             "title": directionName,
             "dimension": "nether",
             "northdirection": directionCode,
-            "rendermode": "nether_smooth_lighting",
+            "rendermode": [Base(), EdgeLines(), Depth(min=0,max=127), Nether(), SmoothLighting()],
             'markers': nether_marker_definitions(),
         }
         renders[configWorldUnixName + "-nether-nolighting-" + directionName] = {
             "title": "No lighting - " + directionName,
             "dimension": "nether",
             "northdirection": directionCode,
-            "rendermode": "nether",
+            "rendermode": [Base(), EdgeLines(), Depth(max=127), Nether()],
             'markers': nether_marker_definitions(),
         }
         renders[configWorldUnixName + "-nether-roof-" + directionName] = {
             "title": "Roof - " + directionName,
             "dimension": "nether",
             "northdirection": directionCode,
-            "rendermode": "normal",
+            "rendermode": [Base(), EdgeLines(), Depth(min=127)],
             'markers': nether_marker_definitions(),
         }
         renders[configWorldUnixName + "-nether-overlay-biome-" + directionName] = {
