@@ -126,7 +126,7 @@ def portalSignFilter(poi):
         if "[Portal]" in poi['Text1']:
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "<br />(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
         if "[End Gateway]" in poi['Text1']:
-            poi['icon'] = "custom-icons/structures/marker_endportal.png"
+            poi['icon'] = "custom-icons/transport/marker_endportal.png"
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "<br />(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
 
 def pointOfInterestSignFilter(poi):
