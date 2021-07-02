@@ -85,7 +85,7 @@ for directionName, directionCode in d_directions.items():
             'markers': end_marker_definitions(),
         }
         renders[configWorldUnixName + "-end-nolighting-" + directionName] = {
-            "title": directionName,
+            "title": "No lighting - " + directionName,
             "dimension": "end",
             "northdirection": directionCode,
             "rendermode": "normal",
