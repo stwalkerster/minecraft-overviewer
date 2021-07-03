@@ -77,18 +77,18 @@ for directionName, directionCode in d_directions.items():
         }
 
     if configRenderEnd:
-        renders[configWorldUnixName + "-end-" + directionName] = {
-            "title": directionName,
-            "dimension": "end",
-            "northdirection": directionCode,
-            "rendermode": "smooth_lighting",
-            'markers': end_marker_definitions(),
-        }
         renders[configWorldUnixName + "-end-nolighting-" + directionName] = {
             "title": "No lighting - " + directionName,
             "dimension": "end",
             "northdirection": directionCode,
             "rendermode": "normal",
+            'markers': end_marker_definitions(),
+        }
+        renders[configWorldUnixName + "-end-" + directionName] = {
+            "title": directionName,
+            "dimension": "end",
+            "northdirection": directionCode,
+            "rendermode": "smooth_lighting",
             'markers': end_marker_definitions(),
         }
 
