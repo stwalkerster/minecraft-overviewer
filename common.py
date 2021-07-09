@@ -93,7 +93,7 @@ def generatedStructureFilter(poi):
         if "[Fortress]" in poi['Text1']:
             poi['icon'] = "custom-icons/structures/marker_fortress.png"
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "<br />(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
-        if "[Bastion]" in poi['Text1']:
+        if "[Bastion]" in poi['Text1'] or "[Bastion Remnant]" in poi['Text1']:
             poi['icon'] = "custom-icons/structures/marker_bastion.png"
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "<br />(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
         if "[End City]" in poi['Text1']:
