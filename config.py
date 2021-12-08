@@ -92,14 +92,14 @@ for directionName, directionCode in d_directions.items():
             'markers': end_marker_definitions(),
         }
 
-    renders[configWorldUnixName + "-overworld-overlay-biome-" + directionName] = {
-        "title": "Biomes",
-        "rendermode": [ClearBase(), BiomeOverlay()],
-        "dimension": "overworld",
-        "overlay": [configWorldUnixName + "-overworld-day-" + directionName,
-                    configWorldUnixName + "-overworld-night-" + directionName],
-        "northdirection": directionCode,
-    }
+    #renders[configWorldUnixName + "-overworld-overlay-biome-" + directionName] = {
+    #    "title": "Biomes",
+    #    "rendermode": [ClearBase(), BiomeOverlay()],
+    #    "dimension": "overworld",
+    #    "overlay": [configWorldUnixName + "-overworld-day-" + directionName,
+    #                configWorldUnixName + "-overworld-night-" + directionName],
+    #    "northdirection": directionCode,
+    #}
 
     renders[configWorldUnixName + "-overworld-overlay-slime-" + directionName] = {
         "title": "Slime Spawn",
