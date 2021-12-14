@@ -66,15 +66,15 @@ for directionName, directionCode in d_directions.items():
             "rendermode": [Base(), EdgeLines(), Depth(min=127)],
             'markers': nether_marker_definitions(),
         }
-        renders[configWorldUnixName + "-nether-overlay-biome-" + directionName] = {
-            "title": "Biomes",
-            "rendermode": [ClearBase(), BiomeOverlay()],
-            "dimension": "nether",
-            "overlay": [configWorldUnixName + "-nether-" + directionName,
-                        configWorldUnixName + "-nether-nolighting-" + directionName,
-                        configWorldUnixName + "-nether-roof-" + directionName],
-            "northdirection": directionCode,
-        }
+        #renders[configWorldUnixName + "-nether-overlay-biome-" + directionName] = {
+        #    "title": "Biomes",
+        #    "rendermode": [ClearBase(), BiomeOverlay()],
+        #    "dimension": "nether",
+        #    "overlay": [configWorldUnixName + "-nether-" + directionName,
+        #                configWorldUnixName + "-nether-nolighting-" + directionName,
+        #                configWorldUnixName + "-nether-roof-" + directionName],
+        #    "northdirection": directionCode,
+        #}
 
     if configRenderEnd:
         renders[configWorldUnixName + "-end-nolighting-" + directionName] = {
