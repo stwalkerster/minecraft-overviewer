@@ -114,7 +114,7 @@ def houseSignFilter(poi):
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "<br />(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
         if "[Minecamp]" in poi['Text1']:
             poi['icon'] = "custom-icons/player/marker_hut.png"
-            return "\n".join("<em>Deprecated tag, please replace with [Hut].</em><br />", [poi['Text2'], poi['Text3'], poi['Text4'], "<br />(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
+            return "\n".join(["<em>Deprecated tag, please replace with [Hut].</em><br />", poi['Text2'], poi['Text3'], poi['Text4'], "<br />(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
 
 def townSignFilter(poi):
     if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
