@@ -2,23 +2,36 @@
 # Transport: #9d7050
 # Players: #128e4e
 # Structures: #f34648
+import os
+
 
 def marker_definitions():
-    return [
-        dict(name="Player bases", filterFunction=houseSignFilter, icon="custom-icons/player/marker_house.png", checked="true", showIconInLegend="true"),
-        dict(name="Farms", filterFunction=farmSignFilter, icon="custom-icons/player/marker_farm.png", showIconInLegend="true"),
+    markers = [
+        dict(name="Player bases", filterFunction=houseSignFilter, icon="custom-icons/player/marker_house.png",
+             checked="true", showIconInLegend="true"),
+        dict(name="Farms", filterFunction=farmSignFilter, icon="custom-icons/player/marker_farm.png",
+             showIconInLegend="true"),
 
-        dict(name="Ender Chests", filterFunction=enderchestFilter, icon="custom-icons/auto/marker_enderchest.png", showIconInLegend="true"),
+        dict(name="Ender Chests", filterFunction=enderchestFilter, icon="custom-icons/auto/marker_enderchest.png",
+             showIconInLegend="true"),
 
-        dict(name="Towns", filterFunction=townSignFilter, icon="custom-icons/misc/marker_town.png", checked="true", showIconInLegend="true"),
-        dict(name="<abbr title='Points of Interest'>POIs</abbr>", filterFunction=pointOfInterestSignFilter, icon="custom-icons/misc/marker_poi.png", checked="true", showIconInLegend="true"),
-        dict(name="Portals", filterFunction=portalSignFilter, icon="custom-icons/misc/marker_portal.png", checked="true", showIconInLegend="true"),
-
-        # dict(name="Fast Travel", filterFunction=fastTravelSignFilter, icon="custom-icons/transport/marker_fasttravel.png", checked="true", showIconInLegend="true"),
-        dict(name="Transport", filterFunction=transportSignFilter, icon="custom-icons/transport/marker_train.png", checked="true", showIconInLegend="true"),
-
-        dict(name="<abbr title='Structures generated with the world'>Structures</abbr>", filterFunction=generatedStructureFilter, icon="custom-icons/structures/marker_temple.png", showIconInLegend="true"),
+        dict(name="Towns", filterFunction=townSignFilter, icon="custom-icons/misc/marker_town.png", checked="true",
+             showIconInLegend="true"),
+        dict(name="<abbr title='Points of Interest'>POIs</abbr>", filterFunction=pointOfInterestSignFilter,
+             icon="custom-icons/misc/marker_poi.png", checked="true", showIconInLegend="true"),
+        dict(name="Portals", filterFunction=portalSignFilter, icon="custom-icons/misc/marker_portal.png",
+             checked="true", showIconInLegend="true")
     ]
+
+    if os.environ.get('BUILD_MARKER_FASTTRAVEL') == 'yes':
+        markers.append(dict(name="Fast Travel", filterFunction=fastTravelSignFilter, icon="custom-icons/transport/marker_fasttravel.png", checked="true", showIconInLegend="true"))
+
+    markers.append(dict(name="Transport", filterFunction=transportSignFilter, icon="custom-icons/transport/marker_train.png", checked="true", showIconInLegend="true"))
+    markers.append(dict(name="<abbr title='Structures generated with the world'>Structures</abbr>",
+             filterFunction=generatedStructureFilter, icon="custom-icons/structures/marker_temple.png",
+             showIconInLegend="true"))
+
+    return markers
 
 
 def nether_marker_definitions():
