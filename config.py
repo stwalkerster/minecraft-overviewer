@@ -45,18 +45,18 @@ for directionName, directionCode in d_directions.items():
     }
 
     if configRenderNether:
-        renders[configWorldUnixName + "-nether-" + directionName] = {
-            "title": directionName,
-            "dimension": "nether",
-            "northdirection": directionCode,
-            "rendermode": [Base(), EdgeLines(), Depth(min=0,max=127), Nether(), SmoothLighting()],
-            'markers': nether_marker_definitions(),
-        }
         renders[configWorldUnixName + "-nether-nolighting-" + directionName] = {
             "title": "No lighting - " + directionName,
             "dimension": "nether",
             "northdirection": directionCode,
             "rendermode": [Base(), EdgeLines(), Depth(max=127), Nether()],
+            'markers': nether_marker_definitions(),
+        }
+        renders[configWorldUnixName + "-nether-" + directionName] = {
+            "title": directionName,
+            "dimension": "nether",
+            "northdirection": directionCode,
+            "rendermode": [Base(), EdgeLines(), Depth(min=0,max=127), Nether(), SmoothLighting()],
             'markers': nether_marker_definitions(),
         }
         renders[configWorldUnixName + "-nether-roof-" + directionName] = {
