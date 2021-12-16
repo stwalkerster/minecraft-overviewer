@@ -172,3 +172,8 @@ img.ov-marker-legend {
     float: left;
     height: 20px;
 }
+
+.leaflet-control-layers label {
+    display: block;
+    min-height: 20px;
+}
