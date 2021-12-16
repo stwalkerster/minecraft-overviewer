@@ -147,7 +147,7 @@ def pointOfInterestSignFilter(poi):
         if "[POI]" in poi['Text1']:
             return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "<br />(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
         if "[Villager Trading]" in poi['Text1']:
-            poi['icon'] = "custom-icons/transport/marker_tradinghall.png"
+            poi['icon'] = "custom-icons/misc/marker_tradinghall.png"
             return "Villager Trading Hall\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "<br />(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
 
 def transportSignFilter(poi):
