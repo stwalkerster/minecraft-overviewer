@@ -68,116 +68,119 @@ def end_marker_definitions():
 def getCoords(poi):
     return "(" + ", ".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"
 
+def formatSign(poi, title):
+    return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "<br />", getCoords(poi)])
+
 def generatedStructureFilter(poi):
     if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
         if "[Spawner]" == poi['Text1']:
             poi['icon'] = "custom-icons/structures/marker_spawner.png"
-            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "<br />", getCoords(poi)])
+            return formatSign(poi, None)
         if "[Witch Hut]" in poi['Text1']:
             poi['icon'] = "custom-icons/structures/marker_witch.png"
-            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "<br />(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
+            return formatSign(poi, None)
         if "[Temple]" in poi['Text1']:
             poi['icon'] = "custom-icons/structures/marker_temple.png"
-            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "<br />(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
+            return formatSign(poi, None)
         if "[Stronghold]" in poi['Text1']:
             poi['icon'] = "custom-icons/structures/marker_stronghold.png"
-            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "<br />(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
+            return formatSign(poi, None)
         if "[Shipwreck]" in poi['Text1']:
             poi['icon'] = "custom-icons/structures/marker_shipwreck.png"
-            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "<br />(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
+            return formatSign(poi, None)
         if "[Mansion]" in poi['Text1']:
             poi['icon'] = "custom-icons/structures/marker_mansion.png"
-            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "<br />(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
+            return formatSign(poi, None)
         if "[Monument]" in poi['Text1']:
             poi['icon'] = "custom-icons/structures/marker_monument.png"
-            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "<br />(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
+            return formatSign(poi, None)
         if "[Ruins]" in poi['Text1'] or "[Ruin]" in poi['Text1']:
             poi['icon'] = "custom-icons/structures/marker_ruins.png"
-            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "<br />(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
+            return formatSign(poi, None)
         if "[Igloo]" in poi['Text1']:
             poi['icon'] = "custom-icons/structures/marker_igloo.png"
-            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "<br />(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
+            return formatSign(poi, None)
         if "[Illager]" in poi['Text1'] or "[Pillager]" in poi['Text1']:
             poi['icon'] = "custom-icons/structures/marker_illager.png"
-            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "<br />(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
+            return formatSign(poi, None)
         if "[Ruined Portal]" in poi['Text1'] or "[Pillager]" in poi['Text1']:
             poi['icon'] = "custom-icons/structures/marker_ruinedportal.png"
-            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "<br />(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
+            return formatSign(poi, None)
         if "[Fortress]" in poi['Text1']:
             poi['icon'] = "custom-icons/structures/marker_fortress.png"
-            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "<br />(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
+            return formatSign(poi, None)
         if "[Bastion]" in poi['Text1'] or "[Bastion Remnant]" in poi['Text1']:
             poi['icon'] = "custom-icons/structures/marker_bastion.png"
-            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "<br />(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
+            return formatSign(poi, None)
         if "[End City]" in poi['Text1']:
             poi['icon'] = "custom-icons/structures/marker_endcity.png"
-            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "<br />(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
+            return formatSign(poi, None)
 
 
 def houseSignFilter(poi):
     if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
         if "[House]" in poi['Text1']:
             poi['icon'] = "custom-icons/player/marker_house.png"
-            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "<br />(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
+            return formatSign(poi, None)
         if "[Hut]" in poi['Text1']:
             poi['icon'] = "custom-icons/player/marker_hut.png"
-            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "<br />(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
+            return formatSign(poi, None)
         if "[Mine]" in poi['Text1']:
             poi['icon'] = "custom-icons/player/marker_mines.png"
-            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "<br />(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
+            return formatSign(poi, None)
         if "[Minecamp]" in poi['Text1']:
             poi['icon'] = "custom-icons/player/marker_hut.png"
-            return "\n".join(["<em>Deprecated tag, please replace with [Hut].</em><br />", poi['Text2'], poi['Text3'], poi['Text4'], "<br />(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
+            return "\n".join(["<em>Deprecated tag, please replace with [Hut].</em><br />", poi['Text2'], poi['Text3'], poi['Text4'], "<br />", getCoords(poi)])
 
 def townSignFilter(poi):
     if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
         if "[Town]" in poi['Text1']:
-            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "<br />(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
+            return formatSign(poi, None)
 
 def portalSignFilter(poi):
     if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
         if "[Portal]" in poi['Text1']:
-            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "<br />(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
+            return formatSign(poi, None)
     if poi['id'] == 'minecraft:end_gateway':
         poi['icon'] = "custom-icons/transport/marker_endportal.png"
-        return "\n".join(["End Gateway", "<br />(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
+        return "\n".join(["End Gateway", "<br />", getCoords(poi)])
 
 def pointOfInterestSignFilter(poi):
     if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
         if "[POI]" in poi['Text1']:
-            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "<br />(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
+            return formatSign(poi, None)
         if "[Villager Trading]" in poi['Text1']:
             poi['icon'] = "custom-icons/misc/marker_tradinghall.png"
-            return "\n".join(["<strong>Villager Trading Hall</strong>", poi['Text2'], poi['Text3'], poi['Text4'], "<br />(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
+            return formatSign(poi, "Villager Trading Hall")
 
 def transportSignFilter(poi):
     if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
         if "[Station]" in poi['Text1'] or "[NFT]" in poi['Text1']:
             poi['icon'] = "custom-icons/transport/marker_train.png"
-            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "<br />(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
+            return formatSign(poi, None)
         if "[Dock]" in poi['Text1']:
             poi['icon'] = "custom-icons/transport/marker_dock.png"
-            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "<br />(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
+            return formatSign(poi, None)
         if "[Canal]" in poi['Text1']:
             poi['icon'] = "custom-icons/transport/marker_canal.png"
-            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "<br />(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
+            return formatSign(poi, None)
         if "[Stable]" in poi['Text1']:
             poi['icon'] = "custom-icons/transport/marker_stable.png"
-            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "<br />(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
+            return formatSign(poi, None)
 
 def fastTravelSignFilter(poi):
     if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
         if "Fast Travel" in poi['Text1']:
-            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "<br />(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
+            return formatSign(poi, None)
 
 def farmSignFilter(poi):
     if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
         if "[Farm]" in poi['Text1']:
-            return "\n".join([poi['Text2'], poi['Text3'], poi['Text4'], "<br />(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
+            return formatSign(poi, None)
         if "[Enclosure]" in poi['Text1'] or "[Field]" in poi['Text1'] or "[Arboretum]" in poi['Text1']:
-            return "\n".join(["<em>Deprecated tag, please replace with [Farm].</em><br />", poi['Text2'], poi['Text3'], poi['Text4'], "<br />(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
+            return "\n".join(["<em>Deprecated tag, please replace with [Farm].</em><br />", poi['Text2'], poi['Text3'], poi['Text4'], "<br />", getCoords(poi)])
 
 
 def enderchestFilter(poi):
     if poi['id'] == 'minecraft:ender_chest':
-        return "\n".join(["Ender Chest", "<br />(" + ",".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"])
+        return "\n".join(["Ender Chest", "<br />", getCoords(poi)])
