@@ -69,10 +69,25 @@ def getCoords(poi):
     return "(" + ", ".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"
 
 def formatSign(poi, title):
-    lines = [poi['Text2'], poi['Text3'], poi['Text4'], getCoords(poi)]
+    lines = [poi['Text2'], poi['Text3'], poi['Text4']]
+
+    while '' in lines:
+        if lines[0] == '':
+            lines.pop(0)
+        elif lines[-1] == '':
+            lines.pop(-1)
+        else:
+            break
+
+    coords = getCoords(poi)
+
+    hover = list(lines)
+    hover.append(coords)
+
     if title is not None:
         lines.insert(0, '<strong>' + title + '</strong>')
-    return ("\n".join([x for x in lines if x]), '<div class="signtext">' + "<br />".join(lines) + '</div>')
+        hover.insert(0, title)
+    return ("\n".join([x for x in hover if x]), '<div class="signtext">' + "<br />".join(lines) + '</div><br />' + coords)
 
 def generatedStructureFilter(poi):
     if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
