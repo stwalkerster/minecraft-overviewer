@@ -101,46 +101,46 @@ def generatedStructureFilter(poi):
     if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
         if "[Spawner]" == poi['Text1']:
             poi['icon'] = "custom-icons/structures/marker_spawner.png"
-            return formatSign(poi, None, None)
+            return formatSign(poi, "Monster Spawner", None)
         if "[Witch Hut]" in poi['Text1']:
             poi['icon'] = "custom-icons/structures/marker_witch.png"
-            return formatSign(poi, None, None)
+            return formatSign(poi, "Witch Hut", None)
         if "[Temple]" in poi['Text1']:
             poi['icon'] = "custom-icons/structures/marker_temple.png"
-            return formatSign(poi, None, None)
+            return formatSign(poi, "Desert / Jungle Temple", None)
         if "[Stronghold]" in poi['Text1']:
             poi['icon'] = "custom-icons/structures/marker_stronghold.png"
-            return formatSign(poi, None, None)
+            return formatSign(poi, "Stronghold", None)
         if "[Shipwreck]" in poi['Text1']:
             poi['icon'] = "custom-icons/structures/marker_shipwreck.png"
-            return formatSign(poi, None, None)
+            return formatSign(poi, "Shipwreck", None)
         if "[Mansion]" in poi['Text1']:
             poi['icon'] = "custom-icons/structures/marker_mansion.png"
-            return formatSign(poi, None, None)
+            return formatSign(poi, "Woodland Mansion", None)
         if "[Monument]" in poi['Text1']:
             poi['icon'] = "custom-icons/structures/marker_monument.png"
-            return formatSign(poi, None, None)
+            return formatSign(poi, "Ocean Monument", None)
         if "[Ruins]" in poi['Text1'] or "[Ruin]" in poi['Text1']:
             poi['icon'] = "custom-icons/structures/marker_ruins.png"
-            return formatSign(poi, None, None)
+            return formatSign(poi, "Underwater Ruins", None)
         if "[Igloo]" in poi['Text1']:
             poi['icon'] = "custom-icons/structures/marker_igloo.png"
-            return formatSign(poi, None, None)
+            return formatSign(poi, "Igloo", None)
         if "[Illager]" in poi['Text1'] or "[Pillager]" in poi['Text1']:
             poi['icon'] = "custom-icons/structures/marker_illager.png"
-            return formatSign(poi, None, None)
+            return formatSign(poi, "Illager Outpost", None)
         if "[Ruined Portal]" in poi['Text1'] or "[Pillager]" in poi['Text1']:
             poi['icon'] = "custom-icons/structures/marker_ruinedportal.png"
-            return formatSign(poi, None, None)
+            return formatSign(poi, "Ruined Portal", None)
         if "[Fortress]" in poi['Text1']:
             poi['icon'] = "custom-icons/structures/marker_fortress.png"
-            return formatSign(poi, None, None)
+            return formatSign(poi, "Nether Fortress", None)
         if "[Bastion]" in poi['Text1'] or "[Bastion Remnant]" in poi['Text1']:
             poi['icon'] = "custom-icons/structures/marker_bastion.png"
-            return formatSign(poi, None, None)
+            return formatSign(poi, "Bastion Remnant", None)
         if "[End City]" in poi['Text1']:
             poi['icon'] = "custom-icons/structures/marker_endcity.png"
-            return formatSign(poi, None, None)
+            return formatSign(poi, "End City", None)
 
 
 def houseSignFilter(poi):
@@ -150,10 +150,10 @@ def houseSignFilter(poi):
             return formatSign(poi, None, None)
         if "[Hut]" in poi['Text1']:
             poi['icon'] = "custom-icons/player/marker_hut.png"
-            return formatSign(poi, None, None)
+            return formatSign(poi, "Hut", None)
         if "[Mine]" in poi['Text1']:
             poi['icon'] = "custom-icons/player/marker_mines.png"
-            return formatSign(poi, None, None)
+            return formatSign(poi, "Mine", None)
         if "[Minecamp]" in poi['Text1']:
             poi['icon'] = "custom-icons/player/marker_hut.png"
             return formatSign(poi, None, '<em>Deprecated tag, please replace with [Hut].</em>')
@@ -162,7 +162,7 @@ def houseSignFilter(poi):
 def townSignFilter(poi):
     if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
         if "[Town]" in poi['Text1']:
-            return formatSign(poi, None, None)
+            return formatSign(poi, "Town", None)
 
 
 def portalSignFilter(poi):
@@ -187,16 +187,16 @@ def transportSignFilter(poi):
     if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
         if "[Station]" in poi['Text1'] or "[NFT]" in poi['Text1']:
             poi['icon'] = "custom-icons/transport/marker_train.png"
-            return formatSign(poi, None, None)
+            return formatSign(poi, "Minecart Station", None)
         if "[Dock]" in poi['Text1']:
             poi['icon'] = "custom-icons/transport/marker_dock.png"
-            return formatSign(poi, None, None)
+            return formatSign(poi, "Dock", None)
         if "[Canal]" in poi['Text1']:
             poi['icon'] = "custom-icons/transport/marker_canal.png"
-            return formatSign(poi, None, None)
+            return formatSign(poi, "Canal", None)
         if "[Stable]" in poi['Text1']:
             poi['icon'] = "custom-icons/transport/marker_stable.png"
-            return formatSign(poi, None, None)
+            return formatSign(poi, "Horse Stable", None)
 
 
 def fastTravelSignFilter(poi):
@@ -208,7 +208,7 @@ def fastTravelSignFilter(poi):
 def farmSignFilter(poi):
     if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
         if "[Farm]" in poi['Text1']:
-            return formatSign(poi, None, None)
+            return formatSign(poi, "Farm", None)
         if "[Enclosure]" in poi['Text1'] or "[Field]" in poi['Text1'] or "[Arboretum]" in poi['Text1']:
             return formatSign(poi, None, '<em>Deprecated tag, please replace with [Farm].</em>')
 

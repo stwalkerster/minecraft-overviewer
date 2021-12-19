@@ -185,3 +185,41 @@ img.ov-marker-legend {
     display: block;
     min-height: 20px;
 }
+
+
+.signtext {
+    background-image: url(./custom-icons/oak_planks.png);
+    background-size: 71px 71px;
+    background-position-y: 11px;
+    image-rendering: pixelated;
+
+    color: #000;
+    font-family: "Minecraft";
+    font-size: 13px;
+    padding: 10px;
+}
+
+.mccolor-white.mcglow-1 {
+    text-shadow: 0 0 3px black, 0 0 5px white, 0 0 5px white, 0 0 5px white, 0 0 5px white, 0 0 6px white, 0 0 6px white;
+}
+
+.mcglow-1 {
+    text-shadow: 0 0 5px white, 0 0 5px white, 0 0 5px white, 0 0 5px white, 0 0 6px white, 0 0 6px white;
+}
+
+.mccolor-brown { color:  #835432; }
+.mccolor-red { color:  #B02E26; }
+.mccolor-orange { color: #F9801D; }
+.mccolor-yellow { color: #FED83D; }
+.mccolor-lime { color: #80C71F; }
+.mccolor-green { color: #5E7C16; }
+.mccolor-cyan { color: #169C9C; }
+.mccolor-light_blue { color: #3AB3DA; }
+.mccolor-blue { color:  #3C44AA; }
+.mccolor-magenta { color: #C74EBD; }
+.mccolor-purple { color: #8932B8; }
+.mccolor-pink { color: #F38BAA; }
+.mccolor-white { color:  #F9FFFE; }
+.mccolor-grey { color: #474F52; }
+.mccolor-light_grey { color: #9D9D97; }
+.mccolor-black { color: #1D1D21; }
