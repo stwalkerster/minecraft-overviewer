@@ -188,7 +188,7 @@ img.ov-marker-legend {
 
 
 .signtext {
-    background-image: url(./custom-icons/oak_planks.png);
+    background-image: url(./oak_planks.png);
     background-size: 71px 71px;
     background-position-y: 11px;
     image-rendering: pixelated;
