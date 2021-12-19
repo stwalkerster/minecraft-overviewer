@@ -87,7 +87,10 @@ def formatSign(poi, title):
     if title is not None:
         lines.insert(0, '<strong>' + title + '</strong>')
         hover.insert(0, title)
-    return ("\n".join([x for x in hover if x]), '<div class="signtext">' + "<br />".join(lines) + '</div><br />' + coords)
+
+    infoWindowText = '<div class="signtext mccolor-' + poi['Color'] + ' mcglow-' + poi['GlowingText'] + '">' + "<br />".join(lines) + '</div><br />' + coords
+
+    return ("\n".join([x for x in hover if x]), infoWindowText)
 
 def generatedStructureFilter(poi):
     if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
