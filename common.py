@@ -65,8 +65,10 @@ def end_marker_definitions():
         dict(name="<abbr title='Structures generated with the world'>Structures</abbr>", filterFunction=generatedStructureFilter, icon="custom-icons/structures/marker_temple.png", showIconInLegend="true"),
     ]
 
+
 def getCoords(poi):
     return "(" + ", ".join([str(poi['x']), str(poi['y']), str(poi['z'])]) + ")"
+
 
 def formatSign(poi, title):
     lines = [poi['Text2'], poi['Text3'], poi['Text4']]
@@ -88,9 +90,13 @@ def formatSign(poi, title):
         lines.insert(0, '<strong>' + title + '</strong>')
         hover.insert(0, title)
 
-    infoWindowText = '<div class="signtext mccolor-' + poi['Color'] + ' mcglow-' + str(poi['GlowingText']) + '">' + "<br />".join(lines) + '</div><br />' + coords
+    if lines:
+        info_window_text = '<div class="signtext mccolor-' + poi['Color'] + ' mcglow-' + str(poi['GlowingText']) + '">' + "<br />".join(lines) + '</div><br />' + coords
+    else:
+        info_window_text = coords
 
-    return ("\n".join([x for x in hover if x]), infoWindowText)
+    return ("\n".join([x for x in hover if x]), info_window_text)
+
 
 def generatedStructureFilter(poi):
     if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
@@ -153,10 +159,12 @@ def houseSignFilter(poi):
             poi['icon'] = "custom-icons/player/marker_hut.png"
             return "\n".join(["<em>Deprecated tag, please replace with [Hut].</em><br />", poi['Text2'], poi['Text3'], poi['Text4'], "<br />", getCoords(poi)])
 
+
 def townSignFilter(poi):
     if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
         if "[Town]" in poi['Text1']:
             return formatSign(poi, None)
+
 
 def portalSignFilter(poi):
     if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
@@ -166,6 +174,7 @@ def portalSignFilter(poi):
         poi['icon'] = "custom-icons/transport/marker_endportal.png"
         return "\n".join(["End Gateway", "<br />", getCoords(poi)])
 
+
 def pointOfInterestSignFilter(poi):
     if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
         if "[POI]" in poi['Text1']:
@@ -173,6 +182,7 @@ def pointOfInterestSignFilter(poi):
         if "[Villager Trading]" in poi['Text1']:
             poi['icon'] = "custom-icons/misc/marker_tradinghall.png"
             return formatSign(poi, "Villager Trading Hall")
+
 
 def transportSignFilter(poi):
     if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
@@ -189,10 +199,12 @@ def transportSignFilter(poi):
             poi['icon'] = "custom-icons/transport/marker_stable.png"
             return formatSign(poi, None)
 
+
 def fastTravelSignFilter(poi):
     if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
         if "Fast Travel" in poi['Text1']:
             return formatSign(poi, None)
+
 
 def farmSignFilter(poi):
     if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
