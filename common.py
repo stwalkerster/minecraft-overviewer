@@ -86,14 +86,15 @@ def formatSign(poi, title):
     hover = list(lines)
     hover.append(coords)
 
+    title_html = ''
     if title is not None:
-        lines.insert(0, '<strong>' + title + '</strong>')
+        title_html = '<strong>' + title + '</strong><br />'
         hover.insert(0, title)
 
     if lines:
-        info_window_text = '<div class="signtext mccolor-' + poi['Color'] + ' mcglow-' + str(poi['GlowingText']) + '">' + "<br />".join(lines) + '</div><br />' + coords
+        info_window_text = title_html + '<div class="signtext mccolor-' + poi['Color'] + ' mcglow-' + str(poi['GlowingText']) + '">' + "<br />".join(lines) + '</div><br />' + coords
     else:
-        info_window_text = coords
+        info_window_text = title_html + coords
 
     return ("\n".join([x for x in hover if x]), info_window_text)
 
