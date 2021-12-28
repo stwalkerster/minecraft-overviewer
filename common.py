@@ -181,6 +181,9 @@ def pointOfInterestSignFilter(poi):
         if "[Villager Trading]" in poi['Text1']:
             poi['icon'] = "custom-icons/misc/marker_tradinghall.png"
             return formatSign(poi, "Villager Trading Hall", None)
+        if "[Chest]" in poi['Text1']:
+            poi['icon'] = "custom-icons/misc/marker_chest.png"
+            return formatSign(poi, "Chest", None)
 
 
 def transportSignFilter(poi):
