@@ -168,6 +168,7 @@ def townSignFilter(poi):
 def portalSignFilter(poi):
     if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
         if "[Portal]" in poi['Text1']:
+            print(globals())
             return formatSign(poi, None, None)
     if poi['id'] == 'minecraft:end_gateway':
         poi['icon'] = "custom-icons/transport/marker_endportal.png"
