@@ -117,7 +117,7 @@ def generatedStructureFilter(poi):
         if "[Mansion]" in poi['Text1']:
             poi['icon'] = "custom-icons/structures/marker_mansion.png"
             return formatSign(poi, "Woodland Mansion", None)
-        if "[Monument]" in poi['Text1']:
+        if "[Monument]" in poi['Text1'] or "[Ocean Monument]" in poi['Text1']:
             poi['icon'] = "custom-icons/structures/marker_monument.png"
             return formatSign(poi, "Ocean Monument", None)
         if "[Ruins]" in poi['Text1'] or "[Ruin]" in poi['Text1']:
