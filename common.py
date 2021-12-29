@@ -5,7 +5,7 @@
 import os
 
 
-def marker_definitions():
+def overworld_marker_definitions():
     markers = [
         dict(name="Player bases", filterFunction=houseSignFilter, icon="custom-icons/player/marker_house.png",
              checked="true", showIconInLegend="true"),
@@ -36,17 +36,31 @@ def marker_definitions():
 
 def nether_marker_definitions():
     return [
-        dict(name="Player bases", filterFunction=houseSignFilter, icon="custom-icons/player/marker_house.png", checked="true", showIconInLegend="true"),
-        dict(name="Farms", filterFunction=farmSignFilter, icon="custom-icons/player/marker_farm.png", showIconInLegend="true"),
+        dict(name="Player bases", filterFunction=houseSignNether, icon="custom-icons/player/marker_house.png", checked="true", showIconInLegend="true"),
+        dict(name="Farms", filterFunction=farmSignNether, icon="custom-icons/player/marker_farm.png", showIconInLegend="true"),
 
-        dict(name="Ender Chests", filterFunction=enderchestFilter, icon="custom-icons/auto/marker_enderchest.png", checked="true", showIconInLegend="true"),
+        dict(name="Ender Chests", filterFunction=enderchestNether, icon="custom-icons/auto/marker_enderchest.png", checked="true", showIconInLegend="true"),
 
-        dict(name="<abbr title='Points of Interest'>POIs</abbr>", filterFunction=pointOfInterestSignFilter, icon="custom-icons/misc/marker_poi.png", checked="true", showIconInLegend="true"),
-        dict(name="Portals", filterFunction=portalSignFilter, icon="custom-icons/misc/marker_portal.png", checked="true", showIconInLegend="true"),
+        dict(name="<abbr title='Points of Interest'>POIs</abbr>", filterFunction=pointOfInterestSignNether, icon="custom-icons/misc/marker_poi.png", checked="true", showIconInLegend="true"),
+        dict(name="Portals", filterFunction=portalSignNether, icon="custom-icons/misc/marker_portal.png", checked="true", showIconInLegend="true"),
 
-        dict(name="Transport", filterFunction=transportSignFilter, icon="custom-icons/transport/marker_train.png", checked="true", showIconInLegend="true"),
+        dict(name="Transport", filterFunction=transportSignNether, icon="custom-icons/transport/marker_train.png", checked="true", showIconInLegend="true"),
 
-        dict(name="<abbr title='Structures generated with the world'>Structures</abbr>", filterFunction=generatedStructureFilter, icon="custom-icons/structures/marker_temple.png", showIconInLegend="true"),
+        dict(name="<abbr title='Structures generated with the world'>Structures</abbr>", filterFunction=generatedStructureNether, icon="custom-icons/structures/marker_temple.png", showIconInLegend="true"),
+    ]
+
+
+def nether_roof_marker_definitions():
+    return [
+        dict(name="Player bases", filterFunction=houseSignRoof, icon="custom-icons/player/marker_house.png", checked="true", showIconInLegend="true"),
+        dict(name="Farms", filterFunction=farmSignRoof, icon="custom-icons/player/marker_farm.png", showIconInLegend="true"),
+
+        dict(name="Ender Chests", filterFunction=enderchestRoof, icon="custom-icons/auto/marker_enderchest.png", checked="true", showIconInLegend="true"),
+
+        dict(name="<abbr title='Points of Interest'>POIs</abbr>", filterFunction=pointOfInterestSignRoof, icon="custom-icons/misc/marker_poi.png", checked="true", showIconInLegend="true"),
+        dict(name="Portals", filterFunction=portalSignRoof, icon="custom-icons/misc/marker_portal.png", checked="true", showIconInLegend="true"),
+
+        dict(name="Transport", filterFunction=transportSignRoof, icon="custom-icons/transport/marker_train.png", checked="true", showIconInLegend="true"),
     ]
 
 
@@ -143,7 +157,22 @@ def generatedStructureFilter(poi):
             return formatSign(poi, "End City", None)
 
 
-def houseSignFilter(poi):
+# region houseSign
+
+def houseSignNether(poi):
+    return houseSignFilter(poi, False)
+
+
+def houseSignRoof(poi):
+    return houseSignFilter(poi, True)
+
+
+def houseSignFilter(poi, roof=None):
+    if roof is True and poi['y'] < 127:
+        return None
+    if roof is False and poi['y'] > 127:
+        return None
+
     if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
         if "[House]" in poi['Text1']:
             poi['icon'] = "custom-icons/player/marker_house.png"
@@ -159,23 +188,54 @@ def houseSignFilter(poi):
             return formatSign(poi, None, '<em>Deprecated tag, please replace with [Hut].</em>')
 
 
+# endregion
+
 def townSignFilter(poi):
     if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
         if "[Town]" in poi['Text1']:
             return formatSign(poi, "Town", None)
 
+# region portalSign
 
-def portalSignFilter(poi):
+def portalSignNether(poi):
+    return portalSignFilter(poi, False)
+
+
+def portalSignRoof(poi):
+    return portalSignFilter(poi, True)
+
+
+def portalSignFilter(poi, roof=None):
+    if roof is True and poi['y'] < 127:
+        return None
+    if roof is False and poi['y'] > 127:
+        return None
+
     if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
         if "[Portal]" in poi['Text1']:
-            print(globals())
             return formatSign(poi, None, None)
     if poi['id'] == 'minecraft:end_gateway':
         poi['icon'] = "custom-icons/transport/marker_endportal.png"
         return formatSign(poi, "End Gateway", None)
 
 
-def pointOfInterestSignFilter(poi):
+# endregion
+
+# region poiSign
+def ppointOfInterestSignNether(poi):
+    return pointOfInterestSignFilter(poi, False)
+
+
+def pointOfInterestSignRoof(poi):
+    return pointOfInterestSignFilter(poi, True)
+
+
+def pointOfInterestSignFilter(poi, roof=None):
+    if roof is True and poi['y'] < 127:
+        return None
+    if roof is False and poi['y'] > 127:
+        return None
+
     if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
         if "[POI]" in poi['Text1']:
             return formatSign(poi, None, None)
@@ -187,7 +247,24 @@ def pointOfInterestSignFilter(poi):
             return formatSign(poi, "Chest", None)
 
 
-def transportSignFilter(poi):
+# endregion
+
+# region transport
+
+def transportSignNether(poi):
+    return transportSignFilter(poi, False)
+
+
+def transportSignRoof(poi):
+    return transportSignFilter(poi, True)
+
+
+def transportSignFilter(poi, roof=None):
+    if roof is True and poi['y'] < 127:
+        return None
+    if roof is False and poi['y'] > 127:
+        return None
+
     if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
         if "[Station]" in poi['Text1'] or "[NFT]" in poi['Text1']:
             poi['icon'] = "custom-icons/transport/marker_train.png"
@@ -203,13 +280,46 @@ def transportSignFilter(poi):
             return formatSign(poi, "Horse Stable", None)
 
 
-def fastTravelSignFilter(poi):
+# endregion
+
+# region fastTravel
+
+def fastTravelSignNether(poi):
+    return fastTravelSignFilter(poi, False)
+
+
+def fastTravelSignRoof(poi):
+    return fastTravelSignFilter(poi, True)
+
+
+def fastTravelSignFilter(poi, roof=None):
+    if roof is True and poi['y'] < 127:
+        return None
+    if roof is False and poi['y'] > 127:
+        return None
+
     if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
         if "Fast Travel" in poi['Text1']:
             return formatSign(poi, None, None)
 
 
-def farmSignFilter(poi):
+# endregion
+
+# region farm
+def farmSignNether(poi):
+    return farmSignFilter(poi, False)
+
+
+def farmSignRoof(poi):
+    return farmSignFilter(poi, True)
+
+
+def farmSignFilter(poi, roof=None):
+    if roof is True and poi['y'] < 127:
+        return None
+    if roof is False and poi['y'] > 127:
+        return None
+
     if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
         if "[Farm]" in poi['Text1']:
             return formatSign(poi, "Farm", None)
@@ -217,6 +327,25 @@ def farmSignFilter(poi):
             return formatSign(poi, None, '<em>Deprecated tag, please replace with [Farm].</em>')
 
 
-def enderchestFilter(poi):
+# endregion
+
+# region ender chest
+def enderchestNether(poi):
+    return enderchestFilter(poi, False)
+
+
+def enderchestRoof(poi):
+    return enderchestFilter(poi, True)
+
+
+def enderchestFilter(poi, roof=None):
+    if roof is True and poi['y'] < 127:
+        return None
+    if roof is False and poi['y'] > 127:
+        return None
+
     if poi['id'] == 'minecraft:ender_chest':
         return formatSign(poi, "Ender Chest", None)
+
+
+# end region

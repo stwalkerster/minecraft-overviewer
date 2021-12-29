@@ -1,6 +1,6 @@
 import os
 from .observer import JSObserver
-from common import marker_definitions, nether_marker_definitions, end_marker_definitions
+from common import overworld_marker_definitions, nether_marker_definitions, end_marker_definitions, nether_roof_marker_definitions
 
 # General config
 end_smooth_lighting = [Base(), EdgeLines(), SmoothLighting(strength=0.5)]
@@ -34,14 +34,14 @@ for directionName, directionCode in d_directions.items():
         "dimension": "overworld",
         "northdirection": directionCode,
         "rendermode": "smooth_lighting",
-        'markers': marker_definitions(),
+        'markers': overworld_marker_definitions(),
     }
     renders[configWorldUnixName + "-overworld-night-" + directionName] = {
         "title": "Night - " + directionName,
         "dimension": "overworld",
         "northdirection": directionCode,
         "rendermode": "smooth_night",
-        'markers': marker_definitions(),
+        'markers': overworld_marker_definitions(),
     }
 
     if configRenderNether:
@@ -64,7 +64,7 @@ for directionName, directionCode in d_directions.items():
             "dimension": "nether",
             "northdirection": directionCode,
             "rendermode": [Base(), EdgeLines(), Depth(min=127)],
-            'markers': nether_marker_definitions(),
+            'markers': nether_roof_marker_definitions(),
         }
         #renders[configWorldUnixName + "-nether-overlay-biome-" + directionName] = {
         #    "title": "Biomes",
