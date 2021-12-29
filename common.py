@@ -46,7 +46,7 @@ def nether_marker_definitions():
 
         dict(name="Transport", filterFunction=transportSignNether, icon="custom-icons/transport/marker_train.png", checked="true", showIconInLegend="true"),
 
-        dict(name="<abbr title='Structures generated with the world'>Structures</abbr>", filterFunction=generatedStructureNether, icon="custom-icons/structures/marker_temple.png", showIconInLegend="true"),
+        dict(name="<abbr title='Structures generated with the world'>Structures</abbr>", filterFunction=generatedStructureFilter, icon="custom-icons/structures/marker_temple.png", showIconInLegend="true"),
     ]
 
 
