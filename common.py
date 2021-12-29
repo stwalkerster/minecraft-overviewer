@@ -222,7 +222,7 @@ def portalSignFilter(poi, roof=None):
 # endregion
 
 # region poiSign
-def ppointOfInterestSignNether(poi):
+def pointOfInterestSignNether(poi):
     return pointOfInterestSignFilter(poi, False)
 
 
