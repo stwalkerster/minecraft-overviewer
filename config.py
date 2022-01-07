@@ -101,11 +101,11 @@ for directionName, directionCode in d_directions.items():
     #    "northdirection": directionCode,
     #}
 
-    renders[configWorldUnixName + "-overworld-overlay-slime-" + directionName] = {
-        "title": "Slime Spawn",
-        "rendermode": [ClearBase(), SlimeOverlay(), BiomeOverlay(biomes=[("Swamp", (0, 255, 0))])],
-        "dimension": "overworld",
-        "overlay": [configWorldUnixName + "-overworld-day-" + directionName,
-                    configWorldUnixName + "-overworld-night-" + directionName],
-        "northdirection": directionCode,
-    }
+    #renders[configWorldUnixName + "-overworld-overlay-slime-" + directionName] = {
+    #    "title": "Slime Spawn",
+    #    "rendermode": [ClearBase(), SlimeOverlay(), BiomeOverlay(biomes=[("Swamp", (0, 255, 0))])],
+    #    "dimension": "overworld",
+    #    "overlay": [configWorldUnixName + "-overworld-day-" + directionName,
+    #                configWorldUnixName + "-overworld-night-" + directionName],
+    #    "northdirection": directionCode,
+    #}
