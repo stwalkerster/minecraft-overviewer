@@ -5,14 +5,15 @@ from common import overworld_marker_definitions, nether_marker_definitions, end_
 # General config
 end_smooth_lighting = [Base(), EdgeLines(), SmoothLighting(strength=0.5)]
 d_directions = dict(North="upper-left", South="lower-right", East="upper-right", West="lower-left")
+d_directions = dict(North="upper-left")
 
 # Configuration
 configWorldUnixName = os.environ.get('BUILD_WORLD_UNIX_NAME')
 configWorldHumanName = os.environ.get('BUILD_WORLD_NAME')
 configWorldPath = os.environ.get('BUILD_WORLD_PATH')
 
-configRenderNether = os.path.isdir(configWorldPath + "/DIM-1/region")
-configRenderEnd = os.path.isdir(configWorldPath + "/DIM1/region")
+configRenderNether = False #os.path.isdir(configWorldPath + "/DIM-1/region")
+configRenderEnd = False #os.path.isdir(configWorldPath + "/DIM1/region")
 
 # Start of overviewer config
 outputdir = "/map/" + configWorldUnixName
@@ -36,13 +37,13 @@ for directionName, directionCode in d_directions.items():
         "rendermode": "smooth_lighting",
         'markers': overworld_marker_definitions(),
     }
-    renders[configWorldUnixName + "-overworld-night-" + directionName] = {
-        "title": "Night - " + directionName,
-        "dimension": "overworld",
-        "northdirection": directionCode,
-        "rendermode": "smooth_night",
-        'markers': overworld_marker_definitions(),
-    }
+    #renders[configWorldUnixName + "-overworld-night-" + directionName] = {
+    #    "title": "Night - " + directionName,
+    #    "dimension": "overworld",
+    #    "northdirection": directionCode,
+    #    "rendermode": "smooth_night",
+    #    'markers': overworld_marker_definitions(),
+    #}
 
     if configRenderNether:
         renders[configWorldUnixName + "-nether-nolighting-" + directionName] = {
