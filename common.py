@@ -179,7 +179,9 @@ def fastlizardTransportSignFilter(poi):
 
         is_station = "north line" in signLine or "green line" in signLine or "east line" in signLine or "south line" in signLine or "purple line" in signLine
 
-        if signLine[0] == '@' and is_station:
+        if signLine == "":
+            return None # Sign is empty
+        elif signLine[0] == '@' and is_station:
             poi['icon'] = "custom-icons/transport/marker_train.png"
 
             return formatSign(poi, "Minecart Station", None, includeFirstLine=True)
