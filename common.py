@@ -169,7 +169,7 @@ def fastlizardFastTravelFilter(poi):
         if sign_text[0] == '#':
             return None
 
-        if 'fast travel' in sign_text.lower():
+        if 'fast travel' in sign_text.lower() or 'faster travelling' in sign_text.lower():
             poi['icon'] = 'custom-icons/transport/marker_fasttravel.png'
             return formatSign(poi, "Fast Travel", None, includeFirstLine=True)
 
