@@ -107,7 +107,7 @@ body {
 
 
 #link, #coordsDiv, #progressDiv {
-    background-color: #fff; /* fallback */
+    background-color: #fff;
     background-color: rgba(255,255,255,0.55);
     border: 1px solid rgb(0, 0, 0);
     font-size: 9pt;
@@ -117,7 +117,7 @@ body {
 }
 
 #link:hover {
-    background-color: #fff; /* fallback */
+    background-color: #fff;
     background-color: rgba(255,255,255,0.8);
 }
 
@@ -201,6 +201,10 @@ img.ov-marker-legend {
     padding: 10px;
 }
 
+.signtext.mcpoi-hanging {
+    background-image: url(./stripped_oak_log.png);
+}
+
 .mccolor-white.mcglow-1 {
     text-shadow: 0 0 3px black, 0 0 5px white, 0 0 5px white, 0 0 5px white, 0 0 5px white, 0 0 6px white, 0 0 6px white;
 }
@@ -222,6 +226,6 @@ img.ov-marker-legend {
 .mccolor-purple { color: #8932B8; }
 .mccolor-pink { color: #F38BAA; }
 .mccolor-white { color:  #F9FFFE; }
-.mccolor-grey { color: #474F52; }
-.mccolor-light_grey { color: #9D9D97; }
+.mccolor-gray { color: #474F52; }
+.mccolor-light_gray { color: #9D9D97; }
 .mccolor-black { color: #1D1D21; }
